@@ -53,10 +53,10 @@
                                 <td><img src="../image/<?= $image ?>" width="100" alt=""></td>
                                 <td><?=$description?></td>
                                 <td><?=$quantity?></td>
-                                <td><?=$idCategory?></td>
+                                <td><?=$idCate?></td>
                                 <td>
                                     <a href="index.php?sp=fix_sp&id=<?=$idProduct?>">Sửa</a>
-                                    <a href="#">Xóa</a>
+                                    <a href="index.php?sp=delete_sp&id=<?=$idProduct?>">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
