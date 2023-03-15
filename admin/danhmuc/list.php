@@ -6,7 +6,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=new_sp">Thêm danh mục</a></h6>
+            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=add_dm">Thêm danh mục</a></h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -26,14 +26,18 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>
-                                <a href="#">Sửa</a>
-                                <a href="#">Xóa</a>
-                            </td>
-                        </tr>
+                        <?php $stt = 1;
+                        
+                         foreach ($listdm as $dm):extract($dm)  ?>
+                            <tr>
+                                <td><?=$stt++?></td>
+                                <td><?=$name?></td>
+                                <td>
+                                    <a href="index.php?sp=fix_dm&id=<?=$idCategory?>">Sửa</a>
+                                    <a href="index.php?sp=delete_dm&id=<?=$idCategory?>">Xóa</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>

@@ -6,16 +6,16 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=new_sp"></a></h6>
+            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_dm">Danh sách danh mục</a></h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                
-                    <form action="index.php?sp=new_sp" method="post">
+                   
+                    <form action="index.php?sp=add_dm" method="post">
                         <h6 class="m-0 font-weight-bold text-primary">Tên danh mục</h6>
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        <input type="text" class="form-control bg-light border-0 small" name="danhmuc" placeholder="Search for..."
                             aria-label="Search" aria-describedby="basic-addon2">
-                        <button type="submit">Thêm mới</button>
+                        <button type="submit" name="new">Thêm mới</button>
                     </form>
                         
             </div>
