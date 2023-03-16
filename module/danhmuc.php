@@ -16,7 +16,7 @@ function load_one_dm($id){
     return $dm;
 }
 function update_dm($id,$danhmuc){
-    $sql = "UPDATE `category` set name='".$danhmuc."' WHERE idCategory=".$id;
+    $sql = "UPDATE `category` set `name`='".$danhmuc."' WHERE `idCategory`=".$id;
     pdo_execute($sql);
 }
 function delete_dm($id){
