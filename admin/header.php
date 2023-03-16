@@ -10,7 +10,7 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Custom styles for this template-->
     <link href="../css.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -320,10 +320,10 @@
                                     <?php if(isset($_SESSION['user'])){
                                         extract($_SESSION['user'])
                                         ?>
-                                        <?=$name?>
+                                       <i class='bx bx-user'></i>
                                         <?php } else{
                                             ?>
-                                            <span>Tài khoản</span>
+                                            <span><i class='bx bx-user'></i></span>
                                             <?php
                                         }?>
                                 </button>
