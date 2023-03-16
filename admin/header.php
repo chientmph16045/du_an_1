@@ -55,7 +55,7 @@
                 <a class="nav-link collapsed" href="index.php?sp=list_dm" data-toggle="collapse"
                     data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <!-- <i class="fas fa-fw"></i> -->
-                    <span>Components</span>
+                    <span>Danh mục</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -71,7 +71,7 @@
                 <a class="nav-link collapsed" href="index.php?sp=list_sp" data-toggle="collapse"
                     data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <!-- <i class="fas fa-fw fa-wrench"></i> -->
-                    <span>Utilities</span>
+                    <span>Sản phẩm</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
@@ -317,10 +317,18 @@
                             <div class="dropdown mt-3">
                                 <button class="btn btn-secondary dropdown-toggle text-black border-0 bg-transparent" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown button
+                                    <?php if(isset($_SESSION['user'])){
+                                        extract($_SESSION['user'])
+                                        ?>
+                                        <?=$name?>
+                                        <?php } else{
+                                            ?>
+                                            <span>Tài khoản</span>
+                                            <?php
+                                        }?>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                                    <li><a class="dropdown-item" href="index.php?sp=logout">Đăng xuất</a></li>
                                 </ul>
                             </div>
                         </li>
