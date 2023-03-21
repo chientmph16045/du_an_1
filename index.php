@@ -1,3 +1,5 @@
 <?php
 include_once './page/header.php';
-echo "dây là file index";
+include_once './page/home.php';
+include_once './page/footer.php';
+
