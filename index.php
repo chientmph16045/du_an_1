@@ -38,6 +38,19 @@ if (isset($_GET['sp'])) {
             }
             include './page/login_resign.php';
             break;
+        case 'forget' :
+            if(isset($_POST['forget'])){
+                $email =$_POST['email'];
+                $check = checkforget($email);
+                if(is_array($check)){
+                    extract($check);
+                    $thongbao  = "Mật khẩu của bạn là ".$password;
+                }else{
+                    $thongbao ='Email không chính xác';
+                }
+            }
+            include './page/forget.php';
+            break;   
         case 'logout':
                 session_destroy();
                 $yourURL = "index.php";
