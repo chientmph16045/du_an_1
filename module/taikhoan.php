@@ -7,6 +7,12 @@ function checkuser($email, $pass)
     return $acc;
 }
 
+function checkforget($email)
+{
+    $sql = "SELECT * FROM `user` where `email`='" . $email . "'";
+    $acc = pdo_query_one($sql);
+    return $acc;
+}
 
 
 function insertAcc($name, $email, $pass)

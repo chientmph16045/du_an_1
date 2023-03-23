@@ -39,6 +39,15 @@
       margin-top: 20px;
       margin-bottom: 90px;
     }
+    .fogot{
+       text-align: center;
+       font-size: 15px;
+
+    }
+    .fogot>a{
+      color: blueviolet;
+
+    }
   </style>
 </head>
 
@@ -85,6 +94,7 @@
           } ?>
         </form>
       </div>
+      <h2 class="fogot">Fogot the password <a href="?sp=forget">click here</a></h2>
     </div>
 
   </div>
