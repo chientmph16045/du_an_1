@@ -151,7 +151,7 @@ if (isset($_SESSION['user'])) {
             }
             case "fix_user":{
                 if(isset($_GET['id'])){
-                    $user=list_one_user($GET["id"]);
+                    $user=list_one_user($_GET["id"]);
                 }
                 $listuser=list_user();
                 include_once "./user/fix.php";
