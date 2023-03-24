@@ -1,34 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from ledthanhdat.vn/html/lynessa/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:25:11 GMT -->
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/chosen.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/pe-icon-7-stroke.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery.scrollbar.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/lightbox.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <title>Lynessa - HTML Template </title>
-</head>
 
 <body>
-    <header id="header" class="header style-04 header-transparent header-sticky">
+<header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
             <div class="header-middle-inner">
                 <div class="header-search-mid">
@@ -196,7 +168,7 @@
                                     <li id="menu-item-228"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Shop"
-                                            href="shop-leftsidebar.php">Shop</a>
+                                            href="./page/shop-leftsidebar.php">Shop</a>
 
                                     </li>
                                     <li id="menu-item-229"
@@ -205,12 +177,12 @@
                                     </li>
                                     <li id="menu-item-996"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Blog" href="blog.php">Blog</a>
+                                        <a class="lynessa-menu-item-title" title="Blog" href="./page/blog.php">Blog</a>
 
                                     </li>
                                     <li id="menu-item-237"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
-                                        <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
+                                        <a class="lynessa-menu-item-title" title="Pages" href="./page/contact.php">Contact</a>
                                     </li>
                                 </ul>
                             </div>
