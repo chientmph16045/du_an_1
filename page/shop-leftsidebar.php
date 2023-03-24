@@ -182,7 +182,7 @@
                                     class="clone-main-menu lynessa-clone-mobile-menu lynessa-nav main-menu">
                                     <li id="menu-item-230"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Home" href="index.php">Home</a>
+                                        <a class="lynessa-menu-item-title" title="Home" href="./index.php">Home</a>
                                         <!-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-home">
                                         <h5 class="az_custom_heading">

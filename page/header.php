@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +29,9 @@
     <title>Lynessa - HTML Template </title>
 </head>
 
+
 <body>
-    <header id="header" class="header style-04 header-transparent header-sticky">
+<header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
             <div class="header-middle-inner">
                 <div class="header-search-mid">
@@ -241,7 +243,7 @@
                                     <li id="menu-item-228"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Shop"
-                                            href="shop-leftsidebar.php">Shop</a>
+                                            href="./page/shop-leftsidebar.php">Shop</a>
 
                                     </li>
                                     <li id="menu-item-229"
@@ -250,12 +252,12 @@
                                     </li>
                                     <li id="menu-item-996"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Blog" href="blog.php">Blog</a>
+                                        <a class="lynessa-menu-item-title" title="Blog" href="./page/blog.php">Blog</a>
 
                                     </li>
                                     <li id="menu-item-237"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
-                                        <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
+                                        <a class="lynessa-menu-item-title" title="Pages" href="./page/contact.php">Contact</a>
                                     </li>
                                 </ul>
                             </div>
