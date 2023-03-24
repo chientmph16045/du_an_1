@@ -438,7 +438,7 @@ include_once "header.php";
                                                 </div>
                                             </div>
                                             <div class="add-to-cart">
-                                                <a href="https://ledthanhdat.vn/lynessa/home-02/?add-to-cart=36"
+                                                <a href="#"
                                                     data-quantity="1"
                                                     class="button product_type_simple add_to_cart_button ajax_add_to_cart"
                                                     data-product_id="36" data-product_sku="098J812-1"

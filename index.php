@@ -1,36 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- Mirrored from ledthanhdat.vn/html/lynessa/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:25:11 GMT -->
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/chosen.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/pe-icon-7-stroke.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery.scrollbar.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/lightbox.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <title>Lynessa - HTML Template </title>
-</head>
 <?php
-// include_once "./page/header.php";
-include_once "./page/home.php";
-// include_once "./page/footer.php";
-?>
+session_start();
+include_once './page/header.php';
+include_once './module/pdo.php';
+include_once './module/taikhoan.php';
 
-</body>
-</html>
+if (isset($_GET['sp'])) {
+    $sp = $_GET['sp'];
+    switch ($sp) {
+
+
+        //login && resign && logout
+        case 'login_resign':
+            include './page/login_resign.php';
+            break;
+        case 'login':
+            if (isset($_POST['login'])){
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
+                $login = checkuser($email,$pass);
+                if(is_array($login)){
+                    $_SESSION['user'] = $login;
+                    $yourURL = "index.php";
+                    echo ("<script>location.href =' $yourURL '</script>");
+                }else{
+                    $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
+                    include './page/login_resign.php';
+                }
+            }
+            break; 
+        case 'resign':
+            if(isset($_POST['resign'])){
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
+                insertAcc($name, $email, $pass);
+                $thongbaodangki = "Đăng kí thành công";
+            }
+            include './page/login_resign.php';
+            break;
+        case 'forget' :
+            if(isset($_POST['forget'])){
+                $email =$_POST['email'];
+                $check = checkforget($email);
+                if(is_array($check)){
+                    extract($check);
+                    $thongbao  = "Mật khẩu của bạn là ".$password;
+                }else{
+                    $thongbao ='Email không chính xác';
+                }
+            }
+            include './page/forget.php';
+            break;   
+        case 'logout':
+                session_destroy();
+                $yourURL = "index.php";
+                echo ("<script>location.href =' $yourURL '</script>");
+                break;
+    }
+} else {
+    include_once './page/home.php';
+}
+include_once './page/footer.php';

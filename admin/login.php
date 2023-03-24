@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .btn{
-  margin-bottom: 10px;
-}
+      margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>

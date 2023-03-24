@@ -1,4 +1,35 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from ledthanhdat.vn/html/lynessa/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:25:11 GMT -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/chosen.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.scrollbar.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lightbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    <title>Lynessa - HTML Template </title>
+</head>
+
+
 <body>
 <header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
@@ -52,37 +83,81 @@
                 <div class="header-control">
                     <div class="header-control-inner">
                         <div class="meta-dreaming">
-                            <div class="menu-item block-user block-dreaming lynessa-dropdown">
-                                <a class="block-link" href="my-account.html">
-                                    <span class="pe-7s-user"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li
-                                        class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--dashboard is-active">
-                                        <a href="#">Dashboard</a>
-                                    </li>
-                                    <li
-                                        class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--orders">
-                                        <a href="#">Orders</a>
-                                    </li>
-                                    <li
-                                        class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--downloads">
-                                        <a href="#">Downloads</a>
-                                    </li>
-                                    <li
-                                        class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-address">
-                                        <a href="#">Addresses</a>
-                                    </li>
-                                    <li
-                                        class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-account">
-                                        <a href="#">Account details</a>
-                                    </li>
-                                    <li
-                                        class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                        <a href="#">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php if (isset($_SESSION['user'])) {
+                                extract($_SESSION['user']);
+                                if ($role == 3) {
+                                    ?>
+                                    <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                        <a class="block-link" href="index.php?sp=account">
+                                            <span class="pe-7s-user"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li
+                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="./admin">Quản Trị</a>
+                                            </li>
+                                            <li
+                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="?sp=logout">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                    <?php
+                                } else {
+
+                                    ?>
+                                   <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                        <a class="block-link" href="index.php?sp=account">
+                                            <span class="pe-7s-user"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                           
+                                            <li
+                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="?sp=logout">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <?php
+                                }
+                                ?>
+
+                            <?php } else { ?>
+                                <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                    <a class="block-link" href="index.php?sp=login_resign">
+                                        <span class="pe-7s-user"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li
+                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--dashboard is-active">
+                                            <a href="#">Dashboard</a>
+                                        </li>
+                                        <li
+                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--orders">
+                                            <a href="#">Orders</a>
+                                        </li>
+                                        <li
+                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--downloads">
+                                            <a href="#">Downloads</a>
+                                        </li>
+                                        <li
+                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-address">
+                                            <a href="#">Addresses</a>
+                                        </li>
+                                        <li
+                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-account">
+                                            <a href="#">Account details</a>
+                                        </li>
+                                        <li
+                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                            <a href="?sp=login">Login</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php } ?>
                             <div class="block-minicart block-dreaming lynessa-mini-cart lynessa-dropdown">
                                 <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
                                     <a class="block-link link-dropdown" href="cart.php">
