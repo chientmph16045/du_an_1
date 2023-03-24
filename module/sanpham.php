@@ -6,14 +6,11 @@ function insert_sp($name, $price, $image, $description, $quantity, $idCategory)
     pdo_execute($sql);
 }
 
-function list_sp($kyw, $idCate)
+function list_sp($idCate)
 {
-    $sql = "SELECT * FROM `product` WHERE 1";
-    if ($kyw != "") {
-        $sql .= " and name like '%" . $kyw . "'%";
-    }
-    if ($kyw > 0) {
-        $sql .= " .idCate = '" . $idCate . "'";
+    $sql = "SELECT * FROM `product` WHERE 1 ";
+    if ($idCate > 0) {
+        $sql .= "  and idCate = '" . $idCate . "'";
     }
     $listsp = pdo_query($sql);
     return $listsp;

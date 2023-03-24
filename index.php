@@ -7,11 +7,15 @@ if (isset($_GET['act']) && ($_GET['act']) !== "") {
     $act = $_GET['act'];
     switch ($act) {
         case 'home':
-            include './page/index.php';
+            include './page/home.php';
             break;
         case 'shop':
-            if (isset($_GET['kyw']))
-                $loadsp = list_sp();
+            if (isset($_GET['idCate']) && ($_GET['idCate']) > 0) {
+                $idCate = $_GET['idCate'];
+            } else {
+                $idCate = 0;
+            }
+            $loadsp = list_sp($idCate);
             $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
