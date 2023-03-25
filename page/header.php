@@ -78,7 +78,7 @@
                     <div class="header-control-inner">
                         <div class="meta-dreaming">
                             <div class="menu-item block-user block-dreaming lynessa-dropdown">
-                                <a class="block-link" href="my-account.html">
+                                <a class="block-link" href="index.php?sp=login_resign">
                                     <span class="pe-7s-user"></span>
                                 </a>
                                 <ul class="sub-menu">
