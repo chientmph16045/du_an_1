@@ -74,7 +74,6 @@ if (isset($_SESSION['user'])) {
                     if (isset($_POST['new_sp'])) {
                         $name = $_POST['name'];
                         $price = $_POST['price'];
-                        $sale_price = $_POST['sale_price'];
                         $image = $_FILES['image']['name'];
                         $target_dir = "../image/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -85,10 +84,8 @@ if (isset($_SESSION['user'])) {
                         }
                         $description = $_POST['description'];
                         $quantity = $_POST['quantity'];
-                        $view = $_POST['view'];
-                        $size = $_POST['size'];
                         $idCategory = $_POST['idCategory'];
-                        insert_sp($id,$name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCate);
+                        insert_sp($name, $price, $image, $description, $quantity, $idCategory);
                     }
                     $listdm = list_dm();
                     include_once './sanpham/add.php';
@@ -107,7 +104,6 @@ if (isset($_SESSION['user'])) {
                         $id = $_POST['id'];
                         $name = $_POST['name'];
                         $price = $_POST['price'];
-                        $sale_price = $_POST['sale_price'];
                         $image = $_FILES['image']['name'];
                         $target_dir = "../image/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -118,10 +114,8 @@ if (isset($_SESSION['user'])) {
                         }
                         $description = $_POST['description'];
                         $quantity = $_POST['quantity'];
-                        $view = $_POST['view'];
-                        $size = $_POST['size'];
                         $idCate = $_POST['idCategory'];
-                        update_sp($id,$name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCate);
+                        update_sp($id, $name, $price, $image, $description, $quantity, $idCate);
                     }
                     $listsp = list_sp();
                     include_once './sanpham/list.php';

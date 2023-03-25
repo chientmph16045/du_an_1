@@ -182,7 +182,7 @@
                                     class="clone-main-menu lynessa-clone-mobile-menu lynessa-nav main-menu">
                                     <li id="menu-item-230"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Home" href="index.php">Home</a>
+                                        <a class="lynessa-menu-item-title" title="Home" href="./index.php">Home</a>
                                         <!-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-home">
                                         <h5 class="az_custom_heading">
@@ -195,16 +195,29 @@
                                         <a class="lynessa-menu-item-title" title="Shop"
                                             href="shop-leftsidebar.php">Shop</a>
 
-            .box10{
-                padding-top:20px;
-            }
-            .box10 a:hover{
-                text-decoration: underline;
-            }
-        </style>
-    <?php
-        include_once 'page/header.php';
-    ?>
+                                    </li>
+                                    <li id="menu-item-229"
+                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Elements" href="#">Elements</a>
+                                    </li>
+                                    <li id="menu-item-996"
+                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Blog" href="blog.php">Blog</a>
+
+                                    </li>
+                                    <li id="menu-item-237"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
+                                        <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</header>
 <div class="banner-wrapper has_background">
     <img src="assets/images/banner-for-all2.jpg"
          class="img-responsive attachment-1920x447 size-1920x447" alt="img">
@@ -372,82 +385,130 @@
                 </div>
                 <div class=" auto-clear lynessa-products">
                     <ul class="row products columns-3">
-                        <?php
-                            foreach ($loadall_sp as $sp) {
-                                extract($sp);
-
-                                echo '<li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes"
-                                data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
-                                <div class="product-inner tooltip-left">
-                                    <div class="product-thumb">
-                                        <a class="thumb-link" href="#">
-                                            <img class="img-responsive"
-                                                 src="image/'.$image.'"
-                                                 alt="MINI SKIRT" width="600" height="778">
-                                        </a>
-                                        <div class="flash">
-                                            <span class="onnew"><span class="text">New</span></span></div>
-                                        
-                                        <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
-                                        <div class="group-button">
-                                            <div class="yith-wcwl-add-to-wishlist">
-                                                <div class="yith-wcwl-add-button show">
-                                                    <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                                </div>
-                                            </div>
-                                            <div class="lynessa product compare-button">
-                                                <a href="#" class="compare button">Compare</a>
-                                            </div>
-                                            <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                            <div class="add-to-cart">
-                                                <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                    options</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-info equal-elem">
-                                        <h3 class="product-name product_title">
-                                            <a href="#">'.$name.'</a>
-                                        </h3>
-                                        <div class="rating-wapper nostar">
-                                            <div class="star-rating"><span style="width:0%">Rated <strong
-                                                    class="rating">0</strong> out of 5</span></div>
-                                            <span class="review">(0)</span></div>
-                                        <span class="price"><span class="lynessa-Price-amount amount"><span
-                                                class="lynessa-Price-currencySymbol">$</span>'.$price.'</span>
-                                        <div class="lynessa-product-details__short-description">
-                                            <p>'.$description.'</p>
-                                            <ul>
-                                                <li>Water-resistant fabric with soft lycra detailing inside</li>
-                                                <li>CLean zip-front, and three piece hood</li>
-                                                <li>Subtle branding and diagonal panel detail</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                        <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes"
+                            data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
+                            <div class="product-inner tooltip-left">
+                                <div class="product-thumb">
+                                    <a class="thumb-link" href="#">
+                                        <img class="img-responsive"
+                                             src="assets/images/apro161-1-600x778.jpg"
+                                             alt="MINI SKIRT" width="600" height="778">
+                                    </a>
+                                    <div class="flash">
+                                        <span class="onnew"><span class="text">New</span></span></div>
+                                    <form class="variations_form cart">
+                                        <table class="variations">
+                                            <tbody>
+                                            <tr>
+                                                <td class="value">
+                                                    <select title="box_style" data-attributetype="box_style"
+                                                            data-id="pa_color"
+                                                            class="attribute-select " name="attribute_pa_color"
+                                                            data-attribute_name="attribute_pa_color"
+                                                            data-show_option_none="yes">
+                                                        <option data-type="" data-pa_color="" value="">Choose an
+                                                            option
+                                                        </option>
+                                                        <option data-width="30" data-height="30" data-type="color"
+                                                                data-pa_color="#3155e2" value="blue"
+                                                                class="attached enabled">Blue
+                                                        </option>
+                                                        <option data-width="30" data-height="30" data-type="color"
+                                                                data-pa_color="#52b745" value="green"
+                                                                class="attached enabled">Green
+                                                        </option>
+                                                        <option data-width="30" data-height="30" data-type="color"
+                                                                data-pa_color="#ffe59e" value="pink"
+                                                                class="attached enabled">Pink
+                                                        </option>
+                                                    </select>
+                                                    <div class="data-val attribute-pa_color"
+                                                         data-attributetype="box_style">
+                                                        <label>
+                                                            <input type="radio" name="color">
+                                                            <span class="change-value color"
+                                                                  style="background: #3155e2;" data-value="blue">
+                                                            </span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="color">
+                                                            <span class="change-value color"
+                                                                  style="background: #52b745;" data-value="green">
+                                                            </span>
+                                                        </label>
+                                                        <label>
+                                                            <input type="radio" name="color">
+                                                            <span class="change-value color"
+                                                                  style="background: #ffe59e;" data-value="pink">
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <a class="reset_variations" href="#" style="visibility: hidden;">Clear</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                    <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
                                     <div class="group-button">
-                                        <div class="group-button-inner">
-                                            <div class="yith-wcwl-add-to-wishlist">
-                                                <div class="yith-wcwl-add-button show">
-                                                    <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                                </div>
+                                        <div class="yith-wcwl-add-to-wishlist">
+                                            <div class="yith-wcwl-add-button show">
+                                                <a href="#" class="add_to_wishlist">Add to Wishlist</a>
                                             </div>
-                                            <div class="lynessa product compare-button">
-                                                <a href="#" class="compare button">Compare</a>
-                                            </div>
-                                            <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                            <div class="add-to-cart">
-                                                <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                    options</a>
-                                            </div>
+                                        </div>
+                                        <div class="lynessa product compare-button">
+                                            <a href="#" class="compare button">Compare</a>
+                                        </div>
+                                        <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                        <div class="add-to-cart">
+                                            <a href="#" class="button product_type_variable add_to_cart_button">Select
+                                                options</a>
                                         </div>
                                     </div>
                                 </div>
-                            </li>';
-                            }
-                        
-                        
-                        ?>
-                        <!-- <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-28 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-sock  instock sale featured shipping-taxable purchasable product-type-simple"
+                                <div class="product-info equal-elem">
+                                    <h3 class="product-name product_title">
+                                        <a href="#">MINI SKIRT</a>
+                                    </h3>
+                                    <div class="rating-wapper nostar">
+                                        <div class="star-rating"><span style="width:0%">Rated <strong
+                                                class="rating">0</strong> out of 5</span></div>
+                                        <span class="review">(0)</span></div>
+                                    <span class="price"><span class="lynessa-Price-amount amount"><span
+                                            class="lynessa-Price-currencySymbol">$</span>45.00</span> – <span
+                                            class="lynessa-Price-amount amount"><span
+                                            class="lynessa-Price-currencySymbol">$</span>54.00</span></span>
+                                    <div class="lynessa-product-details__short-description">
+                                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                            turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                                            tempor sit amet, ante.</p>
+                                        <ul>
+                                            <li>Water-resistant fabric with soft lycra detailing inside</li>
+                                            <li>CLean zip-front, and three piece hood</li>
+                                            <li>Subtle branding and diagonal panel detail</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="group-button">
+                                    <div class="group-button-inner">
+                                        <div class="yith-wcwl-add-to-wishlist">
+                                            <div class="yith-wcwl-add-button show">
+                                                <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                                            </div>
+                                        </div>
+                                        <div class="lynessa product compare-button">
+                                            <a href="#" class="compare button">Compare</a>
+                                        </div>
+                                        <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                        <div class="add-to-cart">
+                                            <a href="#" class="button product_type_variable add_to_cart_button">Select
+                                                options</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-28 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-sock  instock sale featured shipping-taxable purchasable product-type-simple"
                             data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
                             <div class="product-inner tooltip-left">
                                 <div class="product-thumb">
@@ -1309,7 +1370,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
                 <div class="shop-control shop-after-control">
@@ -1330,7 +1391,7 @@
                             <button type="submit" value="Search">Search</button>
                         </form>
                     </div>
-                    <!-- <div id="lynessa_price_filter-2" class="widget lynessa widget_price_filter"><h2
+                    <div id="lynessa_price_filter-2" class="widget lynessa widget_price_filter"><h2
                             class="widgettitle">Filter By Price<span class="arrow"></span></h2>
                         <form method="get" action="#">
                             <div class="price_slider_wrapper">
@@ -1345,20 +1406,189 @@
                                 </div>
                             </div>
                         </form>
-                    </div> -->
-                    <?php
-                        include_once 'page/box_left.php';
-                    
-                    ?>
-                <!-- .widget-area -->
+                    </div>
+                    <div id="lynessa_lynessa_layered_nav-4"
+                         class="widget lynessa_widget_layered_nav widget_layered_nav">
+                        <h2 class="widgettitle">Filter By Color<span class="arrow"></span></h2>
+                        <form class="color-group">
+                            <label class="term-color">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #000000"></i>
+                                <span class="term-name">Black</span>
+                                <span class="count">(4)</span> </label>
+                            <label class="term-color ">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #337fdd"></i>
+                                <span class="term-name">Blue</span>
+                                <span class="count">(3)</span> </label>
+                            <label class="term-color ">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #ffe59e"></i>
+                                <span class="term-name">Light</span>
+                                <span class="count">(1)</span> </label>
+                            <label class="term-color ">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #b6b8ba"></i>
+                                <span class="term-name">Gray</span>
+                                <span class="count">(3)</span> </label>
+                            <label class="term-color ">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #52b745"></i>
+                                <span class="term-name">Green</span>
+                                <span class="count">(1)</span> </label>
+                            <label class="term-color ">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #cc7b4a"></i>
+                                <span class="term-name">Brown</span>
+                                <span class="count">(5)</span> </label>
+                            <label class="term-color ">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #dd333f"></i>
+                                <span class="term-name">Red</span>
+                                <span class="count">(2)</span> </label>
+                            <label class="term-color">
+                                <input type="checkbox" name="term-color">
+                                <i style="color: #e8e120"></i>
+                                <span class="term-name">Yellow</span>
+                                <span class="count">(2)</span> </label>
+                        </form>
+                    </div>
+                    <div id="lynessa_layered_nav-6"
+                         class="widget lynessa widget_layered_nav lynessa-widget-layered-nav"><h2
+                            class="widgettitle">Filter By Size<span class="arrow"></span></h2>
+                        <ul class="lynessa-widget-layered-nav-list">
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>14.0 mm</span>
+                                    <span class="count">(1)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>14.4 mm</span>
+                                    <span class="count">(4)</span></label></li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>14.8 mm</span>
+                                    <span class="count">(2)</span></label></li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>15.2 mm</span>
+                                    <span class="count">(3)</span></label></li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>15.6 mm</span>
+                                    <span class="count">(1)</span></label></li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>16.0 mm</span>
+                                    <span class="count">(4)</span></label></li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>16.4 mm</span>
+                                    <span class="count">(4)</span></label></li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>16.8 mm</span>
+                                    <span class="count">(3)</span></label></li>
+                        </ul>
+                    </div>
+                    <div id="lynessa_product_categories-3" class="widget lynessa widget_product_categories"><h2
+                            class="widgettitle">Product categories<span class="arrow"></span></h2>
+                        <ul class="product-categories">
+                            <li class="cat-item cat-item-22"><label><input type="checkbox"
+                                                                           name="cate"><span>Just In</span>
+                                <span class="count">(11)</span></label></li>
+                            <li class="cat-item cat-item-16"><label><input type="checkbox"
+                                                                           name="cate"><span>Restock</span>
+                                <span class="count">(9)</span></label></li>
+                            <li class="cat-item cat-item-24"><label><input type="checkbox"
+                                                                           name="cate"><span>Dresses</span>
+                                <span class="count">(6)</span></label></li>
+                            <li class="cat-item cat-item-27"><label><input type="checkbox"
+                                                                           name="cate"><span>Shirts</span> <span
+                                    class="count">(6)</span></label></li>
+                            <li class="cat-item cat-item-19"><label><input type="checkbox" name="cate"><span>New arrivals</span>
+                                <span class="count">(7)</span></label></li>
+                            <li class="cat-item cat-item-17"><label><input type="checkbox"
+                                                                           name="cate"><span>Leggings</span>
+                                <span class="count">(6)</span></label></li>
+                            <li class="cat-item cat-item-26"><label><input type="checkbox"
+                                                                           name="cate"><span>Knit Tops</span> <span
+                                    class="count">(4)</span></label></li>
+                            <li class="cat-item cat-item-18"><label><input type="checkbox"
+                                                                           name="cate"><span>Bodysuits</span>
+                                <span class="count">(6)</span></label></li>
+                        </ul>
+                    </div>
+                </div><!-- .widget-area -->
             </div>
         </div>
     </div>
 </div>
-<?php
-    include_once 'page/footer.php';
-
-?>
+<footer id="footer" class="footer style-01">
+    <div class="section-001 section-009">
+        <div class="container">
+            <div class="lynessa-newsletter style-01">
+                <div class="newsletter-inner">
+                    <div class="newsletter-info">
+                        <div class="newsletter-wrap">
+                            <h3 class="title">Newsletter</h3>
+                            <h4 class="subtitle">Get Discount 30% Off</h4>
+                            <p class="desc">Suspendisse netus proin eleifend fusce sollicitudin potenti vel magnis
+                                nascetur</p>
+                        </div>
+                    </div>
+                    <div class="newsletter-form-wrap">
+                        <div class="newsletter-form-inner">
+                            <input class="email email-newsletter" name="email" placeholder="Enter your email ..."
+                                   type="email">
+                            <a href="#" class="button btn-submit submit-newsletter">
+                                <span class="text">Subscribe</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-010">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>© Copyright 2020 <a href="#">Lynessa</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="lynessa-socials style-01">
+                        <div class="content-socials">
+                            <ul class="socials-list">
+                                <li>
+                                    <a href="https://facebook.com/" target="_blank">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank">
+                                        <i class="fa fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <a href="#" class="backtotop active">
     <i class="fa fa-angle-up"></i>

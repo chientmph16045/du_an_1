@@ -19,10 +19,6 @@
                     <h6 class="m-0 font-weight-bold text-primary">Giá</h6>
                     <input type="text" class="form-control bg-light border-0 small" name="price" value="<?=$price?>" aria-label="Search"
                         aria-describedby="basic-addon2">
-                        <h6 class="m-0 font-weight-bold text-primary">Giá giảm giá</h6>
-                    <input type="text" class="form-control bg-light border-0 small" name="sale_price" value="<?=$sale_price?>" aria-label="Search"
-                        aria-describedby="basic-addon2">
-
                     <h6 class="m-0 font-weight-bold text-primary">Hỉnh ảnh</h6>
                     <img src="../image/<?=$image?>" width="200px" alt="">
                     <br>
@@ -34,12 +30,6 @@
                     <h6 class="m-0 font-weight-bold text-primary">Số lượng sản phẩm</h6>
                     <input type="text" class="form-control bg-light border-0 small" name="quantity" value="<?=$quantity?>" aria-label="Search"
                         aria-describedby="basic-addon2">
-                    <h6 class="m-0 font-weight-bold text-primary">Số view</h6>
-                    <input type="text" class="form-control bg-light border-0 small" name="view" value="<?=$view?>" aria-label="Search"
-                        aria-describedby="basic-addon2">
-                        <h6 class="m-0 font-weight-bold text-primary">kích cỡ</h6>
-                    <input type="text" class="form-control bg-light border-0 small" name="size" value="<?=$size?>" aria-label="Search"
-                        aria-describedby="basic-addon2">     
                     <h6 class="m-0 font-weight-bold text-primary">Loại sản phẩm</h6>
                     <select name="idCategory" id="">
                         <?php foreach ($listdm as $dm):
