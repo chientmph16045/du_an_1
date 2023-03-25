@@ -1,4 +1,6 @@
-
+<?php 
+include_once "header.php";
+?>
     <div class="fullwidth-template">
         <div class="slide-home-02">
             <div class="response-product product-list-owl owl-slick equal-container better-height"
@@ -1515,3 +1517,7 @@
         </div>
     </div>
    
+
+    <?php 
+include_once "footer.php";
+?>
