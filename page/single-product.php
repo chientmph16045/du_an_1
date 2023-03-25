@@ -1,3 +1,9 @@
+<?php require('./module/sanpham.php');
+    if (isset($_GET)) {
+        $id = $_GET['id'];
+        $sp = load_one_sp($id);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,19 +183,19 @@
                     <div class="container">
                         <div class="lynessa-menu-wapper"></div>
                         <div class="header-nav-inner">
-                            <div class="box-header-nav menu-nocenter">
+                            <!-- <div class="box-header-nav menu-nocenter">
                                 <ul id="menu-primary-menu"
                                     class="clone-main-menu lynessa-clone-mobile-menu lynessa-nav main-menu">
                                     <li id="menu-item-230"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Home" href="index.php">Home</a>
+                                        <a class="lynessa-menu-item-title" title="Home" href="index.php">Home</a> -->
                                         <!-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-home">
                                         <h5 class="az_custom_heading">
                                                         <a href="index.php">Home 01</a>
                                                     </h5>
                                     </div> -->
-                                    </li>
+                                    <!-- </li>
                                     <li id="menu-item-228"
                                         class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Shop"
@@ -210,7 +216,7 @@
                                         <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -220,7 +226,7 @@
     </header>
 <div class="banner-wrapper no_background">
     <div class="banner-wrapper-inner">
-        <nav class="lynessa-breadcrumb"><a href="index.php">Home</a><i class="fa fa-angle-right"></i><a href="#">Shop</a>
+        <nav class="lynessa-breadcrumb"><a href="./index.php">Home</a><i class="fa fa-angle-right"></i><a href="#">Shop</a>
             <i class="fa fa-angle-right"></i>Single Product
         </nav>
     </div>
@@ -242,8 +248,7 @@
                                     <div class="flex-viewport">
                                         <figure class="lynessa-product-gallery__wrapper">
                                             <div class="lynessa-product-gallery__image">
-                                                <img alt="img"
-                                                     src="assets/images/apro131-2.jpg">
+                                            <img src="assets/images/<?= $sp['image'] ?>" alt="">
                                             </div>
                                             <div class="lynessa-product-gallery__image">
                                                 <img src="assets/images/apro134-1.jpg"
@@ -258,35 +263,20 @@
                                                      class="" alt="img">
                                             </div>
                                         </figure>
+                                        
                                     </div>
-                                    <ol class="flex-control-nav flex-control-thumbs">
-                                        <li><img
-                                                src="assets/images/apro131-2-100x100.jpg"
-                                                alt="img">
-                                        </li>
-                                        <li><img
-                                                src="assets/images/apro134-1-100x100.jpg"
-                                                alt="img">
-                                        </li>
-                                        <li><img
-                                                src="assets/images/apro132-1-100x100.jpg"
-                                                alt="img">
-                                        </li>
-                                        <li><img
-                                                src="assets/images/apro133-1-100x100.jpg"
-                                                alt="img">
-                                        </li>
-                                    </ol>
                                 </div>
                             </div>
                             <div class="summary entry-summary">
                                 <div class="flash">
                                     <span class="onnew"><span class="text">New</span></span></div>
-                                <h1 class="product_title entry-title">T-shirt with skirt</h1>
+                                <h1 class="product_title entry-title"><?=$sp['name']  ?></h1>
+                                <!-- <img src="assets/images/<?= $sp['image'] ?>" alt=""> -->
                                 <p class="price"><span class="lynessa-Price-amount amount"><span
-                                        class="lynessa-Price-currencySymbol">$</span>146.00</span> – <span
+                                        class="lynessa-Price-currencySymbol">$</span><? $sp['price'] ?></span> 
+                                        <!-- – <span
                                         class="lynessa-Price-amount amount"><span
-                                        class="lynessa-Price-currencySymbol">$</span>185.00</span></p>
+                                        class="lynessa-Price-currencySymbol">$</span>185.00</span></p> -->
                                 <p class="stock in-stock">
                                     Availability: <span> In stock</span>
                                 </p>

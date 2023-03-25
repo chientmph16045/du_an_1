@@ -1,5 +1,6 @@
 
 
+
 <?php
 session_start();
 include_once './page/header.php';
@@ -65,4 +66,3 @@ if (isset($_GET['sp'])) {
 } else {
     include_once './page/home.php';
 }
-include_once './page/footer.php';
