@@ -51,6 +51,9 @@ if (isset($_GET['sp'])) {
             }
             include './page/forget.php';
             break;   
+        case 'account':
+            include './page/my-account.php';
+            break;     
         case 'logout':
                 session_destroy();
                 $yourURL = "index.php";

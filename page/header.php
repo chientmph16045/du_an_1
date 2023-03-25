@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Lynessa - HTML Template </title>
 </head>
 
@@ -96,22 +96,26 @@
                                             </li>
                                             <li
                                                 class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="?sp=account">Tài khoản</a>
+                                            </li>
+                                            <li
+                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                 <a href="?sp=logout">Logout</a>
                                             </li>
                                         </ul>
                                     </div>
-
-
                                     <?php
                                 } else {
-
                                     ?>
-                                   <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                    <div class="menu-item block-user block-dreaming lynessa-dropdown">
                                         <a class="block-link" href="index.php?sp=account">
                                             <span class="pe-7s-user"></span>
                                         </a>
                                         <ul class="sub-menu">
-                                           
+                                            <li
+                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="?sp=account">Tài khoản</a>
+                                            </li>
                                             <li
                                                 class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                 <a href="?sp=logout">Logout</a>
@@ -119,7 +123,7 @@
                                         </ul>
                                     </div>
 
-                                    <?php
+                                <?php
                                 }
                                 ?>
 
@@ -130,28 +134,8 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--dashboard is-active">
-                                            <a href="#">Dashboard</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--orders">
-                                            <a href="#">Orders</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--downloads">
-                                            <a href="#">Downloads</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-address">
-                                            <a href="#">Addresses</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-account">
-                                            <a href="#">Account details</a>
-                                        </li>
-                                        <li
                                             class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                            <a href="?sp=login">Login</a>
+                                            <a href="?sp=login_resign">Login or Resign</a>
                                         </li>
                                     </ul>
                                 </div>
