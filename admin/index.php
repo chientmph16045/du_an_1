@@ -74,7 +74,6 @@ if (isset($_SESSION['user'])) {
                     if (isset($_POST['new_sp'])) {
                         $name = $_POST['name'];
                         $price = $_POST['price'];
-                        $sale_price = $_POST['sale_price'];
                         $image = $_FILES['image']['name'];
                         $target_dir = "../image/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -85,10 +84,8 @@ if (isset($_SESSION['user'])) {
                         }
                         $description = $_POST['description'];
                         $quantity = $_POST['quantity'];
-                        $view = $_POST['view'];
-                        $size = $_POST['size'];
                         $idCategory = $_POST['idCategory'];
-                        insert_sp($id,$name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCate);
+                        insert_sp($name, $price, $image, $description, $quantity, $idCategory);
                     }
                     $listdm = list_dm();
                     include_once './sanpham/add.php';
@@ -107,7 +104,6 @@ if (isset($_SESSION['user'])) {
                         $id = $_POST['id'];
                         $name = $_POST['name'];
                         $price = $_POST['price'];
-                        $sale_price = $_POST['sale_price'];
                         $image = $_FILES['image']['name'];
                         $target_dir = "../image/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -118,10 +114,8 @@ if (isset($_SESSION['user'])) {
                         }
                         $description = $_POST['description'];
                         $quantity = $_POST['quantity'];
-                        $view = $_POST['view'];
-                        $size = $_POST['size'];
                         $idCate = $_POST['idCategory'];
-                        update_sp($id,$name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCate);
+                        update_sp($id, $name, $price, $image, $description, $quantity, $idCate);
                     }
                     $listsp = list_sp();
                     include_once './sanpham/list.php';
@@ -135,6 +129,55 @@ if (isset($_SESSION['user'])) {
                     include_once './sanpham/list.php';
                     break;
                 }
+
+            // user
+            case 'list_user':{
+                $listuser = list_user();
+                include_once './user/list.php';
+                break;
+            }
+            case "add_user":{
+                if(isset($_POST['new_user'])){
+                    $name=$_POST['name'];
+                    $role=$_POST['role'];
+                    $email=$_POST['email'];
+                    $password=$_POST['password'];
+                    $address=$_POST['address'];
+                    insert_user($name,$role,$email,$password,$address);
+                }
+                
+                include_once './user/add.php';
+                break;
+            }
+            case "fix_user":{
+                if(isset($_GET['id'])){
+                    $user=list_one_user($GET["id"]);
+                }
+                $listuser=list_user();
+                include_once "./user/fix.php";
+                break;
+            }
+            case "fix_done_user":{
+                if(isset($_POST['fix_user'])){
+                    $id=$_POST['id'];
+                    $name=$_POST['name'];
+                    $role=$_POST['role'];
+                    $email=$_POST['email'];
+                    $password=$_POST['password'];
+                    $address=$_POST['address'];
+                    update_user($id,$name,$role,$email,$password,$address);
+                }
+                $listuser=list_user();
+                include_once './user/fix.php';
+                break;
+            }
+            case "delete_user":{
+                if(isset($_GET['id']) && ($_GET['id']) > 0){
+                    delete_user($GET["id"]);
+                }
+                $listuser=list_user();
+                include_once "./user/list.php";
+            }
             case 'logout':
                 session_destroy();
                 $yourURL = "index.php";
