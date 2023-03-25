@@ -43,7 +43,7 @@
                     </select>
                     <input type="hidden" name="id" value="<?=$idProduct?>" id="">
                     <br>
-                    <button class="mt-2" type="submit" name="fix_sp">Sửa</button>
+                    <button class="mt-2" class="btn btn-primary" type="submit" name="fix_sp">Sửa</button>
                 </form>
 
             </div>

@@ -150,7 +150,7 @@ if (isset($_SESSION['user'])) {
             }
             case "fix_user":{
                 if(isset($_GET['id'])){
-                    $user=list_one_user($GET["id"]);
+                    $user=list_one_user($_GET["id"]);
                 }
                 $listuser=list_user();
                 include_once "./user/fix.php";
@@ -172,10 +172,11 @@ if (isset($_SESSION['user'])) {
             }
             case "delete_user":{
                 if(isset($_GET['id']) && ($_GET['id']) > 0){
-                    delete_user($GET["id"]);
+                    delete_user($_GET["id"]);
                 }
                 $listuser=list_user();
                 include_once "./user/list.php";
+                break;
             }
             case 'logout':
                 session_destroy();
