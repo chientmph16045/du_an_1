@@ -1,14 +1,17 @@
 <?php
 
-function insert_sp($name, $price, $image, $description, $quantity, $idCategory)
+function insert_sp($name, $price, $image, $description, $quantity, $idCate)
 {
-    $sql = "INSERT INTO `product`(`name`,`price`,`image`,`description`,`quantity`,`idCate`) values ('$name','$price','$image','$description','$quantity','$idCategory') ";
+    $sql = "INSERT INTO `product`(`name`,`price`,`image`,`description`,`quantity`,`idCate`) values ('$name','$price','$image','$description','$quantity','$idCate') ";
     pdo_execute($sql);
 }
 
-function list_sp($idCate)
+function list_sp($kyw, $idCate)
 {
     $sql = "SELECT * FROM `product` WHERE 1 ";
+    if ($kyw != "") {
+        $sql .= " and name like '%" . $kyw . "%'";
+    }
     if ($idCate > 0) {
         $sql .= "  and idCate = '" . $idCate . "'";
     }

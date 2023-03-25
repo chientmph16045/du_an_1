@@ -258,8 +258,8 @@
             <div class="sidebar col-xl-3 col-lg-4 col-md-4 col-sm-12">
                 <div id="widget-area" class="widget-area shop-sidebar">
                     <div id="lynessa_product_search-2" class="widget lynessa widget_product_search">
-                        <form class="lynessa-product-search">
-                            <input id="lynessa-product-search-field-0" class="search-field" placeholder="Search products…" value="" name="s" type="search">
+                        <form class="lynessa-product-search" action="index.php?sp=shop" method="post">
+                            <input id="lynessa-product-search-field-0" class="search-field" placeholder="Search products…" value="" name="kyw" type="search">
                             <button type="submit" value="Search">Search</button>
                         </form>
                     </div>
@@ -276,51 +276,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                    <div id="lynessa_lynessa_layered_nav-4" class="widget lynessa_widget_layered_nav widget_layered_nav">
-                        <h2 class="widgettitle">Filter By Color<span class="arrow"></span></h2>
-                        <form class="color-group">
-                            <label class="term-color">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #000000"></i>
-                                <span class="term-name">Black</span>
-                                <span class="count">(4)</span> </label>
-                            <label class="term-color ">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #337fdd"></i>
-                                <span class="term-name">Blue</span>
-                                <span class="count">(3)</span> </label>
-                            <label class="term-color ">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #ffe59e"></i>
-                                <span class="term-name">Light</span>
-                                <span class="count">(1)</span> </label>
-                            <label class="term-color ">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #b6b8ba"></i>
-                                <span class="term-name">Gray</span>
-                                <span class="count">(3)</span> </label>
-                            <label class="term-color ">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #52b745"></i>
-                                <span class="term-name">Green</span>
-                                <span class="count">(1)</span> </label>
-                            <label class="term-color ">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #cc7b4a"></i>
-                                <span class="term-name">Brown</span>
-                                <span class="count">(5)</span> </label>
-                            <label class="term-color ">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #dd333f"></i>
-                                <span class="term-name">Red</span>
-                                <span class="count">(2)</span> </label>
-                            <label class="term-color">
-                                <input type="checkbox" name="term-color">
-                                <i style="color: #e8e120"></i>
-                                <span class="term-name">Yellow</span>
-                                <span class="count">(2)</span> </label>
                         </form>
                     </div>
                     <div id="lynessa_layered_nav-6" class="widget lynessa widget_layered_nav lynessa-widget-layered-nav">

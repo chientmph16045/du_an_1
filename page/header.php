@@ -34,10 +34,10 @@
                 <div class="header-search-mid">
                     <div class="header-search">
                         <div class="block-search">
-                            <form role="search" method="get" class="form-search block-search-form lynessa-live-search-form">
+                            <form role="search" action="index.php?sp=shop" method="post" class="form-search block-search-form lynessa-live-search-form">
                                 <div class="form-content search-box results-search">
                                     <div class="inner">
-                                        <input autocomplete="off" class="searchfield txt-livesearch input" name="s" value="" placeholder="Search here..." type="text">
+                                        <input autocomplete="off" class="searchfield txt-livesearch input" name="kyw" value="" placeholder="Search here..." type="text">
                                     </div>
                                 </div>
                                 <input name="post_type" value="product" type="hidden">

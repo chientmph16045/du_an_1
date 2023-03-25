@@ -58,16 +58,24 @@ if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
             $yourURL = "index.php";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
+
+
+            //menu
         case 'home':
             include './page/home.php';
             break;
         case 'shop':
+            if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
             if (isset($_GET['idCate']) && ($_GET['idCate']) > 0) {
                 $idCate = $_GET['idCate'];
             } else {
                 $idCate = 0;
             }
-            $loadsp = list_sp($idCate);
+            $loadsp = list_sp($kyw, $idCate);
             $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
