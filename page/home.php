@@ -1,7 +1,5 @@
-<?php 
-include_once "header.php";
-?>
-    <div class="fullwidth-template">
+
+    <div class="fullwidth-template " >
         <div class="slide-home-02">
             <div class="response-product product-list-owl owl-slick equal-container better-height"
                 data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:0,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:1}"
@@ -54,7 +52,7 @@ include_once "header.php";
                         <div class="lynessa-banner style-04 left-center">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
-                                    <img src="assets/images/banner244.jpg" class="attachment-full size-full" alt="img">
+                                   <a href="?sp=chitiet"> <img src="assets/images/banner244.jpg" class="attachment-full size-full" alt="img"></a>
                                 </figure>
                                 <div class="banner-info ">
                                     <div class="banner-content">
@@ -114,7 +112,7 @@ include_once "header.php";
                             class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
                             <div class="product-inner tooltip-top tooltip-all-top">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="single-product.php" tabindex="0">
+                                    <a class="thumb-link" href="?sp=chitiet" tabindex="0">
                                         <img class="img-responsive" src="assets/images/apro13-1-270x350.jpg"
                                             alt="KNIT LIKE" width="270" height="350">
                                     </a>
@@ -141,7 +139,7 @@ include_once "header.php";
                                 </div>
                                 <div class="product-info">
                                     <h3 class="product-name product_title">
-                                        <a href="#" tabindex="0">KNIT LIKE</a>
+                                        <a href="?sp=chitiet" tabindex="0">KNIT LIKE</a>
                                     </h3>
                                     <span class="price"><span class="lynessa-Price-amount amount"><span
                                                 class="lynessa-Price-currencySymbol">$</span>109.00</span></span>
@@ -157,7 +155,7 @@ include_once "header.php";
                             class="product-item recent-product style-04 rows-space-0 post-49 product type-product status-publish has-post-thumbnail product_cat-light product_cat-bed product_cat-sofas product_tag-multi product_tag-lamp  instock shipping-taxable purchasable product-type-simple  ">
                             <div class="product-inner tooltip-top tooltip-all-top">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="single-product.php" tabindex="0">
+                                    <a class="thumb-link" href="?sp=chitiet" tabindex="0">
                                         <img class="img-responsive" src="assets/images/apro302-270x350.jpg"
                                             alt="MARIE CAMI" width="270" height="350">
                                     </a>
@@ -1518,6 +1516,4 @@ include_once "header.php";
     </div>
    
 
-    <?php 
-include_once "footer.php";
-?>
+ 

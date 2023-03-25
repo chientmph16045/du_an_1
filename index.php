@@ -52,6 +52,9 @@ if (isset($_GET['sp'])) {
             }
             include './page/forget.php';
             break;   
+        case 'chitiet':
+            include './page/single-product.php';
+            break;    
         case 'account':
             include './page/my-account.php';
             break;     
