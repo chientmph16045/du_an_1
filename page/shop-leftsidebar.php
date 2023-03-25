@@ -374,7 +374,7 @@
                             <?php
                             foreach ($listdm as $category) {
                                 extract($category);
-                                $linkCate = "index.php?act=shop&idCate=" . $idCate;
+                                $linkCate = "index.php?sp=shop&idCate=" . $idCate;
 
                                 echo '<li class="cat-item cat-item-22"><label><input type="checkbox" name="cate"><span><a href="' . $linkCate . '">' . $name . '</a></span>
                                         <span class="count">(11)</span></label></li>';
