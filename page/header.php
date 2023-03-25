@@ -149,7 +149,7 @@
                                         </li>
                                         <li
                                             class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                            <a href="?sp=login">Login</a>
+                                            <a href="?sp=login_resign">Login</a>
                                         </li>
                                     </ul>
                                 </div>
