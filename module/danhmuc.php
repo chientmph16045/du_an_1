@@ -23,3 +23,4 @@ function delete_dm($id){
     $sql = "DELETE FROM `category` WHERE idCategory = " . $_GET['id'];
     pdo_execute($sql);
 }
+

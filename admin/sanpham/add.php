@@ -19,6 +19,9 @@
                             <h6 class="m-0 font-weight-bold text-primary">Giá</h6>
                         <input type="text" class="form-control bg-light border-0 small" name="price" 
                             aria-label="Search" aria-describedby="basic-addon2">
+                            <h6 class="m-0 font-weight-bold text-primary">Giá giảm giá</h6>
+                        <input type="text" class="form-control bg-light border-0 small" name="sale_price" 
+                            aria-label="Search" aria-describedby="basic-addon2">
                             <h6 class="m-0 font-weight-bold text-primary">Hỉnh ảnh</h6>
                         <input type="file" class="form-control bg-light border-0 small" name="image" 
                             aria-label="Search" aria-describedby="basic-addon2">
@@ -27,6 +30,12 @@
                             
                             <h6 class="m-0 font-weight-bold text-primary">Số lượng sản phẩm</h6>
                         <input type="text" class="form-control bg-light border-0 small" name="quantity" 
+                            aria-label="Search" aria-describedby="basic-addon2">
+                            <h6 class="m-0 font-weight-bold text-primary">Lượt Xem </h6>
+                        <input type="text" class="form-control bg-light border-0 small" name="view" 
+                            aria-label="Search" aria-describedby="basic-addon2">
+                            <h6 class="m-0 font-weight-bold text-primary">kích cỡ </h6>
+                        <input type="text" class="form-control bg-light border-0 small" name="size" 
                             aria-label="Search" aria-describedby="basic-addon2">
                             <h6 class="m-0 font-weight-bold text-primary">Loại sản phẩm</h6>
                         <select name="idCategory" id="">

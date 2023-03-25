@@ -1,12 +1,37 @@
+<?php
+session_start();
 
-<?php 
-include_once './page/header.php';
+include "module/pdo.php";
+include "module/danhmuc.php";
+include "module/sanpham.php";
+include "module/taikhoan.php";
 
-<<<<<<< HEAD
+include "page/header.php";
 
-// <?php
-// include_once './page/header.php';
-// echo "dây là file index";
-// >>>>>>> e805fd583698ce4619683acdfab07fb2cff9c214
-=======
->>>>>>> e1b04948436156b98e1053e545a8199968f92401
+// khai báo biến để hứng hàm funtion bên module
+$loadtop10=loadTop10();
+
+$loadall_sp=loadall_sp();
+
+$listdm=list_dm();
+
+$loadall_size=loadall_size();
+
+if (isset($_GET['sp'])) {
+    $sp=$_GET['sp'];
+    
+
+    switch ($sp) {
+        case 'shop-leftsidebar':
+
+            include "page/shop-leftsidebar.php";
+            break;
+        
+        default:
+            
+            break;
+    }
+} else {
+    include "page/home.php";
+}
+include "page/footer.php";
