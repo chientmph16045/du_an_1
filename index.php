@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include_once './page/header.php';
@@ -52,7 +53,7 @@ if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
                 }
             }
             include './page/forget.php';
-            break;
+            break;   
         case 'logout':
             session_destroy();
             $yourURL = "index.php";
