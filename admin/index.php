@@ -180,7 +180,7 @@ if (isset($_SESSION['user'])) {
             }
             case 'logout':
                 session_destroy();
-                $yourURL = "index.php";
+                $yourURL = "../";
                 echo ("<script>location.href =' $yourURL '</script>");
                 break;
         }
