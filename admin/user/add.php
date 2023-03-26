@@ -39,6 +39,10 @@
     <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address">
   </div>
   <div class="col-12">
+    <label for="inputAddress2" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="phone">
+  </div>
+  <div class="col-12">
     <button type="submit" class="btn btn-primary" name="new_user">Add new</button>
   </div>
 </form>

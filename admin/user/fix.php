@@ -38,6 +38,10 @@
     <label for="inputAddress2" class="form-label">Address</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address" value="<?=$address?>">
   </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="phone" value="<?=$phone?>">
+  </div>
   <input type="hidden" name="id" value="<?=$idUser?>" id="">
   <div class="col-12">
     <button type="submit" class="btn btn-primary" name="fix_user">Add new</button>

@@ -11,8 +11,8 @@ function list_user(){
     $listuser=pdo_query($sql);
     return $listuser;
 }
-function insert_user($name,$role,$email,$password,$address){
-    $sql = "INSERT INTO `user`(`name`,`role`,`email`,`password`,`address`) value('$name','$role','$email','$password','$address')";
+function insert_user($name,$role,$email,$phone,$password,$address){
+    $sql = "INSERT INTO `user`(`name`,`role`,`email`,`phone`,`password`,`address`) value('$name','$role','$email','$phone','$password','$address')";
     pdo_execute($sql);
 }
 
@@ -36,8 +36,8 @@ function list_one_user($id){
     $user = pdo_query_one($sql);
     return $user;
 }
-function update_user($id,$name, $role, $email, $password, $address){
-    $sql = "UPDATE `user` set `name`='".$name."', `role`='".$role."',`email`='".$email."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
+function  update_user($id,$name,$role,$email,$phone,$password,$address){
+    $sql = "UPDATE `user` set `name`='".$name."', `role`='".$role."',`email`='".$email."',`phone`='".$phone."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
     pdo_execute($sql);
 }
 function delete_user($id){
