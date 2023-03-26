@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> fac028f7134865a25ff3b71e8892a3467ffcd256
 <div class="banner-wrapper has_background">
     <img src="assets/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447" alt="img">
     <div class="banner-wrapper-inner">
