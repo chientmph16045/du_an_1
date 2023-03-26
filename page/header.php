@@ -137,7 +137,9 @@
                                     <ul class="sub-menu">
                                         <li
                                             class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+
                                             <a href="?sp=login_resign">Login or Resign</a>
+
                                         </li>
                                     </ul>
                                 </div>

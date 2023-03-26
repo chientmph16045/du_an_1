@@ -646,6 +646,12 @@
                                     </div>
                                 </div>
                             </div>
+
+                        </form>
+                    </div>
+                    <div id="lynessa_layered_nav-6" class="widget lynessa widget_layered_nav lynessa-widget-layered-nav">
+                        <h2 class="widgettitle">Filter By Size<span class="arrow"></span></h2>
+
                         </li>
                         <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-23 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-lamp product_cat-sofas product_tag-hat first instock shipping-taxable purchasable product-type-variable has-default-attributes"
                             data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
@@ -1456,6 +1462,7 @@
                     <div id="lynessa_layered_nav-6"
                          class="widget lynessa widget_layered_nav lynessa-widget-layered-nav"><h2
                             class="widgettitle">Filter By Size<span class="arrow"></span></h2>
+
                         <ul class="lynessa-widget-layered-nav-list">
                             <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
                                 <label><input type="checkbox" name="size">
@@ -1465,6 +1472,58 @@
                             <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
                                 <label><input type="checkbox" name="size">
                                     <span>14.4 mm</span>
+
+                                    <span class="count">(4)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>14.8 mm</span>
+                                    <span class="count">(2)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>15.2 mm</span>
+                                    <span class="count">(3)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>15.6 mm</span>
+                                    <span class="count">(1)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>16.0 mm</span>
+                                    <span class="count">(4)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>16.4 mm</span>
+                                    <span class="count">(4)</span></label>
+                            </li>
+                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span>16.8 mm</span>
+                                    <span class="count">(3)</span></label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="lynessa_product_categories-3" class="widget lynessa widget_product_categories">
+                        <h2 class="widgettitle">Product categories<span class="arrow"></span></h2>
+                        <ul class="product-categories">
+                            <?php
+                            foreach ($listdm as $category) {
+                                var_dump($category);
+                                extract($category);
+                                
+                                $linkCate = "index.php?sp=shop&idCate=" . $idCate;
+
+                                echo '<li class="cat-item cat-item-22"><label><input type="checkbox" name="cate"><span><a href="' . $linkCate . '">' . $name . '</a></span>
+                                        <span class="count">(11)</span></label></li>';
+                            }
+                            ?>
+                        </ul>
+
+
                                     <span class="count">(4)</span></label></li>
                             <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
                                 <label><input type="checkbox" name="size">
@@ -1519,94 +1578,9 @@
                                                                            name="cate"><span>Bodysuits</span>
                                 <span class="count">(6)</span></label></li>
                         </ul>
+
                     </div>
                 </div><!-- .widget-area -->
             </div>
         </div>
     </div>
-</div>
-<footer id="footer" class="footer style-01">
-    <div class="section-001 section-009">
-        <div class="container">
-            <div class="lynessa-newsletter style-01">
-                <div class="newsletter-inner">
-                    <div class="newsletter-info">
-                        <div class="newsletter-wrap">
-                            <h3 class="title">Newsletter</h3>
-                            <h4 class="subtitle">Get Discount 30% Off</h4>
-                            <p class="desc">Suspendisse netus proin eleifend fusce sollicitudin potenti vel magnis
-                                nascetur</p>
-                        </div>
-                    </div>
-                    <div class="newsletter-form-wrap">
-                        <div class="newsletter-form-inner">
-                            <input class="email email-newsletter" name="email" placeholder="Enter your email ..."
-                                   type="email">
-                            <a href="#" class="button btn-submit submit-newsletter">
-                                <span class="text">Subscribe</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section-010">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>© Copyright 2020 <a href="#">Lynessa</a>. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="lynessa-socials style-01">
-                        <div class="content-socials">
-                            <ul class="socials-list">
-                                <li>
-                                    <a href="https://facebook.com/" target="_blank">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/" target="_blank">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.pinterest.com/" target="_blank">
-                                        <i class="fa fa-pinterest-p"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<a href="#" class="backtotop active">
-    <i class="fa fa-angle-up"></i>
-</a>
-<script src="assets/js/jquery-1.12.4.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/chosen.min.js"></script>
-<script src="assets/js/countdown.min.js"></script>
-<script src="assets/js/jquery.scrollbar.min.js"></script>
-<script src="assets/js/lightbox.min.js"></script>
-<script src="assets/js/magnific-popup.min.js"></script>
-<script src="assets/js/slick.js"></script>
-<script src="assets/js/jquery.zoom.min.js"></script>
-<script src="assets/js/threesixty.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/mobilemenu.js"></script>
-<script src="assets/js/functions.js"></script>
-</body>
-
-<!-- Mirrored from ledthanhdat.vn/html/lynessa/shop-leftsidebar.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:26:13 GMT -->
-</html>
