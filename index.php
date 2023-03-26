@@ -57,7 +57,11 @@ if (isset($_GET['sp'])) {
             break;    
         case 'account':
             include './page/my-account.php';
-            break;     
+            break;  
+            case 'account_fix':
+                if(isset($_POST['update']))
+                include './page/my-account.php';
+                break;     
         case 'logout':
                 session_destroy();
                 $yourURL = "index.php";
