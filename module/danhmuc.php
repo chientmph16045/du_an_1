@@ -11,6 +11,7 @@ function list_dm()
     $listdm = pdo_query($sql);
     return $listdm;
 }
+
 function load_one_dm($id)
 {
     $sql = "SELECT * FROM `category` WHERE idCate = " . $_GET['id'];
@@ -25,5 +26,4 @@ function update_dm($id, $danhmuc)
 function delete_dm($id)
 {
     $sql = "DELETE FROM `category` WHERE idCate = " . $_GET['id'];
-    pdo_execute($sql);
 }

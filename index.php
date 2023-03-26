@@ -7,7 +7,7 @@ include_once './module/taikhoan.php';
 include "./module/sanpham.php";
 include "./module/danhmuc.php";
 
-if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
+if (isset($_GET['sp'])) {
     $sp = $_GET['sp'];
     switch ($sp) {
 
@@ -53,41 +53,31 @@ if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
                 }
             }
             include './page/forget.php';
-            break;   
+            break;
+        case 'chitiet':
+            include './page/single-product.php';
+            break;
+        case 'account':
+            include './page/my-account.php';
+            break;
+        case 'account_fix':
+            if (isset($_POST['update']))
+                include './page/my-account.php';
+            break;
         case 'logout':
             session_destroy();
             $yourURL = "index.php";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
-
-
-            //menu
+            //view
         case 'home':
             include './page/home.php';
             break;
         case 'shop':
-            if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
-                $kyw = $_POST['kyw'];
-            } else {
-                $kyw = "";
-            }
-            if (isset($_GET['idCate']) && ($_GET['idCate']) > 0) {
-                $idCate = $_GET['idCate'];
-            } else {
-                $idCate = 0;
-            }
-            $loadsp = list_sp($kyw, $idCate);
-            $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
         case 'blog':
             include './page/blog.php';
-            break;
-        case 'contact':
-            include './page/contact.php';
-            break;
-        default:
-            include './page/home.php';
             break;
     }
 } else {

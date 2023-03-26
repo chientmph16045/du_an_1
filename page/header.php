@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,16 +29,16 @@
 
 
 <body>
-<header id="header" class="header style-04 header-transparent header-sticky">
+    <header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
             <div class="header-middle-inner">
                 <div class="header-search-mid">
                     <div class="header-search">
                         <div class="block-search">
-                            <form role="search" action="index.php?sp=shop" method="post" class="form-search block-search-form lynessa-live-search-form">
+                            <form role="search" method="get" class="form-search block-search-form lynessa-live-search-form">
                                 <div class="form-content search-box results-search">
                                     <div class="inner">
-                                        <input autocomplete="off" class="searchfield txt-livesearch input" name="kyw" value="" placeholder="Search here..." type="text">
+                                        <input autocomplete="off" class="searchfield txt-livesearch input" name="s" value="" placeholder="Search here..." type="text">
                                     </div>
                                 </div>
                                 <input name="post_type" value="product" type="hidden">
@@ -82,42 +81,41 @@
                             <?php if (isset($_SESSION['user'])) {
                                 extract($_SESSION['user']);
                                 if ($role == 3) {
-                                    ?>
+                            ?>
                                     <div class="menu-item block-user block-dreaming lynessa-dropdown">
                                         <a class="block-link" href="index.php?sp=account">
                                             <span class="pe-7s-user"></span>
                                         </a>
                                         <ul class="sub-menu">
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                            <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                 <a href="./admin">Quản Trị</a>
                                             </li>
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                            <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="?sp=account">Tài khoản</a>
+                                            </li>
+                                            <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                 <a href="?sp=logout">Logout</a>
                                             </li>
                                         </ul>
                                     </div>
-
-
-                                    <?php
+                                <?php
                                 } else {
-
-                                    ?>
-                                   <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                ?>
+                                    <div class="menu-item block-user block-dreaming lynessa-dropdown">
                                         <a class="block-link" href="index.php?sp=account">
                                             <span class="pe-7s-user"></span>
                                         </a>
                                         <ul class="sub-menu">
-                                           
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                            <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                <a href="?sp=account">Tài khoản</a>
+                                            </li>
+                                            <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                 <a href="?sp=logout">Logout</a>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <?php
+                                <?php
                                 }
                                 ?>
 
@@ -127,29 +125,10 @@
                                         <span class="pe-7s-user"></span>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--dashboard is-active">
-                                            <a href="#">Dashboard</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--orders">
-                                            <a href="#">Orders</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--downloads">
-                                            <a href="#">Downloads</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-address">
-                                            <a href="#">Addresses</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--edit-account">
-                                            <a href="#">Account details</a>
-                                        </li>
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                            <a href="?sp=login_resign">Login</a>
+                                        <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+
+                                            <a href="?sp=login_resign">Login or Resign</a>
+
                                         </li>
                                     </ul>
                                 </div>
@@ -213,7 +192,7 @@
                             <div class="box-header-nav menu-nocenter">
                                 <ul id="menu-primary-menu" class="clone-main-menu lynessa-clone-mobile-menu lynessa-nav main-menu">
                                     <li id="menu-item-230" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-230 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Home" href="index.php?act=home">Home</a>
+                                        <a class="lynessa-menu-item-title" title="Home" href="index.php?sp=home">Home</a>
                                         <!-- <span class="toggle-submenu"></span>
                                     <div class="submenu megamenu megamenu-home">
                                         <h5 class="az_custom_heading">
@@ -221,23 +200,19 @@
                                                     </h5>
                                     </div> -->
                                     </li>
-                                    <li id="menu-item-228"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Shop"
-                                            href="?sp=shop">Shop</a>
+                                    <li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Shop" href="index.php?sp=shop">Shop</a>
 
                                     </li>
                                     <li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Elements" href="#">Elements</a>
                                     </li>
-                                    <li id="menu-item-996"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Blog" href="blog.php">Blog</a>
+                                    <li id="menu-item-996" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Blog" href="index.php?sp=blog">Blog</a>
 
                                     </li>
-                                    <li id="menu-item-237"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
-                                        <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
+                                    <li id="menu-item-237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
+                                        <a class="lynessa-menu-item-title" title="Pages" href="index.php?sp=contact">Contact</a>
                                     </li>
                                 </ul>
                             </div>
