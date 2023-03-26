@@ -329,7 +329,9 @@
                         <ul class="product-categories">
                             <?php
                             foreach ($listdm as $category) {
+                                var_dump($category);
                                 extract($category);
+                                
                                 $linkCate = "index.php?sp=shop&idCate=" . $idCate;
 
                                 echo '<li class="cat-item cat-item-22"><label><input type="checkbox" name="cate"><span><a href="' . $linkCate . '">' . $name . '</a></span>
