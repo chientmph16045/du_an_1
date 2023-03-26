@@ -13,17 +13,17 @@ function list_dm()
 }
 function load_one_dm($id)
 {
-    $sql = "SELECT * FROM `category` WHERE idCategory = " . $_GET['id'];
+    $sql = "SELECT * FROM `category` WHERE idCate = " . $_GET['id'];
     $dm = pdo_query_one($sql);
     return $dm;
 }
 function update_dm($id, $danhmuc)
 {
-    $sql = "UPDATE `category` set `name`='" . $danhmuc . "' WHERE `idCategory`=" . $id;
+    $sql = "UPDATE `category` set `name`='" . $danhmuc . "' WHERE `idCate`=" . $id;
     pdo_execute($sql);
 }
 function delete_dm($id)
 {
-    $sql = "DELETE FROM `category` WHERE idCategory = " . $_GET['id'];
+    $sql = "DELETE FROM `category` WHERE idCate = " . $_GET['id'];
     pdo_execute($sql);
 }
