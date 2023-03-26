@@ -1,4 +1,3 @@
-
 <div class="banner-wrapper has_background">
     <img src="assets/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447" alt="img">
     <div class="banner-wrapper-inner">
@@ -127,13 +126,16 @@
                             <option value="price-desc">Sort by price: high to low</option>
                         </select>
                     </form>
-                    <form class="per-page-form">
+                    <form class="per-page-form" method="post">
                         <label>
                             <select class="option-perpage">
                                 <option value="12" selected="">
-                                    Show 12
+                                    Show all
                                 </option>
-                                <option value="5">
+                                <?php foreach ($listdm as $dm) : extract($dm) ?>
+                                    <option value="<?= $idCate ?>"><?= $name ?></option>
+                                <?php endforeach ?>
+                                <!-- <option value="5">
                                     Show 05
                                 </option>
                                 <option value="10">
@@ -147,7 +149,7 @@
                                 </option>
                                 <option value="20">
                                     Show All
-                                </option>
+                                </option> -->
                             </select>
                         </label>
                     </form>
