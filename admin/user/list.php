@@ -16,7 +16,6 @@
                             <th>STT</th>
                             <th>Tên User</th>
                             <th>Địa chỉ</th>
-                            <th>Số điện thoại</th>
                             <th>Email</th>
                             <th>Thao tác</th>
                         </tr>
@@ -40,7 +39,6 @@
                             <td><?=$stt++?></td>
                             <td><?=$name?></td>
                             <td><?=$address?></td>
-                            <td><?=$phone?></td>
                             <td><?=$email?></td>
                             <td>
                                 <a href="index.php?sp=fix_user&id=<?=$idUser?>">Sửa</a>/

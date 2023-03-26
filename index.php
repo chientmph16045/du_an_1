@@ -4,6 +4,8 @@ session_start();
 include_once './page/header.php';
 include_once './module/pdo.php';
 include_once './module/taikhoan.php';
+include "./module/sanpham.php";
+include "./module/danhmuc.php";
 
 if (isset($_GET['sp'])) {
     $sp = $_GET['sp'];
@@ -15,7 +17,7 @@ if (isset($_GET['sp'])) {
             include './page/login_resign.php';
             break;
         case 'login':
-            if (isset($_POST['login'])){
+            if (isset($_POST['login'])) {
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
                 $login = checkuser($email,$pass);
@@ -43,25 +45,25 @@ if (isset($_GET['sp'])) {
             if(isset($_POST['forget'])){
                 $email =$_POST['email'];
                 $check = checkforget($email);
-                if(is_array($check)){
+                if (is_array($check)) {
                     extract($check);
-                    $thongbao  = "Mật khẩu của bạn là ".$password;
-                }else{
-                    $thongbao ='Email không chính xác';
+                    $thongbao  = "Mật khẩu của bạn là " . $password;
+                } else {
+                    $thongbao = 'Email không chính xác';
                 }
             }
             include './page/forget.php';
             break;   
-        case 'chitiet':
-            include './page/single-product.php';
-            break;    
-        case 'account':
-            include './page/my-account.php';
-            break;  
-            case 'account_fix':
-                if(isset($_POST['update']))
+            case 'chitiet':
+                include './page/single-product.php';
+                break;    
+            case 'account':
                 include './page/my-account.php';
-                break;     
+                break;  
+                case 'account_fix':
+                    if(isset($_POST['update']))
+                    include './page/my-account.php';
+                    break; 
         case 'logout':
                 session_destroy();
                 $yourURL = "index.php";

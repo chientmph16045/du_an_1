@@ -141,10 +141,9 @@ if (isset($_SESSION['user'])) {
                     $name=$_POST['name'];
                     $role=$_POST['role'];
                     $email=$_POST['email'];
-                    $phone = $_POST['phone'];
                     $password=$_POST['password'];
                     $address=$_POST['address'];
-                    insert_user($name,$role,$email,$phone,$password,$address);
+                    insert_user($name,$role,$email,$password,$address);
                 }
                 
                 include_once './user/add.php';
@@ -152,7 +151,7 @@ if (isset($_SESSION['user'])) {
             }
             case "fix_user":{
                 if(isset($_GET['id'])){
-                    $user=list_one_user($_GET["id"]);
+                    $user=list_one_user($GET["id"]);
                 }
                 $listuser=list_user();
                 include_once "./user/fix.php";
@@ -164,13 +163,12 @@ if (isset($_SESSION['user'])) {
                     $name=$_POST['name'];
                     $role=$_POST['role'];
                     $email=$_POST['email'];
-                    $phone = $_POST['phone'];
                     $password=$_POST['password'];
                     $address=$_POST['address'];
-                    update_user($id,$name,$role,$email,$phone,$password,$address);
+                    update_user($id,$name,$role,$email,$password,$address);
                 }
                 $listuser=list_user();
-                include_once './user/add.php';
+                include_once './user/fix.php';
                 break;
             }
             case "delete_user":{

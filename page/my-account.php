@@ -64,7 +64,7 @@
                         <i class="fas fa-lock"></i>
                         <input type="password" placeholder="Mật khẩu" value="<?=$password?>" name="phone" required />
                     </div>
-                    <input type="submit" value="Update Account" name="update" class="btn solid" />
+                    <input type="submit" value="Login" name="login" class="btn solid" />
                     <br>
                     <?php if (isset($thongbaoerro)) {
                         echo $thongbaoerro;
