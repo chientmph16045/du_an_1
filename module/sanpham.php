@@ -6,9 +6,16 @@ function insert_sp($name, $price, $image, $description, $quantity, $idCategory)
     pdo_execute($sql);
 }
 
+
 function list_sp($kyw, $idCate)
 {
-    $sql = "SELECT * FROM `product`";
+    $sql = "SELECT * FROM `product` WHERE 1 ";
+    if ($kyw != "") {
+        $sql .= " and name like '%" . $kyw . "%'";
+    }
+    if ($idCate > 0) {
+        $sql .= "  and idCate = '" . $idCate . "'";
+    }
     $listsp = pdo_query($sql);
     return $listsp;
 }
@@ -37,4 +44,10 @@ function delete_sp($id)
 {
     $sql = "DELETE FROM `product` WHERE idProduct = " . $_GET['id'];
     pdo_execute($sql);
+}
+function load_similar_product($id, $ma_loai)
+{
+    $sql = "select *from product where idCate='" . $ma_loai . "'and idProduct <> " . $id;
+    $listsp = pdo_query($sql);
+    return $listsp;
 }

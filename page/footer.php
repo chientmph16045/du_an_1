@@ -1,3 +1,4 @@
+
 <footer id="footer" class="footer style-04">
         <div class="section-001 section-009">
             <div class="container">
@@ -180,8 +181,5 @@
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/mobilemenu.js"></script>
     <script src="assets/js/functions.js"></script>
-</body>
 
-<!-- Mirrored from ledthanhdat.vn/html/lynessa/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:25:43 GMT -->
 
-</html>
