@@ -329,7 +329,7 @@
                         <ul class="product-categories">
                             <?php
                             foreach ($listdm as $category) {
-                                var_dump($category);
+                                
                                 extract($category);
                                 
                                 $linkCate = "index.php?sp=shop&idCate=" . $idCate;
