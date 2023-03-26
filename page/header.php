@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,16 +29,16 @@
 
 
 <body>
-<header id="header" class="header style-04 header-transparent header-sticky">
+    <header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
             <div class="header-middle-inner">
                 <div class="header-search-mid">
                     <div class="header-search">
                         <div class="block-search">
-                            <form role="search" method="get" class="form-search block-search-form lynessa-live-search-form">
+                            <form role="search" method="post" class="form-search block-search-form lynessa-live-search-form" action="?sp=shop">
                                 <div class="form-content search-box results-search">
                                     <div class="inner">
-                                        <input autocomplete="off" class="searchfield txt-livesearch input" name="s" value="" placeholder="Search here..." type="text">
+                                        <input autocomplete="off" class="searchfield txt-livesearch input" name="kyw" value="" placeholder="Search here..." type="text">
                                     </div>
                                 </div>
                                 <input name="post_type" value="product" type="hidden">
@@ -171,10 +170,8 @@
                                                     </h5>
                                     </div> -->
                                     </li>
-                                    <li id="menu-item-228"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Shop"
-                                            href="?sp=shop">Shop</a>
+                                    <li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Shop" href="?sp=shop">Shop</a>
 
                                     </li>
                                     <li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
