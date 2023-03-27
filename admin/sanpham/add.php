@@ -10,9 +10,10 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+
                    
                    
-<form action="index.php?sp=add_sp" enctype="multipart/form-data" method="post">
+            <form action="index.php?sp=add_sp" enctype="multipart/form-data" method="post">
                         <h6 class="m-0 font-weight-bold text-primary">Tên sản phẩm</h6>
                         <input type="text" class="form-control bg-light border-0 small" name="name" 
                             aria-label="Search" aria-describedby="basic-addon2">
@@ -35,9 +36,10 @@
                             <?php endforeach?>
                         </select>
                         <br>
-                        <button  class="mt-2" type="submit" name="new_sp">Thêm mới</button>
+                        <button  class="btn btn-primary" class="btn btn-primary" type="submit" name="new_sp">Thêm mới</button>
                     </form>
                         
+
             </div>
         </div>
     </div>
@@ -48,4 +50,3 @@
 
 </div>
 <!-- End of Main Content -->
-                        
