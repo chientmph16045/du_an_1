@@ -21,21 +21,19 @@ if (isset($_GET['sp'])) {
                 $pass = $_POST['pass'];
                 $login = checkuser($email, $pass);
                 if (is_array($login)) {
-                $login = checkuser($email, $pass);
-                if (is_array($login)) {
-                    $_SESSION['user'] = $login;
-                    $yourURL = "index.php";
-                    echo ("<script>location.href =' $yourURL '</script>");
-                } else {
+                    $login = checkuser($email, $pass);
+                    if (is_array($login)) {
+                        $_SESSION['user'] = $login;
+                        $yourURL = "index.php";
+                        echo ("<script>location.href =' $yourURL '</script>");
+                    }
                 } else {
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
                     include './page/login_resign.php';
                 }
             }
             break;
-            break;
         case 'resign':
-            if (isset($_POST['resign'])) {
             if (isset($_POST['resign'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
@@ -45,9 +43,6 @@ if (isset($_GET['sp'])) {
             }
             include './page/login_resign.php';
             break;
-        case 'forget':
-            if (isset($_POST['forget'])) {
-                $email = $_POST['email'];
         case 'forget':
             if (isset($_POST['forget'])) {
                 $email = $_POST['email'];
@@ -88,20 +83,6 @@ if (isset($_GET['sp'])) {
             echo ("<script>location.href =' $yourURL '</script>");
             break;
             //view
-        case 'home':
-            include './page/home.php';
-            break;
-        case 'shop':
-            include './page/shop-leftsidebar.php';
-            break;
-        case 'blog':
-            include './page/blog.php';
-            break;
-            session_destroy();
-            $yourURL = "index.php";
-            echo ("<script>location.href =' $yourURL '</script>");
-            break;
-
         case 'home':
             include './page/home.php';
             break;
