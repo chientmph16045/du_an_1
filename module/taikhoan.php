@@ -40,6 +40,11 @@ function update_user($id,$name, $role, $email, $password, $address){
     $sql = "UPDATE `user` set `name`='".$name."', `role`='".$role."',`email`='".$email."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
     pdo_execute($sql);
 }
+function update_user_now($id,$name,$address,$phone,$pass){
+    $sql = "UPDATE `user` set `name`='".$name."', `address`='".$address."',`phone`='".$phone."',`password`='".$pass."' WHERE `user`.`idUser`=".$id;
+    pdo_execute($sql);
+}
+
 function delete_user($id){
     $sql = "DELETE FROM `user` WHERE idUser = " . $_GET['id'];
     pdo_execute($sql);

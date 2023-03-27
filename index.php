@@ -30,6 +30,18 @@ if (isset($_GET['sp'])) {
                 }
             }
             break;
+        case 'account_fix':
+            if (isset($_POST['update'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+                $pass = $_POST['pass'];
+                update_user_now($id,$name,$address,$phone,$pass);
+
+            }
+            include './page/my-account.php';
+            break;
         case 'resign':
             if (isset($_POST['resign'])) {
                 $name = $_POST['name'];
@@ -59,10 +71,7 @@ if (isset($_GET['sp'])) {
         case 'account':
             include './page/my-account.php';
             break;
-        case 'account_fix':
-            if (isset($_POST['update']))
-                include './page/my-account.php';
-            break;
+
         case 'logout':
             session_destroy();
             $yourURL = "index.php";
