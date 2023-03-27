@@ -21,7 +21,7 @@
                     <input type="text" class="form-control bg-light border-0 small" value="<?=
                          $name ?>" name="danhmuc" aria-label="Search" aria-describedby="basic-addon2">
                         <input type="hidden" name="id" value="<?= $idCategory ?>" id="">
-                    <button type="submit" name="fix">Sửa</button>
+                    <button type="submit" class="btn btn-primary" name="fix">Sửa</button>
                 </form>
 
             </div>

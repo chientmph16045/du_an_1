@@ -62,6 +62,21 @@ if (isset($_GET['sp'])) {
                 $yourURL = "index.php";
                 echo ("<script>location.href =' $yourURL '</script>");
                 break;
+        case "cart" :
+            include_once "./page/cart.php";
+            break;
+        case "shop-leftsidebar":
+            include_once "./page/shop-leftsidebar.php";
+            break;
+        case "blog":
+            include_once "./page/blog.php";
+            break;
+        case "contact":
+            include_once "./page/contact.php";
+            break;
+        case "checkout":
+            include_once "./page/checkout.php";
+            break;
     }
 } else {
     include_once './page/home.php';
