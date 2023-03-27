@@ -1,4 +1,6 @@
 
+
+
 <?php
 session_start();
 include_once './page/header.php';
@@ -52,6 +54,9 @@ if (isset($_GET['sp'])) {
             }
             include './page/forget.php';
             break;   
+        case 'account':
+            include './page/my-account.php';
+            break;     
         case 'logout':
                 session_destroy();
                 $yourURL = "index.php";
@@ -76,4 +81,3 @@ if (isset($_GET['sp'])) {
 } else {
     include_once './page/home.php';
 }
-include_once './page/footer.php';
