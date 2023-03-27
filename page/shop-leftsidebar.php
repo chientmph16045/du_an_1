@@ -167,7 +167,7 @@
                                     <div class="flash">
                                         <span class="onnew"><span class="text">New</span></span>
                                     </div>
-                                    <form class="variations_form cart">
+                                    <form action="?sp=addtocart" method="post" class="variations_form cart">
                                         <table class="variations">
                                             <tbody>
                                                 <tr>
@@ -188,6 +188,9 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <div class="add-to-cart">
+                                        <button type="submit" class="button product_type_variable add_to_cart_button">add<button>
+                                    </div>
                                     </form>
                                     <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
                                     <div class="group-button">
@@ -200,10 +203,7 @@
                                             <a href="#" class="compare button">Compare</a>
                                         </div>
                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                        <div class="add-to-cart">
-                                            <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                options</a>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="product-info equal-elem">
