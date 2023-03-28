@@ -153,8 +153,23 @@
                                         <h3 class="minicart-title">Your Cart<span class="minicart-number-items">3</span>
                                         </h3>
                                         <ul class="lynessa-mini-cart cart_list product_list_widget">
+
+                                        <?php $stt=0;
+                                         foreach($_SESSION['mycart'] as $cart): 
+                                            $stt++;
+                                         ?>
                                             <li class="lynessa-mini-cart-item mini_cart_item">
-                                                <a href="#" class="remove remove_from_cart_button">×</a>
+                                                <a href="?sp=delete_cart&idCart=<?=$stt?>" class="remove remove_from_cart_button">×</a>
+                                                <a href="#">
+                                                    <img src="./image/<?=$cart[2]?>" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">T-shirt with skirt –
+                                                    Pink&nbsp;
+                                                </a>
+                                                <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>150.00</span></span>
+                                            </li>
+                                            
+                                            <?php endforeach?>
+                                            <!-- <li class="lynessa-mini-cart-item mini_cart_item">
+                                                <a href="?sp=delete_cart&idCart" class="remove remove_from_cart_button">×</a>
                                                 <a href="#">
                                                     <img src="assets/images/apro134-1-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">T-shirt with skirt –
                                                     Pink&nbsp;
@@ -174,7 +189,7 @@
                                                     <img src="assets/images/apro201-1-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">ELOISE SHIRRED&nbsp;
                                                 </a>
                                                 <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>139.00</span></span>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                         <p class="lynessa-mini-cart__total total"><strong>Subtotal:</strong>
                                             <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>418.00</span>
