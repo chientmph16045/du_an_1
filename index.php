@@ -7,12 +7,12 @@ include_once './module/taikhoan.php';
 include "./module/sanpham.php";
 include "./module/danhmuc.php";
 
-if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
+if (isset($_GET['sp'])) {
     $sp = $_GET['sp'];
     switch ($sp) {
 
 
-            //login && resign && logout
+        //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
@@ -31,6 +31,18 @@ if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
                 }
             }
             break;
+        case 'account_fix':
+            if (isset($_POST['update'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+                $pass = $_POST['pass'];
+                update_user_now($id,$name,$address,$phone,$pass);
+
+            }
+            include './page/my-account.php';
+            break;
         case 'resign':
             if (isset($_POST['resign'])) {
                 $name = $_POST['name'];
@@ -47,25 +59,27 @@ if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
                 $check = checkforget($email);
                 if (is_array($check)) {
                     extract($check);
-                    $thongbao  = "Mật khẩu của bạn là " . $password;
+                    $thongbao = "Mật khẩu của bạn là " . $password;
                 } else {
                     $thongbao = 'Email không chính xác';
                 }
             }
             include './page/forget.php';
-            break;   
+            break;
+        case 'chitiet':
+            include './page/single-product.php';
+            break;
+        case 'account':
+            include './page/my-account.php';
+            break;
+
         case 'logout':
-            session_destroy();
-            $yourURL = "index.php";
-            echo ("<script>location.href =' $yourURL '</script>");
-            break;
-
-
-            //menu
-        case 'home':
-            include './page/home.php';
-            break;
-        case 'shop':
+                session_destroy();
+                $yourURL = "index.php";
+                echo ("<script>location.href =' $yourURL '</script>");
+                break;
+                
+         case 'shop':
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
             } else {
@@ -80,17 +94,27 @@ if (isset($_GET['sp']) &&  ($_GET['sp']) != "") {
             $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
-        case 'blog':
-            include './page/blog.php';
+        case "cart" :
+            include_once "./page/cart.php";
             break;
-        case 'contact':
-            include './page/contact.php';
+        case "shop-leftsidebar":
+            include_once "./page/shop-leftsidebar.php";
+            break;
+        case "blog":
+            include_once "./page/blog.php";
+            break;
+        case "contact":
+            include_once "./page/contact.php";
+            break;
+        case "checkout":
+            include_once "./page/checkout.php";
             break;
         default:
             include './page/home.php';
-            break;
     }
 } else {
     include_once './page/home.php';
 }
+
 include_once './page/footer.php';
+

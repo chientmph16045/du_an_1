@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
     if (isset($_GET['sp'])) {
         $sp = $_GET['sp'];
         switch ($sp) {
-                //danh mục
+            //danh mục
             case 'list_dm': {
                     $listdm = list_dm();
                     include_once './danhmuc/list.php';
@@ -49,22 +49,23 @@ if (isset($_SESSION['user'])) {
                     include_once './danhmuc/list.php';
                     break;
                 }
-                //sản phẩm
+            //sản phẩm
             case 'spcl':
                 if (isset($_POST['tim'])) {
                     $sp = $_POST['loaisp'];
-                    if ($sp > 0) {
+                    if($sp > 0){
                         $listsp = load_one_list_sp_same($sp);
                         $listdm = list_dm();
-                    } else {
-                        $listsp = list_sp('', 0);
-                        $listdm = list_dm();
+                    }
+                    else{
+                        $listsp = list_sp($kyw='', $idCate=0);
+                    $listdm = list_dm();
                     }
                 }
                 include_once './sanpham/list.php';
                 break;
             case 'list_sp': {
-                    $listsp = list_sp('', 0);
+                    $listsp = list_sp($kyw='', $idCate=0);
                     $listdm = list_dm();
                     include_once './sanpham/list.php';
                     break;
@@ -116,7 +117,7 @@ if (isset($_SESSION['user'])) {
                         $idCate = $_POST['idCategory'];
                         update_sp($id, $name, $price, $image, $description, $quantity, $idCate);
                     }
-                    $listsp = list_sp('', 0);
+                    $listsp = list_sp($kyw='', $idCate=0);
                     include_once './sanpham/list.php';
                     break;
                 }
@@ -124,7 +125,7 @@ if (isset($_SESSION['user'])) {
                     if (isset($_GET['id']) && ($_GET['id']) > 0) {
                         delete_sp($_GET['id']);
                     }
-                    $listsp = list_sp('', 0);
+                    $listsp = list_sp($kyw='', $idCate=0);
                     include_once './sanpham/list.php';
                     break;
                 }
@@ -212,3 +213,4 @@ if (isset($_SESSION['user'])) {
         }
     }
 }
+?>
