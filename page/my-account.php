@@ -40,6 +40,7 @@
 </head>
 <?php if (isset($_SESSION['user']))
     extract($_SESSION['user']);
+
 ?>
 
 <body>
@@ -50,21 +51,22 @@
                     <h2 class="title">Cập nhật thông tin tài khoản</h2>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Họ và tên" name="name" required />
+                        <input type="text" placeholder="Họ và tên" value="<?=$name?>" name="name" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" placeholder="Địa chỉ" name="address" required />
+                        <input type="text" placeholder="Địa chỉ" value="<?=$address?>" name="address" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" placeholder="Số điện thoại" name="phone" required />
+                        <input type="text" placeholder="Số điện thoại" value="<?=$phone?>" name="phone" required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Mật khẩu" value="<?=$password?>" name="phone" required />
+                        <input type="password" placeholder="Mật khẩu" value="<?=$password?>" name="pass" required />
                     </div>
-                    <input type="submit" value="Login" name="login" class="btn solid" />
+                    <input type="hidden" name="id" value="<?=$idUser?>" id="">
+                    <input type="submit" value="Update" name="update" class="btn solid" />
                     <br>
                     <?php if (isset($thongbaoerro)) {
                         echo $thongbaoerro;

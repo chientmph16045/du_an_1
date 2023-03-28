@@ -157,7 +157,8 @@
                         <?php
                         foreach ($loadsp as $sp) {
                             extract($sp);
-                            echo '<li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
+                            echo '
+                            <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
                             <div class="product-inner tooltip-left">
                                 <div class="product-thumb">
                                     <a class="thumb-link" href="#">
@@ -166,7 +167,7 @@
                                     <div class="flash">
                                         <span class="onnew"><span class="text">New</span></span>
                                     </div>
-                                    <form class="variations_form cart">
+                                    <form action="?sp=addtocart" method="post" class="variations_form cart">
                                         <table class="variations">
                                             <tbody>
                                                 <tr>
@@ -187,6 +188,9 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <div class="add-to-cart">
+                                        <button type="submit" class="button product_type_variable add_to_cart_button">add<button>
+                                    </div>
                                     </form>
                                     <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
                                     <div class="group-button">
@@ -199,10 +203,7 @@
                                             <a href="#" class="compare button">Compare</a>
                                         </div>
                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                        <div class="add-to-cart">
-                                            <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                options</a>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="product-info equal-elem">
@@ -343,4 +344,6 @@
             </div>
         </div>
     </div>
+
 </div>
+
