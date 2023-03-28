@@ -149,13 +149,34 @@
                                 <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
                                     <a class="block-link link-dropdown" href="cart.php">
                                         <span class="pe-7s-shopbag"></span>
-                                        <span class="count">3</span>
+                                        <?php
+                                            if (isset($_SESSION['mycart'])) {
+                                                $stt = 0;
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                    $stt++;
+                                                ?><span class="count"><?=$stt?></span>
+                                        <?php 
+                                                }
+                                                }
+                                                ?>
+                                        
                                     </a>
                                 </div>
 
                                 <div class="widget lynessa widget_shopping_cart">
                                     <div class="widget_shopping_cart_content">
-                                        <h3 class="minicart-title">Your Cart<span class="minicart-number-items"></span>
+                                   
+                                                
+                                        <h3 class="minicart-title">Your Cart <?php
+                                            if (isset($_SESSION['mycart'])) {
+                                                $stt = 0;
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                    $stt++;
+                                                ?><span class="minicart-number-items"><?=$stt?></span>
+                                        <?php 
+                                                }
+                                                }
+                                                ?>
                                         </h3>
                                         <ul class="lynessa-mini-cart cart_list product_list_widget">
                                             <?php
@@ -170,8 +191,7 @@
                                                         <a href="#">
                                                             <img src="./image/<?= $cart[2] ?>"
                                                                 class="attachment-lynessa_thumbnail size-lynessa_thumbnail"
-                                                                alt="img" width="600" height="778">T-shirt with skirt –
-                                                            Pink&nbsp;
+                                                                alt="img" width="600" height="778"><?=$cart[1]?>;
                                                         </a>
                                                         <span class="quantity"><?=$cart[4]?> × <span
                                                                 class="lynessa-Price-amount amount"><span
@@ -183,11 +203,20 @@
                                             ?>
                                         </ul>
                                         <p class="lynessa-mini-cart__total total"><strong>Subtotal:</strong>
-                                            <span class="lynessa-Price-amount amount"><span
-                                                    class="lynessa-Price-currencySymbol">$</span>418.00</span>
+                                        <?php
+                                         $tong = 0;
+                                            if (isset($_SESSION['mycart'])) {
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                   $tong += $cart[5];
+                                                }
+                                                echo '
+                                                <span class="lynessa-Price-amount amount"><span
+                                            class="lynessa-Price-currencySymbol">$</span>'.$tong.'</span>';
+                                                }
+                                                ?>
                                         </p>
                                         <p class="lynessa-mini-cart__buttons buttons">
-                                            <a href="cart.php" class="button lynessa-forward">Viewcart</a>
+                                            <a href="?sp=cart" class="button lynessa-forward">Viewcart</a>
                                             <a href="checkout.php" class="button checkout lynessa-forward">Checkout</a>
                                         </p>
                                     </div>

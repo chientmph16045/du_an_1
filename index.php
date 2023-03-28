@@ -113,7 +113,26 @@ if (isset($_GET['sp'])) {
             $yourURL = "index.php?sp=shop";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
-
+            case 'cart':
+                include_once './page/cart.php';
+                break;
+            case 'update_cart':
+                if(isset($_SESSION['newcart'])){
+                    $_SESSION['newcart'] = [];
+                }
+                if(isset($_POST['update'])){
+                    foreach($_SESSION['mycart']as $cart){
+                        $id = $cart[0];
+                        $name = $cart[1];
+                        $image = $cart[2];
+                        $price = $cart[3];
+                        $soluong = $_POST['quantity'];
+                        $ttien = $soluong * $price;
+                    }
+                    $spadd = [$id, $name, $image, $price, $soluong, $ttien];
+                    array_push($_SESSION['newcart'], $spadd);
+                }
+                break;    
         case 'delete_cart':
             if (isset($_GET['idCart'])) {
                 array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
@@ -124,7 +143,17 @@ if (isset($_GET['sp'])) {
             $yourURL = "index.php?sp=addtocart";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
-
+        case 'delete_cart_cart':
+                if (isset($_GET['idCart'])) {
+                    array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
+                } else {
+                    $_SESSION['mycart'] = [];
+                }
+    
+                $yourURL = "index.php?sp=cart";
+                echo ("<script>location.href =' $yourURL '</script>");
+                break;
+    
         case 'blog':
             include './page/blog.php';
             break;
