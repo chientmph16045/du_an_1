@@ -1,9 +1,7 @@
 
-
 <div class="banner-wrapper no_background" style="padding-top: 180px;">
-
     <div class="banner-wrapper-inner">
-        <nav class="lynessa-breadcrumb"><a href="./index.php">Home</a><i class="fa fa-angle-right"></i><a href="#">Shop</a>
+        <nav class="lynessa-breadcrumb"><a href="index.php">Home</a><i class="fa fa-angle-right"></i><a href="#">Shop</a>
             <i class="fa fa-angle-right"></i>Single Product
         </nav>
     </div>
@@ -25,7 +23,8 @@
                                     <div class="flex-viewport">
                                         <figure class="lynessa-product-gallery__wrapper">
                                             <div class="lynessa-product-gallery__image">
-                                            <img src="assets/images/<?= $sp['image'] ?>" alt="">
+                                                <img alt="img"
+                                                     src="assets/images/apro131-2.jpg">
                                             </div>
                                             <div class="lynessa-product-gallery__image">
                                                 <img src="assets/images/apro134-1.jpg"
@@ -40,20 +39,35 @@
                                                      class="" alt="img">
                                             </div>
                                         </figure>
-                                        
                                     </div>
+                                    <ol class="flex-control-nav flex-control-thumbs">
+                                        <li><img
+                                                src="assets/images/apro131-2-100x100.jpg"
+                                                alt="img">
+                                        </li>
+                                        <li><img
+                                                src="assets/images/apro134-1-100x100.jpg"
+                                                alt="img">
+                                        </li>
+                                        <li><img
+                                                src="assets/images/apro132-1-100x100.jpg"
+                                                alt="img">
+                                        </li>
+                                        <li><img
+                                                src="assets/images/apro133-1-100x100.jpg"
+                                                alt="img">
+                                        </li>
+                                    </ol>
                                 </div>
                             </div>
                             <div class="summary entry-summary">
                                 <div class="flash">
                                     <span class="onnew"><span class="text">New</span></span></div>
-                                <h1 class="product_title entry-title"><?=$sp['name']  ?></h1>
-                                <!-- <img src="assets/images/<?= $sp['image'] ?>" alt=""> -->
+                                <h1 class="product_title entry-title">T-shirt with skirt</h1>
                                 <p class="price"><span class="lynessa-Price-amount amount"><span
-                                        class="lynessa-Price-currencySymbol">$</span><? $sp['price'] ?></span> 
-                                        <!-- – <span
+                                        class="lynessa-Price-currencySymbol">$</span>146.00</span> – <span
                                         class="lynessa-Price-amount amount"><span
-                                        class="lynessa-Price-currencySymbol">$</span>185.00</span></p> -->
+                                        class="lynessa-Price-currencySymbol">$</span>185.00</span></p>
                                 <p class="stock in-stock">
                                     Availability: <span> In stock</span>
                                 </p>

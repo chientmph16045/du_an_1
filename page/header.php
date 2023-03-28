@@ -153,23 +153,8 @@
                                         <h3 class="minicart-title">Your Cart<span class="minicart-number-items">3</span>
                                         </h3>
                                         <ul class="lynessa-mini-cart cart_list product_list_widget">
-
-                                        <?php $stt=0;
-                                         foreach($_SESSION['mycart'] as $cart): 
-                                            $stt++;
-                                         ?>
                                             <li class="lynessa-mini-cart-item mini_cart_item">
-                                                <a href="?sp=delete_cart&idCart=<?=$stt?>" class="remove remove_from_cart_button">×</a>
-                                                <a href="#">
-                                                    <img src="./image/<?=$cart[2]?>" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">T-shirt with skirt –
-                                                    Pink&nbsp;
-                                                </a>
-                                                <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>150.00</span></span>
-                                            </li>
-                                            
-                                            <?php endforeach?>
-                                            <!-- <li class="lynessa-mini-cart-item mini_cart_item">
-                                                <a href="?sp=delete_cart&idCart" class="remove remove_from_cart_button">×</a>
+                                                <a href="#" class="remove remove_from_cart_button">×</a>
                                                 <a href="#">
                                                     <img src="assets/images/apro134-1-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">T-shirt with skirt –
                                                     Pink&nbsp;
@@ -189,14 +174,14 @@
                                                     <img src="assets/images/apro201-1-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">ELOISE SHIRRED&nbsp;
                                                 </a>
                                                 <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>139.00</span></span>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                         <p class="lynessa-mini-cart__total total"><strong>Subtotal:</strong>
                                             <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>418.00</span>
                                         </p>
                                         <p class="lynessa-mini-cart__buttons buttons">
-                                            <a href="?sp=cart" class="button lynessa-forward">Viewcart</a>
-                                            <a href="?sp=checkout" class="button checkout lynessa-forward">Checkout</a>
+                                            <a href="cart.php" class="button lynessa-forward">Viewcart</a>
+                                            <a href="checkout.php" class="button checkout lynessa-forward">Checkout</a>
                                         </p>
                                     </div>
                                 </div>
@@ -223,27 +208,19 @@
                                                     </h5>
                                     </div> -->
                                     </li>
-
-                                    <li id="menu-item-228"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Shop"
-                                            href="?sp=shop-leftsidebar">Shop</a>
-
+                                    <li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Shop" href="?sp=shop">Shop</a>
 
                                     </li>
                                     <li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Elements" href="#">Elements</a>
                                     </li>
-
-                                    <li id="menu-item-996"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Blog" href="?sp=blog">Blog</a>
+                                    <li id="menu-item-996" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Blog" href="blog.php">Blog</a>
 
                                     </li>
-                                    <li id="menu-item-237"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
-                                        <a class="lynessa-menu-item-title" title="Pages" href="?sp=contact">Contact</a>
-
+                                    <li id="menu-item-237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
+                                        <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
                                     </li>
                                 </ul>
                             </div>
