@@ -24,7 +24,7 @@
                                     <select name="loaisp" class="border-0" id="">
                                     <option value="0" selected>Loại sản phẩm</option>
                                         <?php foreach($listdm as $dm):extract($dm)?>
-                                            <option value="<?=$idCategory?>"><?=$name?></option>
+                                            <option value="<?=$idCate?>"><?=$name?></option>
                                         <?php endforeach?>
                                     </select>
                                     <input type="submit" class="border-0" name="tim" value="search" id="">

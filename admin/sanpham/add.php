@@ -11,6 +11,7 @@
         <div class="card-body">
             <div class="table-responsive">
 
+
                    
                    
             <form action="index.php?sp=add_sp" enctype="multipart/form-data" method="post">
@@ -39,6 +40,7 @@
                         <button  class="btn btn-primary" class="btn btn-primary" type="submit" name="new_sp">Thêm mới</button>
                     </form>
                         
+
 
             </div>
         </div>
