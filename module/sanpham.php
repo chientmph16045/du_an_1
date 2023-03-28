@@ -1,5 +1,5 @@
 <?php
-require('pdo.php');
+
 function insert_sp($name, $price, $image, $description, $quantity, $idCategory)
 {
     $sql = "INSERT INTO `product`(`name`,`price`,`image`,`description`,`quantity`,`idCate`) values ('$name','$price','$image','$description','$quantity','$idCategory') ";

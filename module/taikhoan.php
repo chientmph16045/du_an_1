@@ -46,10 +46,8 @@ function update_user_now($id,$name,$address,$phone,$pass){
 }
 
 function delete_user($id){
-        $sql = "DELETE FROM `user` WHERE idUser = " . $_GET['id'];
-        pdo_execute($sql);
-    
-    
+    $sql = "DELETE FROM `user` WHERE idUser = " . $_GET['id'];
+    pdo_execute($sql);
 }
 
 ?>

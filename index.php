@@ -1,5 +1,6 @@
 
 <?php
+
 session_start();
 include_once './page/header.php';
 include_once './module/pdo.php';
@@ -7,12 +8,15 @@ include_once './module/taikhoan.php';
 include "./module/sanpham.php";
 include "./module/danhmuc.php";
 
+if (!isset($_SESSION['mycart'])) {
+    $_SESSION['mycart'] = [];
+}
 if (isset($_GET['sp'])) {
     $sp = $_GET['sp'];
     switch ($sp) {
 
 
-        //login && resign && logout
+            //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
@@ -38,8 +42,7 @@ if (isset($_GET['sp'])) {
                 $address = $_POST['address'];
                 $phone = $_POST['phone'];
                 $pass = $_POST['pass'];
-                update_user_now($id,$name,$address,$phone,$pass);
-
+                update_user_now($id, $name, $address, $phone, $pass);
             }
             include './page/my-account.php';
             break;
@@ -74,12 +77,12 @@ if (isset($_GET['sp'])) {
             break;
 
         case 'logout':
-                session_destroy();
-                $yourURL = "index.php";
-                echo ("<script>location.href =' $yourURL '</script>");
-                break;
-                
-         case 'shop':
+            session_destroy();
+            $yourURL = "index.php";
+            echo ("<script>location.href =' $yourURL '</script>");
+            break;
+
+        case 'shop':
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
             } else {
@@ -94,14 +97,36 @@ if (isset($_GET['sp'])) {
             $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
-        case "cart" :
-            include_once "./page/cart.php";
+        case 'addtocart':
+            if (isset($_POST['addcart'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $image = $_POST['img'];
+                $price = $_POST['price'];
+                $soluong = 1;
+                $ttien = $soluong * $price;
+                $spadd = [$id, $name, $image, $price, $soluong, $ttien];
+                array_push($_SESSION['mycart'], $spadd);
+                // var_dump($_SESSION['mycart']);
+            }
+            include './page/header.php';
+            $yourURL = "index.php?sp=shop";
+            echo ("<script>location.href =' $yourURL '</script>");
             break;
-        case "shop-leftsidebar":
-            include_once "./page/shop-leftsidebar.php";
+
+        case 'delete_cart':
+            if (isset($_GET['idCart'])) {
+                array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+
+            $yourURL = "index.php?sp=addtocart";
+            echo ("<script>location.href =' $yourURL '</script>");
             break;
-        case "blog":
-            include_once "./page/blog.php";
+
+        case 'blog':
+            include './page/blog.php';
             break;
         case "contact":
             include_once "./page/contact.php";
@@ -117,4 +142,3 @@ if (isset($_GET['sp'])) {
 }
 
 include_once './page/footer.php';
-
