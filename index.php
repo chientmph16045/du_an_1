@@ -12,7 +12,7 @@ if (isset($_GET['sp'])) {
     switch ($sp) {
 
 
-        //login && resign && logout
+            //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
@@ -22,9 +22,12 @@ if (isset($_GET['sp'])) {
                 $pass = $_POST['pass'];
                 $login = checkuser($email, $pass);
                 if (is_array($login)) {
-                    $_SESSION['user'] = $login;
-                    $yourURL = "index.php";
-                    echo ("<script>location.href =' $yourURL '</script>");
+                    $login = checkuser($email, $pass);
+                    if (is_array($login)) {
+                        $_SESSION['user'] = $login;
+                        $yourURL = "index.php";
+                        echo ("<script>location.href =' $yourURL '</script>");
+                    }
                 } else {
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
                     include './page/login_resign.php';
