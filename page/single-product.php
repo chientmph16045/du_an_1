@@ -1,5 +1,7 @@
 
-<div class="banner-wrapper no_background">
+
+<div class="banner-wrapper no_background" style="padding-top: 180px;">
+
     <div class="banner-wrapper-inner">
         <nav class="lynessa-breadcrumb"><a href="./index.php">Home</a><i class="fa fa-angle-right"></i><a href="#">Shop</a>
             <i class="fa fa-angle-right"></i>Single Product
