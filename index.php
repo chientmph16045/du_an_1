@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include_once './page/header.php';
@@ -73,15 +74,12 @@ if (isset($_GET['sp'])) {
             break;
 
         case 'logout':
-            session_destroy();
-            $yourURL = "index.php";
-            echo ("<script>location.href =' $yourURL '</script>");
-            break;
-
-        case 'home':
-            include './page/home.php';
-            break;
-        case 'shop':
+                session_destroy();
+                $yourURL = "index.php";
+                echo ("<script>location.href =' $yourURL '</script>");
+                break;
+                
+         case 'shop':
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
             } else {
@@ -96,17 +94,27 @@ if (isset($_GET['sp'])) {
             $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
-        case 'blog':
-            include './page/blog.php';
+        case "cart" :
+            include_once "./page/cart.php";
             break;
-        case 'contact':
-            include './page/contact.php';
+        case "shop-leftsidebar":
+            include_once "./page/shop-leftsidebar.php";
+            break;
+        case "blog":
+            include_once "./page/blog.php";
+            break;
+        case "contact":
+            include_once "./page/contact.php";
+            break;
+        case "checkout":
+            include_once "./page/checkout.php";
             break;
         default:
             include './page/home.php';
-            break;
     }
 } else {
     include_once './page/home.php';
 }
+
 include_once './page/footer.php';
+
