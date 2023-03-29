@@ -1039,8 +1039,9 @@
                                         </div>
                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
                                         <div class="add-to-cart">
+                                            <button>
                                             <a href="#" class="button product_type_simple add_to_cart_button">Read
-                                                more</a>
+                                                more</a></button>
                                         </div>
                                     </div>
                                 </div>
