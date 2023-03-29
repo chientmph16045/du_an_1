@@ -86,6 +86,12 @@ if (isset($_GET['sp'])) {
         case 'home':
             include './page/home.php';
             break;
+        case 'price':
+
+            $loadsp = list_sp('', 0);
+            $listdm = list_dm();
+            include './page/shop-leftsidebar.php';
+            break;
         case 'shop':
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
