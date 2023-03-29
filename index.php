@@ -116,23 +116,7 @@ if (isset($_GET['sp'])) {
             case 'cart':
                 include_once './page/cart.php';
                 break;
-            case 'update_cart':
-                if(isset($_SESSION['newcart'])){
-                    $_SESSION['newcart'] = [];
-                }
-                if(isset($_POST['update'])){
-                    foreach($_SESSION['mycart']as $cart){
-                        $id = $cart[0];
-                        $name = $cart[1];
-                        $image = $cart[2];
-                        $price = $cart[3];
-                        $soluong = $_POST['quantity'];
-                        $ttien = $soluong * $price;
-                    }
-                    $spadd = [$id, $name, $image, $price, $soluong, $ttien];
-                    array_push($_SESSION['newcart'], $spadd);
-                }
-                break;    
+           
         case 'delete_cart':
             if (isset($_GET['idCart'])) {
                 array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
