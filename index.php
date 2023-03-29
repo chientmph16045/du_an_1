@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -7,6 +6,7 @@ include_once './module/pdo.php';
 include_once './module/taikhoan.php';
 include "./module/sanpham.php";
 include "./module/danhmuc.php";
+include './module/cart.php';
 
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -16,7 +16,7 @@ if (isset($_GET['sp'])) {
     switch ($sp) {
 
 
-            //login && resign && logout
+        //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
@@ -113,26 +113,10 @@ if (isset($_GET['sp'])) {
             $yourURL = "index.php?sp=shop";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
-            case 'cart':
-                include_once './page/cart.php';
-                break;
-            case 'update_cart':
-                if(isset($_SESSION['newcart'])){
-                    $_SESSION['newcart'] = [];
-                }
-                if(isset($_POST['update'])){
-                    foreach($_SESSION['mycart']as $cart){
-                        $id = $cart[0];
-                        $name = $cart[1];
-                        $image = $cart[2];
-                        $price = $cart[3];
-                        $soluong = $_POST['quantity'];
-                        $ttien = $soluong * $price;
-                    }
-                    $spadd = [$id, $name, $image, $price, $soluong, $ttien];
-                    array_push($_SESSION['newcart'], $spadd);
-                }
-                break;    
+        case 'cart':
+            include_once './page/cart.php';
+            break;
+
         case 'delete_cart':
             if (isset($_GET['idCart'])) {
                 array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
@@ -144,16 +128,32 @@ if (isset($_GET['sp'])) {
             echo ("<script>location.href =' $yourURL '</script>");
             break;
         case 'delete_cart_cart':
-                if (isset($_GET['idCart'])) {
-                    array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
-                } else {
-                    $_SESSION['mycart'] = [];
+            if (isset($_GET['idCart'])) {
+                array_splice($_SESSION['mycart'], $_GET['idCart'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+
+            $yourURL = "index.php?sp=cart";
+            echo ("<script>location.href =' $yourURL '</script>");
+            break;
+        case 'order':
+            if (isset($_POST['place_order'])) {
+                $name = $_POST['name'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
+                $date = time();
+                $idbill = insert_bill($name, $address, $phone, $date);
+                foreach ($_SESSION['mycart'] as $cart) {
+                    insert_cart($_SESSION['user']['idUser'],$cart[0], $cart[4], $tt = 1, $idbill);
                 }
-    
-                $yourURL = "index.php?sp=cart";
-                echo ("<script>location.href =' $yourURL '</script>");
-                break;
-    
+                // $giohang = giohang();
+                
+            }
+            
+            include './page/comf.php';
+            unset($_SESSION['mycart']);
+            break;
         case 'blog':
             include './page/blog.php';
             break;

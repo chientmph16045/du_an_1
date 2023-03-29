@@ -217,7 +217,7 @@
                                         </p>
                                         <p class="lynessa-mini-cart__buttons buttons">
                                             <a href="?sp=cart" class="button lynessa-forward">Viewcart</a>
-                                            <a href="checkout.php" class="button checkout lynessa-forward">Checkout</a>
+                                            <a href="?sp=checkout" class="button checkout lynessa-forward">Checkout</a>
                                         </p>
                                     </div>
                                 </div>
