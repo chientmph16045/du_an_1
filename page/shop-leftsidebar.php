@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
 
 <!-- Mirrored from ledthanhdat.vn/html/lynessa/shop-leftsidebar.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:26:13 GMT -->
-<head>
+<!-- <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png"/>
@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
     <title>Lynessa - HTML Template </title>
-</head>
+</head> -->
 <body>
     <header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
@@ -1525,7 +1525,7 @@
         </div>
     </div>
 </div>
-<footer id="footer" class="footer style-01">
+<!-- <footer id="footer" class="footer style-01">
     <div class="section-001 section-009">
         <div class="container">
             <div class="lynessa-newsletter style-01">
@@ -1605,7 +1605,7 @@
 <script src="assets/js/threesixty.min.js"></script>
 <script src="assets/js/jquery-ui.min.js"></script>
 <script src="assets/js/mobilemenu.js"></script>
-<script src="assets/js/functions.js"></script>
+<script src="assets/js/functions.js"></script> -->
 </body>
 
 <!-- Mirrored from ledthanhdat.vn/html/lynessa/shop-leftsidebar.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Mar 2023 03:26:13 GMT -->

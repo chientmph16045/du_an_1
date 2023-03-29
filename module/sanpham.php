@@ -1,5 +1,5 @@
 <?php
-
+require_once('pdo.php');
 function insert_sp($name, $price, $image, $description, $quantity, $idCategory)
 {
     $sql = "INSERT INTO `product`(`name`,`price`,`image`,`description`,`quantity`,`idCate`) values ('$name','$price','$image','$description','$quantity','$idCategory') ";
@@ -12,7 +12,7 @@ function list_sp(){
     return $listsp;
 }
 function load_one_sp($id){
-    $sql = "SELECT * FROM `product` WHERE idProduct = ".$_GET['id'];
+    $sql = "SELECT * FROM `product` WHERE idProduct = $id";
     $sp = pdo_query_one($sql);
     return $sp;
 }
