@@ -78,7 +78,8 @@ if (isset($_GET['sp'])) {
             include './page/single-product.php';
             break;
         case 'account':
-            $listsp = order($_SESSION['user']['idUser']);
+            $id = $_SESSION['user']['idUser'];
+            $listsp = order($id);
             
             include './page/my-account.php';
             break;

@@ -59,7 +59,7 @@
                     <h2 class="title">Cập nhật tài khoản</h2>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Họ và tên" value="<?= $name ?>" name="name" required />
+                        <input type="text" placeholder="Họ và tên" value="<?= $nameUser ?>" name="name" required />
                     </div>
                     <div class="input-field">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
