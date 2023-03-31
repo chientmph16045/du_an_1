@@ -92,7 +92,7 @@
                                                                 title="required">*</abbr></span></label><span
                                                         class="lynessa-input-wrapper"><input type="text" class="input-text "
                                                             name="name" id="billing_company" placeholder=""
-                                                            value="<?= $name ?>" autocomplete="organization"></span>
+                                                            value="<?= $nameUser ?>" autocomplete="organization"></span>
                                                 </p>
                                                 <p class="form-row form-row-wide" id="billing_company_field"
                                                     data-priority="30"><label for="billing_company" class="">Company

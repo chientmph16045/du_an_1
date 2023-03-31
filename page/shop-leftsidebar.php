@@ -184,7 +184,7 @@
                                                     <td class="value">
                                                         <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
                                                            <input type="hidden" name="img" value="' . $image . '"/>
-                                                           <input type="hidden" name="name" value="' . $name . '"/>
+                                                           <input type="hidden" name="name" value="' . $namePro . '"/>
                                                            <input type="hidden" name="price" value="' . $price . '"/>
                                                            <input type="hidden" name="id" value="' . $idProduct . '"/>
                                                         </select>
@@ -218,7 +218,7 @@
                                
                                 <div class="product-info equal-elem">
                                     <h3 class="product-name product_title">
-                                        <a href="#">' . $name . '</a>
+                                        <a href="#">' . $namePro . '</a>
                                     </h3>  
                                     <div class="rating-wapper nostar">
                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
