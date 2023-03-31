@@ -22,9 +22,6 @@
                             <th style="text-align:center">Số lượng</th>
                             <th style="text-align:center">Thay đổi trạng thái đơn hàng</th>
                             <th style="text-align:center">Mức giá</th>
-
-                            
-
                         </tr>
                     </thead>
                     <!-- <tfoot>
