@@ -12,13 +12,38 @@ function insert_cart($idUser,$idsp,$quantity,$tt,$idbill)
     return pdo_execute($sql);
 }
 function order($id){
-    $sql = "SELECT * FROM cart where idOrder =".$id;
+    $sql = "SELECT *,cart.quantity FROM cart
+    inner join product on cart.idSp = product.idProduct 
+    inner join `status` on cart.tinhtrang = `status`.idStatus
+    where `idUser` = ".$id." order by idCart desc";
     $listod = pdo_query($sql);
     return $listod;
 }
+function customer(){
+    $sql = "SELECT *,cart.quantity FROM cart
+    inner join user on user.idUser = cart.idUser
+    inner join `status` on `status`.idStatus = cart.tinhtrang
+    inner join product on cart.idSp = product.idProduct
+    
+   ";
+    $listod = pdo_query($sql);
+    return $listod;
+}
+function change_status($id,$change_status)
+{
+    $sql = "UPDATE `cart` set `tinhtrang`='".$change_status."' WHERE `idCart`=".$id;
+    pdo_execute($sql);
+}
+
 function bill($id){
     $sql = "SELECT * FROM `placinganorder` where idOder =".$id;
     $listdm = pdo_query($sql);
     return $listdm;
+}
+function status()
+{
+    $sql = "SELECT * FROM `status`";
+    $listst = pdo_query($sql);
+    return $listst;
 }
 ?>

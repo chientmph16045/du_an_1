@@ -25,9 +25,9 @@ function load_one_sp($id)
     $sp = pdo_query_one($sql);
     return $sp;
 }
-function load_one_list_sp_same($sp)
+function load_one_list_sp_same($id)
 {
-    $sql = "SELECT * FROM `product` WHERE idCate = " . $sp;
+    $sql = "SELECT * FROM `product` WHERE idCate = " . $id;
     $sp = pdo_query($sql);
     return $sp;
 }

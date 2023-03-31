@@ -42,8 +42,13 @@ if (isset($_GET['sp'])) {
                 $address = $_POST['address'];
                 $phone = $_POST['phone'];
                 $pass = $_POST['pass'];
+                $email = $_POST['email'];
                 update_user_now($id, $name, $address, $phone, $pass);
+                unset($_SESSION['user']);
+                $new = checkuser($email,$pass);
             }
+            $_SESSION['user']=$new;
+            $thongbao = "Cập nhật thông tin tài khoản thành công";
             include './page/my-account.php';
             break;
         case 'resign':
@@ -73,9 +78,19 @@ if (isset($_GET['sp'])) {
             include './page/single-product.php';
             break;
         case 'account':
+            $listsp = order($_SESSION['user']['idUser']);
+            
             include './page/my-account.php';
             break;
-
+        case 'change_status':
+            if(isset($_POST['change'])){
+                $id = $_GET['id'];
+                $change_status = $_POST['change_status'];
+                change_status($id,$change_status);
+            }
+            $listsp = order($_SESSION['user']['idUser']);
+            include './page/my-account.php';
+            break;
         case 'logout':
             session_destroy();
             $yourURL = "index.php";
