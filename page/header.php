@@ -29,6 +29,14 @@
 </head>
 
 <body>
+
+    <style>
+        .description{
+            width: 100%;
+            height: 180px;
+        }
+    </style>
+
     <header id="header" class="header style-04 header-transparent header-sticky">
         <div class="header-middle">
             <div class="header-middle-inner">

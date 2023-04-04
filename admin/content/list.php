@@ -6,35 +6,42 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=add_dm">Thêm danh mục</a></h6>
+            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=add_content">Thêm content</a></h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+                    <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Detail</th>
+                            <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
+                        
                             <th>STT</th>
-                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Detail</th>
+                            <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <?php $stt = 1;
-                        
-                         foreach ($listdm as $dm):extract($dm)  ?>
+                            $list_contnet=list_content();
+                         foreach ($list_contnet as $ct):extract($ct)  ?>
                             <tr>
                                 <td><?=$stt++?></td>
-                                <td><?=$name?></td>
+                                <td><?=$title?></td>
+                                <td><?=$detail?></td>
+                                <td><img src="../image/<?=$image?>" width="100" alt=""></td>
                                 <td>
-                                    <a href="index.php?sp=fix_dm&id=<?=$idCategory?>">Sửa</a>
-                                    <a href="index.php?sp=delete_dm&id=<?=$idCategory?>">Xóa</a>
+                                    <a href="index.php?sp=fix_content&id=<?=$id?>">Sửa</a>
+                                    <a href="index.php?sp=delete_content&id=<?=$id?>">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

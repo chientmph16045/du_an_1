@@ -5,6 +5,8 @@ include "./header.php";
 include '../module/danhmuc.php';
 include '../module/sanpham.php';
 include '../module/taikhoan.php';
+include '../module/banner.php';
+include '../module/content.php';
 
 
 if (isset($_SESSION['user'])) {
@@ -88,7 +90,7 @@ if (isset($_SESSION['user'])) {
                         $view = $_POST['view'];
                         $size = $_POST['size'];
                         $idCategory = $_POST['idCategory'];
-                        insert_sp($id,$name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCate);
+                        insert_sp($name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCategory);
                     }
                     $listdm = list_dm();
                     include_once './sanpham/add.php';
@@ -135,6 +137,147 @@ if (isset($_SESSION['user'])) {
                     include_once './sanpham/list.php';
                     break;
                 }
+
+            case 'list_banner':
+                $list_banner=list_banner();
+
+                include_once './banner/list.php';
+                break;
+                
+            case 'add_banner':{
+
+                if (isset($_POST['new_banner'])) {
+                    $title=$_POST['title'];
+                    $s_title=$_POST['s_title'];
+                    $image = $_FILES['image']['name'];
+                    $target_dir = "../image/";
+                    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                        //echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                    } else {
+                        //echo "Sorry, there was an error uploading your file.";
+                    }
+
+                    insert_banner($title,$s_title,$image);
+                }
+                
+                include_once './banner/add.php';
+                break;
+                  
+            }
+
+            case 'fix_banner': {
+                if (isset($_GET['id'])) {
+                    $id=$_GET['id'];
+                    $banner =load_one_banner($id);
+                }
+                
+                include_once './banner/fix.php';
+                break;
+            }
+            case 'fix_done_banner': {
+                    if (isset($_POST['fix_banner'])) {
+                        $id = $_POST['id'];
+                        $title=$_POST['title'];
+                        $s_title=$_POST['s_title'];
+                        $description=$_POST['description'];
+                        $image = $_FILES['image']['name'];
+                        $target_dir = "../image/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            //echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+                        } else {
+                            //echo "Sorry, there was an error uploading your file.";
+                        }
+                        
+                        update_banner($id,$title,$s_title,$description,$image);
+                    }
+                    $list_banner=list_banner();
+                    include_once './banner/list.php';
+                    break;
+                }
+                
+
+                case 'delete_banner': {
+                    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+                        
+                        delete_banner($_GET['id']);
+                    }
+                    $list_banner=list_banner();
+                    include_once './banner/list.php';
+                    break;
+                }
+
+                case 'list_content':
+                    $list_content=list_content();
+    
+                    include_once './content/list.php';
+                    break;
+                    
+                case 'add_content':{
+    
+                    if (isset($_POST['new_content'])) {
+                        $title=$_POST['title'];
+                        $detail=$_POST['detail'];
+                        $image = $_FILES['image']['name'];
+                        $target_dir = "../image/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            //echo "The file ". htmlspecialchars( basename( $_FILES["hinh"]["name"])). " has been uploaded.";
+                        } else {
+                            //echo "Sorry, there was an error uploading your file.";
+                        }
+    
+                        insert_content($title,$detail,$image);
+                    }
+                    
+                    include_once './content/add.php';
+                    break;
+                      
+                }
+    
+                case 'fix_content':{
+                    if (isset($_GET['id'])) {
+                        $id=$_GET['id'];
+                        $content=load_one_content($id);
+                    }
+                    include_once './content/fix.php';
+                }
+                    
+                    break;
+
+                case 'fix_done_content': {
+                        if (isset($_POST['fix_content'])) {
+                            $id = $_POST['id'];
+                            $title=$_POST['title'];
+                            $detail=$_POST['detail'];
+                            $image = $_FILES['image']['name'];
+                            $target_dir = "../image/";
+                            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                                //echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+                            } else {
+                                //echo "Sorry, there was an error uploading your file.";
+                            }
+                            
+                            update_content($id,$title,$detail,$image);
+                        }
+                        $list_listcontent=list_content();
+                        include_once './content/list.php';
+                        break;
+                    }
+                    
+    
+                    case 'delete_content': {
+                        if (isset($_GET['id']) && ($_GET['id']) > 0) {
+                            
+                            delete_content($_GET['id']);
+                        }
+                        $list_content=list_content();
+                        include_once './content/list.php';
+                        break;
+                    }
+
             case 'logout':
                 session_destroy();
                 $yourURL = "index.php";

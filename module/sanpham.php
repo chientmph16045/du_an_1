@@ -35,7 +35,7 @@ function delete_sp($id){
 }
 
 function loadTop10(){
-    $sql ="SELECT * FROM `product` where 1 order by view desc limit 0,10";
+    $sql ="SELECT * FROM `product` where 1 order by view desc limit 0,9";
     $listsanpham=pdo_query($sql);
 
     return $listsanpham;
@@ -75,3 +75,28 @@ function search_sp($kw,$idcate){
 
         return $listsanpham;
 }
+
+// load sản phẩm sale mới nhất
+function load_sale_sp(){
+    $sql ="SELECT * FROM `product` where 1 order by sale_price desc limit 0,9";
+    $listsanpham=pdo_query($sql);
+
+    return $listsanpham;
+}
+
+function load_sale_sp3(){
+    $sql ="SELECT * FROM `product` where 1 order by sale_price >0 desc limit 0,3";
+    $listsanpham=pdo_query($sql);
+
+    return $listsanpham;
+}
+
+function load_quantity_sp(){
+    $sql ="SELECT * FROM `product` where 1 order by quantity desc limit 0,6";
+    $listsanpham=pdo_query($sql);
+
+    return $listsanpham;
+}
+
+?>
+

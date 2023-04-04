@@ -4,51 +4,74 @@
             <div class="response-product product-list-owl owl-slick equal-container better-height"
                 data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:0,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:1}"
                 data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}}]">
-                <div class="slide-wrap">
-                    <img src="assets/images/slide21.jpg" alt="image">
+                <?php foreach ($loadbanner as $banner) {
+                    extract($banner);
+
+                    $linkshop="index.php?sp=shop-leftsidebar";
+
+
+                    echo '
+                    <div class="slide-wrap">
+                    <img src="./image/'.$image.'"alt="image">
                     <div class="slide-info">
                         <div class="container">
                             <div class="slide-inner">
-                                <h5>Sale up to <span>40%</span> Off</h5>
-                                <h1>The Summer</h1>
-                                <h2>This Week Only</h2>
-                                <a href="#">Shop now</a>
+                                <h5>'.$title.'</h5>
+                                <h1>'.$s_title.'</h1>
+                                <h2>'.$description.'</h2>
+                                <a href="'.$linkshop.'">Shop now</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="slide-wrap">
-                    <img src="assets/images/slide22.jpg" alt="image">
-                    <div class="slide-info">
-                        <div class="container">
-                            <div class="slide-inner">
-                                <h5>Hurry Up !</h5>
-                                <h1>New Arrival</h1>
-                                <h2>For Your Just In</h2>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-wrap">
-                    <img src="assets/images/slide23.jpg" alt="image">
-                    <div class="slide-info">
-                        <div class="container">
-                            <div class="slide-inner">
-                                <h5>Special Offer</h5>
-                                <h1>Flash Sale</h1>
-                                <h2>Up to <span>70%</span> Off</h2>
-                                <a href="#">Shop now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    
+                    ';
+                } ?>
+                
             </div>
         </div>
         <div class="section-001 section-004">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-lg-6">
+
+                    <?php 
+                        include_once './module/pdo.php';
+                        $sql="select * from content where id <5 ";
+                        $job=$conn->query($sql);
+
+                    
+                    
+                        foreach ($job as $rows) {
+                        extract($rows);
+                        $linkshop="index.php?sp=shop-leftsidebar";
+                    ?>
+
+                        <div class="col-md-12 col-lg-6">
+                        <div class="lynessa-banner style-04 left-center">
+                            <div class="banner-inner">
+                                <figure class="banner-thumb">
+                                    <img src="./image/<?php echo $rows['image'];?>" class="attachment-full size-full" alt="img">
+                                </figure>
+                                <div class="banner-info ">
+                                    <div class="banner-content">
+                                        <div class="title-wrap">
+                                            <h6 class="title"><?php echo $rows['title'];?></h6>
+                                        </div>
+                                        
+                                        <div class="button-wrap">
+                                            <div class="subtitle"><?php echo $rows['detail'];?></div>
+                                            <a class="button" target="_self" href="<?=$linkshop?>"><span>Shop now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                    <?php } ?>
+                    
+                    <!-- <div class="col-md-12 col-lg-6">
                         <div class="lynessa-banner style-04 left-center">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
@@ -89,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -108,7 +131,117 @@
                     <div class="response-product product-list-owl owl-slick equal-container better-height"
                         data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:4,&quot;rows&quot;:1}"
                         data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                        <div
+                            
+                        <?php   
+                            foreach ($load_quantity as $q) {
+                                extract($q);
+                                if ($sale_price!=0&&$sale_price!='') {
+                                    echo '
+                                <div
+                                class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
+                                <div class="product-inner tooltip-top tooltip-all-top">
+                                    <div class="product-thumb">
+                                        <a class="thumb-link" href="single-product.php" tabindex="0">
+                                            <img class="img-responsive" src="./image/'.$image.'"
+                                                alt="KNIT LIKE" width="270" height="350">
+                                        </a>
+                                        <div class="flash">
+                                            <span class="onnew"><span class="text">New</span></span>
+                                        </div>
+                                        <div class="group-button">
+                                            <div class="add-to-cart">
+                                                <a href="#"
+                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                    to
+                                                    cart</a>
+                                            </div>
+                                            <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                            <div class="lynessa product compare-button">
+                                                <a href="#" class="compare button">Compare</a>
+                                            </div>
+                                            <div class="yith-wcwl-add-to-wishlist">
+                                                <div class="yith-wcwl-add-button show">
+                                                    <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name product_title">
+                                            <a href="#" tabindex="0">'.$name.'</a>
+                                        </h3>
+                                        <span class="price">
+                                        <del><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span>'.$sale_price.'
+                                                             </span></del>
+                                        
+                                        <span class="lynessa-Price-amount amount"><span
+                                                    class="lynessa-Price-currencySymbol">$</span>'.$price.'</span></span>
+                                        <div class="rating-wapper nostar">
+                                            <div class="star-rating"><span style="width:0%">Rated <strong
+                                                        class="rating">0</strong> out of 5</span></div>
+                                            <span class="review">(0)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                ';
+                                }else {
+                                    echo '
+                                <div
+                                class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
+                                <div class="product-inner tooltip-top tooltip-all-top">
+                                    <div class="product-thumb">
+                                        <a class="thumb-link" href="single-product.php" tabindex="0">
+                                            <img class="img-responsive" src="./image/'.$image.'"
+                                                alt="KNIT LIKE" width="270" height="350">
+                                        </a>
+                                        <div class="flash">
+                                            <span class="onnew"><span class="text">New</span></span>
+                                        </div>
+                                        <div class="group-button">
+                                            <div class="add-to-cart">
+                                                <a href="#"
+                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                    to
+                                                    cart</a>
+                                            </div>
+                                            <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                            <div class="lynessa product compare-button">
+                                                <a href="#" class="compare button">Compare</a>
+                                            </div>
+                                            <div class="yith-wcwl-add-to-wishlist">
+                                                <div class="yith-wcwl-add-button show">
+                                                    <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name product_title">
+                                            <a href="#" tabindex="0">'.$name.'</a>
+                                        </h3>
+                                        <span class="price"><span class="lynessa-Price-amount amount"><span
+                                                    class="lynessa-Price-currencySymbol">$</span>'.$price.'</span></span>
+                                        <div class="rating-wapper nostar">
+                                            <div class="star-rating"><span style="width:0%">Rated <strong
+                                                        class="rating">0</strong> out of 5</span></div>
+                                            <span class="review">(0)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                ';
+                                }
+                                
+                            }
+                        
+                        ?>
+                        
+                       
+                        <!-- <div
                             class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
                             <div class="product-inner tooltip-top tooltip-all-top">
                                 <div class="product-thumb">
@@ -369,7 +502,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -391,7 +524,70 @@
                             <div class="response-product product-list-owl owl-slick equal-container better-height"
                                 data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:2,&quot;rows&quot;:1}"
                                 data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                                <div class="product-item on_sale style-03 rows-space-0 post-36 product type-product status-publish has-post-thumbnail product_cat-table product_cat-bed product_tag-light product_tag-table product_tag-sock first instock sale shipping-taxable purchasable product-type-simple"
+                                
+                                <?php 
+                                    include_once './module/db.php';
+                                    $sql="select * from product where 1 order by idProduct desc limit 0,3";
+                                    $job1=$conn->query($sql);
+
+                                    foreach ($job1 as $keys) {
+                                        extract($keys);
+                                ?>
+
+                                    <div class="product-item on_sale style-03 rows-space-0 post-36 product type-product status-publish has-post-thumbnail product_cat-table product_cat-bed product_tag-light product_tag-table product_tag-sock first instock sale shipping-taxable purchasable product-type-simple"
+                                    data-slick-index="0" style="margin-right: 30px; width: 520px;" aria-hidden="false"
+                                    tabindex="0" role="tabpanel" id="slick-slide10"
+                                    aria-describedby="slick-slide-control10">
+                                    <div class="product-inner">
+                                        <div class="product-thumb">
+                                            <a class="thumb-link" href="#" tabindex="0">
+                                                <img class="img-responsive" src="./image/<?php echo $keys['image']?>"
+                                                    alt="SPORTY HOODIE" width="275" height="310">
+                                            </a>
+                                        </div>
+                                        <div class="product-info equal-elem">
+                                            <h3 class="product-name product_title">
+                                                <h3><a href="#" tabindex="0"><?php echo $keys['name']?></a></h3>
+                                            </h3>
+                                            <span class="price"><del><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span><?php echo $keys['sale_price']?></span></del>
+                                                <ins><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span><?php echo $keys['price']?></span></ins></span>
+                                            <!-- <div class="process-valiable">
+                                                <div class="valiable-text">
+                                                    <span class="text">
+                                                        13% Already Sold </span>
+                                                    <span class="text">
+                                                        Available: <span>
+                                                            21 </span>
+                                                    </span>
+                                                </div>
+                                                <span class="valiable-total total">
+                                                    <span class="process" style="width: 13%"></span>
+                                                </span>
+                                            </div> -->
+                                            <div class="description">
+                                                <h4>description :</h4>
+                                                <a href="#"><?php echo $keys['description']?></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a href="#"
+                                                    data-quantity="1"
+                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                    data-product_id="36" data-product_sku="098J812-1"
+                                                    aria-label="Add “SPORTY HOODIE” to your cart" rel="nofollow"
+                                                    tabindex="0">Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <?php
+                                    }
+                                ?>
+
+                                <!-- <div class="product-item on_sale style-03 rows-space-0 post-36 product type-product status-publish has-post-thumbnail product_cat-table product_cat-bed product_tag-light product_tag-table product_tag-sock first instock sale shipping-taxable purchasable product-type-simple"
                                     data-slick-index="0" style="margin-right: 30px; width: 520px;" aria-hidden="false"
                                     tabindex="0" role="tabpanel" id="slick-slide10"
                                     aria-describedby="slick-slide-control10">
@@ -555,7 +751,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -565,7 +761,44 @@
         <div class="section-013 section-001">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    
+                <?php 
+                        include_once './module/pdo.php';
+                        $sql="select * from content where id >=5 ";
+                        $job=$conn->query($sql);
+
+                    
+                    
+                        foreach ($job as $rows) {
+                        extract($rows);
+                        $linkshop="index.php?sp=shop-leftsidebar";
+                    ?>
+
+                        <div class="col-md-4">
+                        <div class="lynessa-banner style-03 left-center">
+                            <div class="banner-inner">
+                                <figure class="banner-thumb">
+                                    <img src="./image/<?php echo $rows['image']?>" class="attachment-full size-full" alt="img">
+                                </figure>
+                                <div class="banner-info ">
+                                    <div class="banner-content">
+                                        <div class="title-wrap">
+                                            <h6 class="title">
+                                                <a target="_self" href="<?=$linkshop?>">Show now</a>
+                                            </h6>
+                                        </div>
+                                        <div class="cate"><?php echo $rows['title']?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                    <?php } ?>
+                            
+                
+                    <!-- <div class="col-md-4">
                         <div class="lynessa-banner style-03 left-center">
                             <div class="banner-inner">
                                 <figure class="banner-thumb">
@@ -625,7 +858,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -635,12 +868,81 @@
                     <div class="col-md-12 col-lg-4">
                         <div class="lynessa-products style-06">
                             <h3 class="title">
-                                <span>Best selling</span>
+                                <span>Sale Product</span>
                             </h3>
+
                             <div class="response-product product-list-owl owl-slick equal-container better-height"
                                 data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:30,&quot;dots&quot;:false,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:3}"
                                 data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
+                                
+                                <?php
+                            foreach ($loadsale as $sale) {
+                                extract($sale);
+                                
+                                // tạo link sản phẩm chi tiết
+                                $linksp="index.php?sp=sanphamct&id=".$idProduct;
+
+                                if ($sale_price!=0 && $sale_price !="") {
+                                    echo '<div
+                                    class="product-item best-selling style-06 rows-space-30 post-25 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-specials product_tag-light product_tag-sock first instock sale featured shipping-taxable purchasable product-type-simple">
+                                    <div class="product-inner">
+                                        <div class="product-thumb">
+                                            <a class="thumb-link" href="#" tabindex="0">
+                                                <img class="img-responsive" src="image/'.$image.'"
+                                                    alt="HEM SMOCKING" width="90" height="90">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h3 class="product-name product_title">
+                                                <a href="#" tabindex="0">'.$name.'</a>
+                                            </h3>
+                                            <div class="rating-wapper nostar">
+                                                <div class="star-rating"><span style="width:0%">Rated <strong
+                                                            class="rating">0</strong> out of 5</span></div>
+                                                <span class="review">(0)</span>
+                                            </div>
+                                            <span class="price"><del><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span>'.$sale_price.'
+                                                             </span></del>
+                                                <ins><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span>'.$price.'</span></ins></span>
+                                        </div>
+                                    </div>
+                                </div>';
+                                }else {
+                                    echo '
                                 <div
+                                class="product-item best-selling style-06 rows-space-30 post-25 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-specials product_tag-light product_tag-sock first instock sale featured shipping-taxable purchasable product-type-simple">
+                                <div class="product-inner">
+                                    <div class="product-thumb">
+                                        <a class="thumb-link" href="#" tabindex="0">
+                                            <img class="img-responsive" src="image/'.$image.'"
+                                                alt="HEM SMOCKING" width="90" height="90">
+                                        </a>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name product_title">
+                                            <a href="#" tabindex="0">'.$name.'</a>
+                                        </h3>
+                                        <div class="rating-wapper nostar">
+                                            <div class="star-rating"><span style="width:0%">Rated <strong
+                                                        class="rating">0</strong> out of 5</span></div>
+                                            <span class="review">(0)</span>
+                                        </div>
+                                        <span class="price">
+                                            <ins><span class="lynessa-Price-amount amount"><span
+                                                        class="lynessa-Price-currencySymbol">$</span>'.$price.'</span></ins></span>
+                                    </div>
+                                </div>
+                            </div> ';
+                                }
+
+                                
+                            }
+                        
+                            ?>
+                                
+                                <!-- <div
                                     class="product-item best-selling style-06 rows-space-30 post-25 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-specials product_tag-light product_tag-sock first instock sale featured shipping-taxable purchasable product-type-simple">
                                     <div class="product-inner">
                                         <div class="product-thumb">
@@ -658,7 +960,8 @@
                                                             class="rating">0</strong> out of 5</span></div>
                                                 <span class="review">(0)</span>
                                             </div>
-                                            <span class="price"><del><span class="lynessa-Price-amount amount"><span
+                                            <span class="price">
+                                                <del><span class="lynessa-Price-amount amount"><span
                                                             class="lynessa-Price-currencySymbol">$</span>89.00</span></del>
                                                 <ins><span class="lynessa-Price-amount amount"><span
                                                             class="lynessa-Price-currencySymbol">$</span>79.00</span></ins></span>
@@ -858,7 +1161,7 @@
                                                         class="lynessa-Price-currencySymbol">$</span>98.00</span></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -870,7 +1173,73 @@
                             <div class="response-product product-list-owl owl-slick equal-container better-height"
                                 data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:30,&quot;dots&quot;:false,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:3}"
                                 data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                                <div
+                                
+                                <?php
+                                foreach ($loadtop10 as $top10) {
+                                extract($top10);    
+                                // $sql="SELECT idProduct,name,price,sale_price,image,description,quantity,view,size,idCatr,(sale_price/price) as gia  FROM `product` where 1 order by gia desc limit 0,6";
+                                
+                                
+                                // tạo link sản phẩm chi tiết
+                                $linksp="index.php?sp=sanphamct&id=".$idProduct;
+                                if ($sale_price!=0 && $sale_price !="") {
+                                    echo '<div
+                                    class="product-item top-rated style-06 rows-space-30 post-26 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-hat first instock featured shipping-taxable product-type-external">
+                                    <div class="product-inner">
+                                        <div class="product-thumb">
+                                            <a class="thumb-link" href="#" tabindex="0">
+                                                <img class="img-responsive" src="./image/'.$image.'"
+                                                    alt="ELOISE SHIRRED" width="90" height="90">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h3 class="product-name product_title">
+                                                <a href="#" tabindex="0">'.$name.'</a>
+                                            </h3>
+                                            <div class="rating-wapper ">
+                                                <div class="star-rating"><span style="width:100%">Rated <strong
+                                                            class="rating">5.00</strong> out of 5</span></div>
+                                                <span class="review">(1)</span>
+                                            </div>
+                                            <span class="price"><del><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span>'.$sale_price.'</span></del>
+                                                <ins><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span>'.$price.'</span></ins></span>
+                                        </div>
+                                    </div>
+                                </div>';
+                                }else {
+                                    echo '<div
+                                    class="product-item top-rated style-06 rows-space-30 post-26 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-hat first instock featured shipping-taxable product-type-external">
+                                    <div class="product-inner">
+                                        <div class="product-thumb">
+                                            <a class="thumb-link" href="#" tabindex="0">
+                                                <img class="img-responsive" src="./image/'.$image.'"
+                                                    alt="ELOISE SHIRRED" width="90" height="90">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h3 class="product-name product_title">
+                                                <a href="#" tabindex="0">'.$name.'</a>
+                                            </h3>
+                                            <div class="rating-wapper ">
+                                                <div class="star-rating"><span style="width:100%">Rated <strong
+                                                            class="rating">5.00</strong> out of 5</span></div>
+                                                <span class="review">(1)</span>
+                                            </div>
+                                            <span class="price">
+                                                <ins><span class="lynessa-Price-amount amount"><span
+                                                            class="lynessa-Price-currencySymbol">$</span>'.$price.'</span></ins></span>
+                                        </div>
+                                    </div>
+                                </div>';
+                                
+                                    }
+                                }
+                        
+                                    ?>
+                                
+                                <!-- <div
                                     class="product-item top-rated style-06 rows-space-30 post-26 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-hat first instock featured shipping-taxable product-type-external">
                                     <div class="product-inner">
                                         <div class="product-thumb">
@@ -1086,7 +1455,7 @@
                                                         class="lynessa-Price-currencySymbol">$</span>134.00</span></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -1513,5 +1882,4 @@
                 </div>
             </div>
         </div>
-    </div>
-   
+    </div> 

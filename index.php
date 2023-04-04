@@ -1,45 +1,35 @@
 <?php
 session_start();
-<<<<<<< HEAD
-
-include "module/pdo.php";
-include "module/danhmuc.php";
-include "module/sanpham.php";
-include "module/taikhoan.php";
+include_once './module/db.php';
+include_once './page/header.php';
+include_once './module/pdo.php';
+include_once  './module/danhmuc.php';
+include_once  './module/sanpham.php';
+include_once './module/taikhoan.php';
+include_once './module/banner.php';
+include_once './module/content.php';
 
 include "page/header.php";
 
 // khai báo biến để hứng hàm funtion bên module
 $loadtop10=loadTop10();
 
+$loadsale=load_sale_sp();
+
+$load_quantity=load_quantity_sp();
+
+$loadsale3=load_sale_sp3();
+            
 $loadall_sp=loadall_sp();
 
 $listdm=list_dm();
 
-$loadall_size=loadall_size();
+$loadbanner=list_banner();
 
-if (isset($_GET['sp'])) {
-    $sp=$_GET['sp'];
-    
+$loadcontent=list_content();
 
-    switch ($sp) {
-        case 'shop-leftsidebar':
+$loadall_size=loadall_size();   
 
-            include "page/shop-leftsidebar.php";
-            break;
-        
-        default:
-            
-            break;
-    }
-} else {
-    include "page/home.php";
-}
-include "page/footer.php";
-=======
-include_once './page/header.php';
-include_once './module/pdo.php';
-include_once './module/taikhoan.php';
 
 if (isset($_GET['sp'])) {
     $sp = $_GET['sp'];
@@ -48,7 +38,7 @@ if (isset($_GET['sp'])) {
 
         //login && resign && logout
         case 'login_resign':
-            include './page/login_resign.php';
+            include 'page/login_resign.php';
             break;
         case 'login':
             if (isset($_POST['login'])){
@@ -61,7 +51,7 @@ if (isset($_GET['sp'])) {
                     echo ("<script>location.href =' $yourURL '</script>");
                 }else{
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
-                    include './page/login_resign.php';
+                    include 'page/login_resign.php';
                 }
             }
             break; 
@@ -73,7 +63,7 @@ if (isset($_GET['sp'])) {
                 insertAcc($name, $email, $pass);
                 $thongbaodangki = "Đăng kí thành công";
             }
-            include './page/login_resign.php';
+            include 'page/login_resign.php';
             break;
         case 'forget' :
             if(isset($_POST['forget'])){
@@ -86,16 +76,23 @@ if (isset($_GET['sp'])) {
                     $thongbao ='Email không chính xác';
                 }
             }
-            include './page/forget.php';
+            include 'page/forget.php';
             break;   
         case 'logout':
                 session_destroy();
                 $yourURL = "index.php";
                 echo ("<script>location.href =' $yourURL '</script>");
                 break;
+
+        case 'shop-leftsidebar':
+
+            include "page/shop-leftsidebar.php";
+            break;
+            
+ 
     }
 } else {
     include_once './page/home.php';
 }
 include_once './page/footer.php';
->>>>>>> c9744879834ee5602302f1dba87b23088f768307
+
