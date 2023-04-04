@@ -27,8 +27,14 @@ if (isset($_GET['sp'])) {
                 $login = checkuser($email, $pass);
                 if (is_array($login)) {
                     $_SESSION['user'] = $login;
-                    $yourURL = "index.php";
+                    if($_SESSION['user']['address']==''){
+                        $yourURL = "index.php?sp=account";
                     echo ("<script>location.href =' $yourURL '</script>");
+                    }else{
+                        $yourURL = "index.php";
+                        echo ("<script>location.href =' $yourURL '</script>");
+                    }
+                   
                 } else {
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
                     include './page/login_resign.php';
@@ -49,6 +55,8 @@ if (isset($_GET['sp'])) {
             }
             $_SESSION['user']=$new;
             $thongbao = "Cập nhật thông tin tài khoản thành công";
+            $id = $_SESSION['user']['idUser'];
+            $listsp = order($id);
             include './page/my-account.php';
             break;
         case 'resign':

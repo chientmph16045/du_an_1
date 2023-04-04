@@ -41,7 +41,8 @@
             margin-top: 20px;
             margin-bottom: 90px;
         }
-        .ad{
+
+        .ad {
             margin-left: 19px;
         }
     </style>
@@ -62,16 +63,22 @@
                         <input type="text" placeholder="Họ và tên" value="<?= $nameUser ?>" name="name" required />
                     </div>
                     <div class="input-field">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-</svg>
-                        <input type="text" placeholder="Địa chỉ" class="ad" value="<?= $address ?>" name="address" required />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                        </svg>
+                        <input type="text" placeholder="Địa chỉ" class="ad" value="<?= $address ?>" name="address"
+                            required />
                     </div>
                     <div class="input-field">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-</svg>
-                        <input type="text" placeholder="Số điện thoại" class="ad" value="<?= $phone ?>" name="phone" required />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                        </svg>
+                        <input type="text" placeholder="Số điện thoại" class="ad" value="<?= $phone ?>" name="phone"
+                            required />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
@@ -117,32 +124,35 @@
                                 <td>
                                     <?= $quantity ?>
                                 </td>
-                                <td value="<?=$idStatus?>">
+                                <td value="<?= $idStatus ?>">
                                     <?= $nameStatus ?>
                                 </td>
                                 <td>
-                                    <?php 
-                                    
-                                    if ($tinhtrang == 7 || $tinhtrang == 4 || $tinhtrang == 0 || $tinhtrang == 6) {
+                                    <?php
+
+                                    if ($tinhtrang == 7 || $tinhtrang == 4 || $tinhtrang == 0 || $tinhtrang == 6||$tinhtrang==3) {
                                         $trangthai = '';
-                                    if ($tinhtrang == 7) {
-                                        $trangthai = "Hủy hàng thất bại ";
-                                    }
-                                    if ($tinhtrang == 4) {
-                                        $trangthai = "Giao thành công";
-                                    }
-                                    if ($tinhtrang == 0) {
-                                        $trangthai = "Hủy hàng thành công";
-                                    }
-                                    if ($tinhtrang == 6) {
-                                        $trangthai = "Đang chờ xác nhận";
-                                    }
+                                        if ($tinhtrang == 7) {
+                                            $trangthai = "Hủy hàng thất bại ";
+                                        }
+                                        if ($tinhtrang == 4) {
+                                            $trangthai = "Giao thành công";
+                                        }
+                                        if ($tinhtrang == 0) {
+                                            $trangthai = "Hủy hàng thành công";
+                                        }
+                                        if ($tinhtrang == 6) {
+                                            $trangthai = "Đang chờ xác nhận";
+                                        } 
+                                        if ($tinhtrang == 3) {
+                                            $trangthai = "Đang giao hàng";
+                                        }
                                         ?>
-                                        <input type="submit" value="<?= $trangthai,$tinhtrang ?>" disabled name="change"
+                                        <input type="submit" value="<?= $trangthai ?>" disabled name="change"
                                             class="btn solid" />
 
                                         <?php
-                                    } elseif($tinhtrang == 1 || $tinhtrang== 2) { ?>
+                                    } elseif ($tinhtrang == 1 || $tinhtrang == 2) { ?>
                                         <form action="?sp=change_status&id=<?= $idCart ?>" method="post">
                                             <?= $change ?>
                                             <input type="submit" value="Hủy" name="change" class="btn solid" />
