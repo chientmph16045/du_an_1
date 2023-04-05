@@ -4,33 +4,34 @@ session_start();
 include_once './page/header.php';
 include_once './module/pdo.php';
 include_once './module/taikhoan.php';
+include_once './module/sanpham.php';
 
 if (isset($_GET['sp'])) {
     $sp = $_GET['sp'];
     switch ($sp) {
 
 
-        //login && resign && logout
+            //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
         case 'login':
-            if (isset($_POST['login'])){
+            if (isset($_POST['login'])) {
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
-                $login = checkuser($email,$pass);
-                if(is_array($login)){
+                $login = checkuser($email, $pass);
+                if (is_array($login)) {
                     $_SESSION['user'] = $login;
                     $yourURL = "index.php";
                     echo ("<script>location.href =' $yourURL '</script>");
-                }else{
+                } else {
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
                     include './page/login_resign.php';
                 }
             }
-            break; 
+            break;
         case 'resign':
-            if(isset($_POST['resign'])){
+            if (isset($_POST['resign'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
@@ -39,26 +40,35 @@ if (isset($_GET['sp'])) {
             }
             include './page/login_resign.php';
             break;
-        case 'forget' :
-            if(isset($_POST['forget'])){
-                $email =$_POST['email'];
+        case 'forget':
+            if (isset($_POST['forget'])) {
+                $email = $_POST['email'];
                 $check = checkforget($email);
-                if(is_array($check)){
+                if (is_array($check)) {
                     extract($check);
-                    $thongbao  = "Mật khẩu của bạn là ".$password;
-                }else{
-                    $thongbao ='Email không chính xác';
+                    $thongbao  = "Mật khẩu của bạn là " . $password;
+                } else {
+                    $thongbao = 'Email không chính xác';
                 }
             }
             include './page/forget.php';
-            break;   
+            break;
         case 'logout':
-                session_destroy();
-                $yourURL = "index.php";
-                echo ("<script>location.href =' $yourURL '</script>");
-                break;
+            session_destroy();
+            $yourURL = "index.php";
+            echo ("<script>location.href =' $yourURL '</script>");
+            break;
+        case 'chitiet':
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $sp = load_one_sp($id);
+                include_once './page/single-product.php';
+            }
+
+            break;
     }
 } else {
+    $list_sp = list_sp();
     include_once './page/home.php';
 }
 include_once './page/footer.php';

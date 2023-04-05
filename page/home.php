@@ -1,8 +1,3 @@
-<?php
-include_once "header.php";
-require_once "./module/sanpham.php";
-$list_sp = list_sp();
-?>
 <div class="fullwidth-template">
     <div class="slide-home-02">
         <div class="response-product product-list-owl owl-slick equal-container better-height" data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:0,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:1}" data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:1,&quot;slidesMargin&quot;:&quot;0&quot;}}]">
@@ -117,7 +112,7 @@ $list_sp = list_sp();
                         <div class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
                             <div class="product-inner tooltip-top tooltip-all-top">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="single-product.php?id=<?=$value['idProduct']?>" tabindex="0">
+                                    <a class="thumb-link" href="index.php?sp=chitiet&id=<?=$value['idProduct']?>" tabindex="0">
                                         <img class="img-responsive" src="assets/images/<?= $value['image'] ?>" alt="<?= $value['name'] ?>" width="270" height="350">
                                     </a>
                                     <div class="flash">
@@ -155,6 +150,8 @@ $list_sp = list_sp();
                     <?php endforeach ?>
                 </div>
 
+
+    <!--end chi tiet -->
             </div>
         </div>
     </div>
@@ -1106,8 +1103,3 @@ $list_sp = list_sp();
         </div>
     </div>
 </div>
-
-
-<?php
-include_once "footer.php";
-?>
