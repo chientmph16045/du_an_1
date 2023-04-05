@@ -113,7 +113,7 @@
                             <div class="product-inner tooltip-top tooltip-all-top">
                                 <div class="product-thumb">
                                     <a class="thumb-link" href="index.php?sp=chitiet&id=<?=$value['idProduct']?>" tabindex="0">
-                                        <img class="img-responsive" src="assets/images/<?= $value['image'] ?>" alt="<?= $value['name'] ?>" width="270" height="350">
+                                        <img class="img-responsive" src="image/<?= $value['image'] ?>" alt="" width="270" height="350">
                                     </a>
                                     <div class="flash">
                                         <span class="onnew"><span class="text">New</span></span>
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="product-info">
                                     <h3 class="product-name product_title">
-                                        <a href="#" tabindex="0"><?= $value['name'] ?></a>
+                                        <a href="#" tabindex="0"><?= $value['namePro'] ?></a>
                                     </h3>
                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $value['price'] ?></span></span>
                                     <div class="rating-wapper nostar">
