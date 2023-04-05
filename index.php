@@ -172,7 +172,6 @@ if (isset($_GET['sp'])) {
                     insert_cart($_SESSION['user']['idUser'],$cart[0], $cart[4], $tt = 1, $idbill);
                 }
                 // $giohang = giohang();
-                
             }
             
             include './page/comf.php';
