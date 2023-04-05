@@ -181,12 +181,12 @@
                                  <div class="single-left">
                                      <div class="lynessa-product-gallery lynessa-product-gallery--with-images lynessa-product-gallery--columns-4 images">
                                          <a href="#" class="lynessa-product-gallery__trigger">
-                                             <img draggable="false" class="emoji" alt="🔍" src="https://s.w.org/images/core/emoji/11/svg/1f50d.svg"></a>
+                                             <img draggable="false" class="emoji" alt="🔍" src="image/<?=$sp['image']?>"></a>
                                          <div class="flex-viewport">
                                              <figure class="lynessa-product-gallery__wrapper">
 
                                                  <div class="lynessa-product-gallery__image">
-                                                     <img src="assets/images/<?= $sp['image'] ?>" alt="img">
+                                                     <img src="image/<?= $sp['image'] ?>" alt="img">
                                                  </div>
 
                                              </figure>
@@ -207,7 +207,7 @@
                                      <div class="flash">
                                          <span class="onnew"><span class="text">New</span></span>
                                      </div>
-                                     <h1 class="product_title entry-title"><?= $sp['name'] ?></h1>
+                                     <h1 class="product_title entry-title"><?= $sp['namePro'] ?></h1>
                                      <p class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $sp['price'] ?> </span></p>
                                      <p class="stock in-stock">
                                          Availability: <span> In stock</span>
