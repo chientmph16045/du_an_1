@@ -126,9 +126,22 @@ if (isset($_GET['sp'])) {
                 $image = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = $_POST['quantity'];
-                $ttien = $soluong * $price;
-                $spadd = [$id, $name, $image, $price, $soluong, $ttien];
-                array_push($_SESSION['mycart'], $spadd);
+                $check = 0;
+                for($i = 0;$i<sizeof($_SESSION['mycart']);$i++){
+                    if($_SESSION['mycart'][$i][1]==$name){
+                        $check = 1;
+                        $soluongnew = $soluong+$_SESSION['mycart'][$i][4];
+                        $_SESSION['mycart'][$i][4]=$soluongnew;
+                        break;
+                    }
+                }
+                if($check==0){
+                    $ttien = $soluong * $price;
+                    $spadd = [$id, $name, $image, $price, $soluong, $ttien];
+                    array_push($_SESSION['mycart'], $spadd);
+                    $thongbaocart='Thêm thành công';
+                }
+                
                 // var_dump($_SESSION['mycart']);
             }
             include './page/header.php';

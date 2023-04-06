@@ -177,8 +177,13 @@
                                     <div class="flash">
                                         <span class="onnew"><span class="text">New</span></span>
                                     </div>
-                                    <form action="?sp=addtocart" method="post" class="variations_form cart">
-                                        <table class="variations">
+                                    
+                                    <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
+                                    <div class="group-button">
+                                        
+                                        
+                                        <form action="?sp=addtocart" method="post" >
+                                          <table class="variations">
                                             <tbody>
                                                 <tr>
                                                     <td class="value">
@@ -187,18 +192,12 @@
                                                            <input type="hidden" name="name" value="' . $namePro . '"/>
                                                            <input type="hidden" name="price" value="' . $price . '"/>
                                                            <input type="hidden" name="id" value="' . $idProduct . '"/>
+                                                           <input type="hidden" name="quantity" value="1"/>
                                                         </select>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
-                                           
-                                      
-                                        
-                                    </form>    
-                                    <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
-                                    <div class="group-button">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button show">
                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
@@ -207,12 +206,12 @@
                                         <div class="lynessa product compare-button">
                                             <a href="#" class="compare button">Compare</a>
                                         </div>
+
                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
                                         <div class="add-to-cart">
-                                            <a href="index.php?sp=chitiet&id='.$idProduct.'" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
-                                                to
-                                                cart</a>
-                                        </div>
+                                            <button type="submit" name="addcart" style="width: 40px;    background-color: #cf9163;"><img src="./image/cart.svg"></button>                                 
+                                        </form>
+                                    </div>
                                     </div>
                                     
                                 </div>
@@ -237,23 +236,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="group-button">
-                                    <div class="group-button-inner">
-                                        <div class="yith-wcwl-add-to-wishlist">
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                        <div class="lynessa product compare-button">
-                                            <a href="#" class="compare button">Compare</a>
-                                        </div>            
-                                        <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                        <div class="add-to-cart">
-                                            <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                options</a>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </li>';
                         }
