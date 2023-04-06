@@ -45,9 +45,14 @@ function delete_sp($id)
     $sql = "DELETE FROM `product` WHERE idProduct = " . $_GET['id'];
     pdo_execute($sql);
 }
-function load_similar_product($id, $ma_loai)
+function price()
 {
-    $sql = "select *from product where idCate='" . $ma_loai . "'and idProduct <> " . $id;
-    $listsp = pdo_query($sql);
-    return $listsp;
+    if (isset($_POST['action'])) {
+        $sql = "SELECT * FROM  `product` WHERE productStatus = '1'";
+        if (isset($_POST['data_min'], $_POS['data_max']) && !empty($_POS[' data_value_min'] && !empty($_POS[' data_value_max']))) {
+            $sql = "AND price BETWEEN '" . $_POST['data_min'] . "' AND '" . $_POST['data_max'] . "' ";
+        }
+    }
+    $productPrice = pdo_execute($sql);
+    return $productPrice;
 }

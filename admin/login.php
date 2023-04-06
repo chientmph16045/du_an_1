@@ -45,11 +45,11 @@
             <legend>Please, enter your email and password for login.</legend>
             <div class="input-block">
               <label for="login-email">E-mail</label>
-              <input id="login-email" name="email" type="email" required>
+              <input id="login-email" type="email" name="email" required>
             </div>
             <div class="input-block">
               <label for="login-password">Password</label>
-              <input id="login-password" name="password" type="password" required>
+              <input id="login-password" type="password" name="password" required>
             </div>
           </fieldset>
           <button type="submit" class="btn-login" value="login" name="login">Login</button>
