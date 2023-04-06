@@ -66,6 +66,7 @@ if (isset($_SESSION['user'])) {
             case 'list_sp': {
                     $listsp = list_sp('', 0);
                     $listsp = list_sp($kyw = '', $idCate = 0);
+                    $listsp = list_sp($kyw = '', $idCate = 0);
                     $listdm = list_dm();
                     include_once './sanpham/list.php';
                     break;
@@ -117,7 +118,6 @@ if (isset($_SESSION['user'])) {
                         $idCate = $_POST['idCategory'];
                         update_sp($id, $name, $price, $image, $description, $quantity, $idCate);
                     }
-                    $listsp = list_sp('', 0);
                     $listsp = list_sp($kyw = '', $idCate = 0);
                     include_once './sanpham/list.php';
                     break;
@@ -126,7 +126,6 @@ if (isset($_SESSION['user'])) {
                     if (isset($_GET['id']) && ($_GET['id']) > 0) {
                         delete_sp($_GET['id']);
                     }
-                    $listsp = list_sp('', 0);
                     $listsp = list_sp($kyw = '', $idCate = 0);
                     include_once './sanpham/list.php';
                     break;
