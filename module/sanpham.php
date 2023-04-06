@@ -11,7 +11,7 @@ function list_sp($kyw, $idCate)
 {
     $sql = "SELECT * FROM `product` WHERE 1 ";
     if ($kyw != "") {
-        $sql .= " and name like '%" . $kyw . "%'";
+        $sql .= " and namePro like '%" . $kyw . "%'";
     }
     if ($idCate > 0) {
         $sql .= "  and idCate = '" . $idCate . "'";

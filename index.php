@@ -82,7 +82,7 @@ if (isset($_GET['sp'])) {
             }
             include './page/forget.php';
             break;
-        
+
         case 'account':
             $id = $_SESSION['user']['idUser'];
             $listsp = order($id);
@@ -125,7 +125,7 @@ if (isset($_GET['sp'])) {
                 $name = $_POST['name'];
                 $image = $_POST['img'];
                 $price = $_POST['price'];
-                $soluong = 1;
+                $soluong = $_POST['quantity'];
                 $ttien = $soluong * $price;
                 $spadd = [$id, $name, $image, $price, $soluong, $ttien];
                 array_push($_SESSION['mycart'], $spadd);
@@ -162,10 +162,9 @@ if (isset($_GET['sp'])) {
         case 'chitiet':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $sp = load_one_sp($id);
-                include_once './page/single-product.php';
+                $sp = load_one_sp($id); 
             }
-
+            include_once './page/single-product.php';
             break;
         case 'order':
             if (isset($_POST['place_order'])) {
@@ -193,10 +192,12 @@ if (isset($_GET['sp'])) {
             include_once "./page/checkout.php";
             break;
         default:
+            $list_sp = list_sp($kyw = '', $idCate = 0);
+
             include './page/home.php';
     }
 } else {
-    $list_sp = list_sp($kyw='',$idCate=0);
+    $list_sp = list_sp($kyw = '', $idCate = 0);
     include_once './page/home.php';
 }
 
