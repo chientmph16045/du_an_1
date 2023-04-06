@@ -15,7 +15,7 @@
                         <h6 class="m-0 font-weight-bold text-primary">Tên danh mục</h6>
                         <input type="text" class="form-control bg-light border-0 small" name="danhmuc" placeholder="Search for..."
                             aria-label="Search" aria-describedby="basic-addon2">
-                        <button type="submit" name="new">Thêm mới</button>
+                        <button type="submit" class="btn btn-primary" name="new">Thêm mới</button>
                     </form>
                         
             </div>

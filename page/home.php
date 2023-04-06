@@ -245,17 +245,15 @@
                             class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
                             <div class="product-inner tooltip-top tooltip-all-top">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="single-product.php" tabindex="0">
-                                        <img class="img-responsive" src="assets/images/apro13-1-270x350.jpg"
-                                            alt="KNIT LIKE" width="270" height="350">
+                                    <a class="thumb-link" href="single-product.php?id=<?=$value['idProduct']?>" tabindex="0">
+                                        <img class="img-responsive" src="assets/images/<?= $value['image'] ?>" alt="<?= $value['name'] ?>" width="270" height="350">
                                     </a>
                                     <div class="flash">
                                         <span class="onnew"><span class="text">New</span></span>
                                     </div>
                                     <div class="group-button">
                                         <div class="add-to-cart">
-                                            <a href="#"
-                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                            <a href="#" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add
                                                 to
                                                 cart</a>
                                         </div>
@@ -272,13 +270,11 @@
                                 </div>
                                 <div class="product-info">
                                     <h3 class="product-name product_title">
-                                        <a href="#" tabindex="0">KNIT LIKE</a>
+                                        <a href="#" tabindex="0"><?= $value['name'] ?></a>
                                     </h3>
-                                    <span class="price"><span class="lynessa-Price-amount amount"><span
-                                                class="lynessa-Price-currencySymbol">$</span>109.00</span></span>
+                                    <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $value['price'] ?></span></span>
                                     <div class="rating-wapper nostar">
-                                        <div class="star-rating"><span style="width:0%">Rated <strong
-                                                    class="rating">0</strong> out of 5</span></div>
+                                        <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
                                         <span class="review">(0)</span>
                                     </div>
                                 </div>
@@ -880,14 +876,14 @@
                                 extract($sale);
                                 
                                 // tạo link sản phẩm chi tiết
-                                $linksp="index.php?sp=sanphamct&id=".$idProduct;
+                                $linksp="index.php?sp=single-product&id=".$idProduct;
 
                                 if ($sale_price!=0 && $sale_price !="") {
                                     echo '<div
                                     class="product-item best-selling style-06 rows-space-30 post-25 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-specials product_tag-light product_tag-sock first instock sale featured shipping-taxable purchasable product-type-simple">
                                     <div class="product-inner">
                                         <div class="product-thumb">
-                                            <a class="thumb-link" href="#" tabindex="0">
+                                            <a class="thumb-link" href="'.$linksp.'" tabindex="0">
                                                 <img class="img-responsive" src="image/'.$image.'"
                                                     alt="HEM SMOCKING" width="90" height="90">
                                             </a>

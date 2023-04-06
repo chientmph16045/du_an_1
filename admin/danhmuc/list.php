@@ -18,13 +18,13 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
                             <th>STT</th>
                             <th>Name</th>
                             <th>Action</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                     <tbody>
                         <?php $stt = 1;
                         

@@ -12,7 +12,7 @@ function list_sp(){
     return $listsp;
 }
 function load_one_sp($id){
-    $sql = "SELECT * FROM `product` WHERE idProduct = ".$_GET['id'];
+    $sql = "SELECT * FROM `product` WHERE idProduct =".$id;
     $sp = pdo_query_one($sql);
     return $sp;
 }

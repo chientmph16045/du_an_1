@@ -36,7 +36,7 @@
                             <th>Thao tác</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
                             <th>STT</th>
                             <th>Tên Sản Phẩm</th>
@@ -50,7 +50,7 @@
                             <th>Loại sản phẩm</th>
                             <th>Thao tác</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                     <tbody>
                         <?php $stt = 1;
                         

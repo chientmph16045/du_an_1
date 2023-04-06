@@ -117,6 +117,13 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.php?sp=list_user" data-toggle="collapse"
+                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <!-- <i class="fas fa-fw fa-wrench"></i> -->
+                    <span>User</span>
+                </a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
