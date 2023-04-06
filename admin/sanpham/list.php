@@ -55,7 +55,7 @@
                                     <?= $stt++ ?>
                                 </td>
                                 <td>
-                                    <?= $name ?>
+                                    <?= $namePro ?>
                                 </td>
                                 <td>
                                     <?= $price ?>

@@ -5,6 +5,7 @@ include "./header.php";
 include '../module/danhmuc.php';
 include '../module/sanpham.php';
 include '../module/taikhoan.php';
+include '../module/cart.php';
 
 
 if (isset($_SESSION['user'])) {
@@ -52,20 +53,20 @@ if (isset($_SESSION['user'])) {
             //sản phẩm
             case 'spcl':
                 if (isset($_POST['tim'])) {
-                    $sp = $_POST['loaisp'];
-                    if($sp > 0){
-                        $listsp = load_one_list_sp_same($sp);
+                    $id = $_POST['loaisp'];
+                    if($id > 0){
+                        $listsp = load_one_list_sp_same($id);
                         $listdm = list_dm();
                     }
                     else{
-                        $listsp = list_sp();
+                        $listsp = list_sp($kyw='', $idCate=0);
                     $listdm = list_dm();
                     }
                 }
                 include_once './sanpham/list.php';
                 break;
             case 'list_sp': {
-                    $listsp = list_sp();
+                    $listsp = list_sp($kyw='', $idCate=0);
                     $listdm = list_dm();
                     include_once './sanpham/list.php';
                     break;
@@ -117,7 +118,7 @@ if (isset($_SESSION['user'])) {
                         $idCate = $_POST['idCategory'];
                         update_sp($id, $name, $price, $image, $description, $quantity, $idCate);
                     }
-                    $listsp = list_sp();
+                    $listsp = list_sp($kyw='', $idCate=0);
                     include_once './sanpham/list.php';
                     break;
                 }
@@ -125,7 +126,7 @@ if (isset($_SESSION['user'])) {
                     if (isset($_GET['id']) && ($_GET['id']) > 0) {
                         delete_sp($_GET['id']);
                     }
-                    $listsp = list_sp();
+                    $listsp = list_sp($kyw='', $idCate=0);
                     include_once './sanpham/list.php';
                     break;
                 }
@@ -168,22 +169,38 @@ if (isset($_SESSION['user'])) {
                     update_user($id,$name,$role,$email,$password,$address);
                 }
                 $listuser=list_user();
-                include_once './user/fix.php';
+                include_once './user/list.php';
                 break;
             }
             case "delete_user":{
                 if(isset($_GET['id']) && ($_GET['id']) > 0){
-                    delete_user($_GET["id"]);
+                    delete_user($GET["id"]);
                 }
                 $listuser=list_user();
                 include_once "./user/list.php";
-                break;
             }
             case 'logout':
                 session_destroy();
-                $yourURL = "index.php";
+                $yourURL = "../";
                 echo ("<script>location.href =' $yourURL '</script>");
                 break;
+            //đơn hàng
+            case 'donhang':
+                $listkh = customer();
+                $listst = status();
+                include './donhang/list.php';
+                break;  
+            case 'chang_status':
+                if(isset($_POST['change'])){
+                    $id = $_GET['id'];
+                    $change_status = $_POST['changest'];
+                    change_status($id,$change_status);
+                }
+                $listkh = customer();
+                $listst = status();
+                var_dump( change_status($id,$change_status));
+                include './donhang/list.php';
+                break;      
         }
     } else {
         include "./home.php";

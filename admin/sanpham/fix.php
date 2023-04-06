@@ -34,16 +34,16 @@
                     <select name="idCategory" id="">
                         <?php foreach ($listdm as $dm):
                             extract($dm) ;
-                            if ($idCate == $idCategory)
-                            echo '<option value="' . $idCategory . '" selected>' . $name . '</option>';
+                            if ($idCate == $idCate)
+                            echo '<option value="' . $idCate . '" selected>' . $name . '</option>';
                         else
-                            echo '<option value="' . $idCategory . '" >' . $name . '</option>'?>
+                            echo '<option value="' . $idCate . '" >' . $name . '</option>'?>
 
                         <?php endforeach ?>
                     </select>
                     <input type="hidden" name="id" value="<?=$idProduct?>" id="">
                     <br>
-                    <button class="mt-2" class="btn btn-primary" type="submit" name="fix_sp">Sửa</button>
+                    <button class="mt-2" type="submit" name="fix_sp">Sửa</button>
                 </form>
 
             </div>
