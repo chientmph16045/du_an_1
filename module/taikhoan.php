@@ -12,7 +12,7 @@ function list_user(){
     return $listuser;
 }
 function insert_user($name,$role,$email,$password,$address){
-    $sql = "INSERT INTO `user`(`name`,`role`,`email`,`password`,`address`) value('$name','$role','$email','$password','$address')";
+    $sql = "INSERT INTO `user`(`nameUser`,`role`,`email`,`password`,`address`) value('$name','$role','$email','$password','$address')";
     pdo_execute($sql);
 }
 
@@ -27,7 +27,7 @@ function checkforget($email)
 
 function insertAcc($name, $email, $pass)
 {
-    $sql = "INSERT INTO `user`(`name`,`email`,`password`) values ('$name','$email','$pass') ";
+    $sql = "INSERT INTO `user`(`nameUser`,`email`,`password`) values ('$name','$email','$pass') ";
     pdo_execute($sql);
 }
 
@@ -37,11 +37,11 @@ function list_one_user($id){
     return $user;
 }
 function update_user($id,$name, $role, $email, $password, $address){
-    $sql = "UPDATE `user` set `name`='".$name."', `role`='".$role."',`email`='".$email."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
+    $sql = "UPDATE `user` set `nameUser`='".$name."', `role`='".$role."',`email`='".$email."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
     pdo_execute($sql);
 }
 function update_user_now($id,$name,$address,$phone,$pass){
-    $sql = "UPDATE `user` set `name`='".$name."', `address`='".$address."',`phone`='".$phone."',`password`='".$pass."' WHERE `user`.`idUser`=".$id;
+    $sql = "UPDATE `user` set `nameUser`='".$name."', `address`='".$address."',`phone`='".$phone."',`password`='".$pass."' WHERE `user`.`idUser`=".$id;
     pdo_execute($sql);
 }
 
