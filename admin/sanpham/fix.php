@@ -36,9 +36,9 @@
                         <?php foreach ($listdm as $dm) :
                             extract($dm);
                             if ($idCate == $idCate)
-                                echo '<option value="' . $idCate . '" selected>' . $name . '</option>';
+                                echo '<option value="' . $idCategory  . '" selected>' . $name . '</option>';
                             else
-                                echo '<option value="' . $idCate . '" >' . $name . '</option>' ?>
+                                echo '<option value="' . $idCategory  . '" >' . $name . '</option>' ?>
 
                         <?php endforeach ?>
                     </select>
