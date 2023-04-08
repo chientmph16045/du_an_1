@@ -164,10 +164,16 @@
                 </div>
             </div>
         </div>
+       
     </footer>
     <a href="#" class="backtotop active">
         <i class="fa fa-angle-up"></i>
     </a>
+    <script>
+        <?php if(isset($thongbaocart)){?>
+        alert('<?=$thongbaocart?>')
+        <?php }?>
+    </script>
     <script src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/chosen.min.js"></script>

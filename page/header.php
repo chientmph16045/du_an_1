@@ -155,9 +155,12 @@
                                                 foreach ($_SESSION['mycart'] as $cart) {
                                                     $stt++;
                                                 ?><span class="count"><?=$stt?></span>
-                                        <?php 
+                                         
+                                                
+                                                <?php 
+                                                
                                                 }
-                                                }
+                                            }
                                                 ?>
                                         
                                     </a>

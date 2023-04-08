@@ -19,7 +19,7 @@
 <form class="row g-3" action="index.php?sp=fix_done_user" enctype="multipart/form-data" method="post">
   <div class="col-6">
     <label for="inputAddress" class="form-label">User name</label>
-    <input type="text" class="form-control" id="inputUserName" placeholder="Name ..." name="name" value="<?=$name?>"> 
+    <input type="text" class="form-control" id="inputUserName" placeholder="Name ..." name="name" value="<?=$nameUser?>"> 
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Role</label>
