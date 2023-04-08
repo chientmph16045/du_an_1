@@ -2,15 +2,12 @@
     <img src="assets/images/banner-for-all2.jpg" class="img-responsive attachment-1920x447 size-1920x447" alt="img">
     <div class="banner-wrapper-inner">
         <div class="container lynessa-categories style-02">
-            <div class="categories-list-owl owl-slick equal-container better-height"
-                data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:60,&quot;dots&quot;:false,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:6,&quot;rows&quot;:1}"
-                data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:5,&quot;slidesMargin&quot;:&quot;30&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:6,&quot;slidesMargin&quot;:&quot;40&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:6,&quot;slidesMargin&quot;:&quot;50&quot;}}]">
+            <div class="categories-list-owl owl-slick equal-container better-height" data-slick="{&quot;arrows&quot;:true,&quot;slidesMargin&quot;:60,&quot;dots&quot;:false,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:6,&quot;rows&quot;:1}" data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:4,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:5,&quot;slidesMargin&quot;:&quot;30&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:6,&quot;slidesMargin&quot;:&quot;40&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:6,&quot;slidesMargin&quot;:&quot;50&quot;}}]">
                 <div class="categories-item rows-space-0 post-740 page type-page status-publish hentry">
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="-1">
-                                <img src="assets/images/cat1.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat1.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="-1">
@@ -22,8 +19,7 @@
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="-1">
-                                <img src="assets/images/cat2.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat2.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="-1"> JUMPSUITS </a>
@@ -34,8 +30,7 @@
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="0">
-                                <img src="assets/images/cat3.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat3.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="0">
@@ -47,8 +42,7 @@
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="0">
-                                <img src="assets/images/cat4.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat4.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="0">
@@ -60,8 +54,7 @@
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="0">
-                                <img src="assets/images/cat5.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat5.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="0">
@@ -73,8 +66,7 @@
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="0">
-                                <img src="assets/images/cat6.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat6.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="0">
@@ -86,8 +78,7 @@
                     <div class="categories-inner">
                         <figure class="categories-thumb">
                             <a href="#" tabindex="0">
-                                <img src="assets/images/cat7.jpg" class="img-responsive attachment-370x370 size-370x370"
-                                    alt="img"> </a>
+                                <img src="assets/images/cat7.jpg" class="img-responsive attachment-370x370 size-370x370" alt="img"> </a>
                         </figure>
                         <h3 class="title">
                             <a href="#" tabindex="0">
@@ -107,8 +98,7 @@
                 <div class="shop-control shop-before-control">
                     <div class="grid-view-mode">
                         <form>
-                            <a href="#" data-toggle="tooltip" data-placement="top"
-                                class="modes-mode mode-grid display-mode active" value="grid">
+                            <a href="#" data-toggle="tooltip" data-placement="top" class="modes-mode mode-grid display-mode active" value="grid">
                                 <span class="button-inner">
                                     Shop Grid
                                     <span></span>
@@ -116,8 +106,7 @@
                                     <span></span>
                                 </span>
                             </a>
-                            <a href="#" data-toggle="tooltip" data-placement="top"
-                                class="modes-mode mode-list display-mode " value="list">
+                            <a href="#" data-toggle="tooltip" data-placement="top" class="modes-mode mode-list display-mode " value="list">
                                 <span class="button-inner">
                                     Shop List
                                     <span></span>
@@ -137,14 +126,18 @@
                             <option value="price-desc">Sort by price: high to low</option>
                         </select>
                     </form>
-                    <form class="per-page-form">
+                    <form class="per-page-form" method="post" action="index.php?sp=shopcl">
                         <label>
-                            <select class="option-perpage">
-                                <option value="12" selected="">
-                                    Show 12
+                            <select class="option-perpage" name="loaisp">
+                                <option value="0" selected="">
+                                    Show all
                                 </option>
-                                <option value="5">
-                                    Show 05
+                                <?php foreach ($listdm as $dm) : extract($dm) ?>
+                                    <option value="<?= $idCate ?>"><?= $name ?></option>
+                                <?php endforeach ?>
+                                <input type="submit" class=" search" name="search" value="search" id="">
+                                <!-- <option value="5">
+                                    <a href="#">Show 05</a>
                                 </option>
                                 <option value="10">
                                     Show 10
@@ -157,7 +150,7 @@
                                 </option>
                                 <option value="20">
                                     Show All
-                                </option>
+                                </option> -->
                             </select>
                         </label>
                     </form>
@@ -255,29 +248,26 @@
                 <div id="widget-area" class="widget-area shop-sidebar">
                     <div id="lynessa_product_search-2" class="widget lynessa widget_product_search">
                         <form class="lynessa-product-search" action="index.php?sp=shop" method="post">
-                            <input id="lynessa-product-search-field-0" class="search-field"
-                                placeholder="Search products…" value="" name="kyw" type="search">
+                            <input id="lynessa-product-search-field-0" class="search-field" placeholder="Search products…" name="kyw" type="search">
                             <button type="submit" value="Search">Search</button>
                         </form>
                     </div>
                     <div id="lynessa_price_filter-2" class="widget lynessa widget_price_filter">
                         <h2 class="widgettitle">Filter By Price<span class="arrow"></span></h2>
-                        <form method="get" action="#">
+                        <form method="post" action="index.php?sp=shop">
                             <div class="price_slider_wrapper">
-                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$"
-                                    class="price_slider" data-value-min="100" data-value-max="800">
+                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="0" data-value-max="1000">
                                 </div>
                                 <div class="price_slider_amount">
                                     <button type="submit" class="button">Filter</button>
                                     <div class="price_label">
-                                        Price: <span class="from">$100</span> — <span class="to">$800</span>
+                                        Price: <span class="from">$0</span> — <span class="to">$1000</span>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div id="lynessa_layered_nav-6"
-                        class="widget lynessa widget_layered_nav lynessa-widget-layered-nav">
+                    <div id="lynessa_layered_nav-6" class="widget lynessa widget_layered_nav lynessa-widget-layered-nav">
                         <h2 class="widgettitle">Filter By Size<span class="arrow"></span></h2>
                         <ul class="lynessa-widget-layered-nav-list">
                             <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
@@ -331,7 +321,7 @@
                                 $linkCate = "index.php?sp=shop&idCate=" . $idCate;
 
                                 echo '<li class="cat-item cat-item-22"><label><input type="checkbox" name="cate"><span><a href="' . $linkCate . '">' . $name . '</a></span>
-                                        <span class="count">(11)</span></label></li>';
+                                        </label></li>';
                             }
                             ?>
                         </ul>

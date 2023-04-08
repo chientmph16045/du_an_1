@@ -16,7 +16,7 @@ if (isset($_GET['sp'])) {
     switch ($sp) {
 
 
-        //login && resign && logout
+            //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
@@ -26,6 +26,7 @@ if (isset($_GET['sp'])) {
                 $pass = $_POST['pass'];
                 $login = checkuser($email, $pass);
                 if (is_array($login)) {
+
                     $_SESSION['user'] = $login;
                     if ($_SESSION['user']['address'] == '') {
                         $yourURL = "index.php?sp=account";
@@ -34,6 +35,7 @@ if (isset($_GET['sp'])) {
                         $yourURL = "index.php";
                         echo ("<script>location.href =' $yourURL '</script>");
                     }
+
 
                 } else {
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
@@ -104,7 +106,21 @@ if (isset($_GET['sp'])) {
             echo ("<script>location.href =' $yourURL '</script>");
             break;
 
+        case 'shopcl':
+            if (isset($_POST['search'])) {
+                $sp = $_POST['loaisp'];
+                if ($sp > 0) {
+                    $loadsp = load_one_list_sp_same($sp);
+                    $listdm = list_dm();
+                } else {
+                    $loadsp = list_sp('', 0);
+                    $listdm = list_dm();
+                }
+            }
+            include './page/shop-leftsidebar.php';
+            break;
         case 'shop':
+
             if (isset($_POST['kyw']) && ($_POST['kyw']) != "") {
                 $kyw = $_POST['kyw'];
             } else {
@@ -190,6 +206,7 @@ if (isset($_GET['sp'])) {
                     insert_cart($_SESSION['user']['idUser'], $cart[0], $cart[4], $tt = 1, $idbill);
                 }
                 // $giohang = giohang();
+
             }
 
             include './page/comf.php';

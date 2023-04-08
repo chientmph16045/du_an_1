@@ -84,7 +84,6 @@
 </body>
 <script>
   const switchers = [...document.querySelectorAll('.switcher')]
-
   switchers.forEach(item => {
     item.addEventListener('click', function() {
       switchers.forEach(item => item.parentElement.classList.remove('is-active'))
