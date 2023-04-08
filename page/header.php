@@ -25,6 +25,13 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Lynessa - HTML Template </title>
+    <style>
+        img > .a{
+            width: 270px;
+            height: 350px;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 
