@@ -146,7 +146,7 @@
                             <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
                             <div class="product-inner tooltip-left">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="index.php?sp=chitiet&id='.$idProduct.'">
+                                    <a class="thumb-link" href="index.php?sp=chitiet&id=' . $idProduct . '">
                                         <img class="img-responsive" src="./image/' . $image . '" alt="MINI SKIRT" width="600" height="778">
                                     </a>
                                     <div class="flash">
@@ -164,7 +164,7 @@
                                                     <td class="value">
                                                         <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
                                                            <input type="hidden" name="img" value="' . $image . '"/>
-                                                           <input type="hidden" name="name" value="' . $namePro . '"/>
+                                                           <input type="hidden" name="name" value="' . $name . '"/>
                                                            <input type="hidden" name="price" value="' . $price . '"/>
                                                            <input type="hidden" name="id" value="' . $idProduct . '"/>
                                                            <input type="hidden" name="quantity" value="1"/>
@@ -193,7 +193,7 @@
                                
                                 <div class="product-info equal-elem">
                                     <h3 class="product-name product_title">
-                                        <a href="#">' . $namePro . '</a>
+                                        <a href="#">' . $name . '</a>
                                     </h3>  
                                     <div class="rating-wapper nostar">
                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
@@ -238,7 +238,7 @@
                         <h2 class="widgettitle">Filter By Price<span class="arrow"></span></h2>
                         <form method="get" action="index.php?sp=shop">
                             <div class="price_slider_wrapper">
-                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="0" data-value-max="500">
+                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="50" data-value-max="500">
                                 </div>
                                 <div class="price_slider_amount">
                                     <button type="submit" class="button">Filter</button>
