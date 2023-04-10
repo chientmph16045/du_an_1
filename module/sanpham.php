@@ -16,6 +16,12 @@ function list_sp($kyw, $idCate)
     if ($idCate > 0) {
         $sql .= "  and idCate = '" . $idCate . "'";
     }
+    $orderField = isset($_GET['field']) ? $_GET['field'] : "";
+    $orderSort = isset($_GET['sort']) ? $_GET['sort'] : "";
+    if (!empty($orderField) && !empty($orderSort)) {
+        $sql .= " ORDER BY `product`.`" . $orderField . "`" . $orderSort;
+    }
+
     $listsp = pdo_query($sql);
     return $listsp;
 }
@@ -55,4 +61,7 @@ function price()
     }
     $productPrice = pdo_execute($sql);
     return $productPrice;
+}
+function orderCondition()
+{
 }

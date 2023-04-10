@@ -170,76 +170,77 @@ jQuery(function (e) {
                         l.closest(".price_slider_wrapper").find(".price_slider_amount").html(n)
                     }
                 })
-            }), $(document).on("click",
+            }),
+        $(document).on("click",
+            function (a) {
+                var t = $(a.target).closest(".lynessa-dropdown"),
+                    n = $(".lynessa-dropdown");
+                0 < t.length ? (n.not(t).removeClass("open"),
+                    ($(a.target).is('[data-lynessa="lynessa-dropdown"]') || 0 < $(a.target).closest('[data-lynessa="lynessa-dropdown"]').length) && (t.toggleClass("open"),
+                        a.preventDefault())) : $(".lynessa-dropdown").removeClass("open")
+            }), $(document).on("click", ".lynessa-tabs .tab-link a, .lynessa-accordion .panel-heading a",
                 function (a) {
-                    var t = $(a.target).closest(".lynessa-dropdown"),
-                        n = $(".lynessa-dropdown");
-                    0 < t.length ? (n.not(t).removeClass("open"),
-                        ($(a.target).is('[data-lynessa="lynessa-dropdown"]') || 0 < $(a.target).closest('[data-lynessa="lynessa-dropdown"]').length) && (t.toggleClass("open"),
-                            a.preventDefault())) : $(".lynessa-dropdown").removeClass("open")
-                }), $(document).on("click", ".lynessa-tabs .tab-link a, .lynessa-accordion .panel-heading a",
+                    a.preventDefault();
+                    var t = $(this),
+                        n = t.data("id"),
+                        e = t.attr("href"),
+                        s = t.data("ajax"),
+                        l = t.data("section"),
+                        i = t.data("animate"),
+                        o = t.closest(".tab-link,.lynessa-accordion").find("a.loaded").attr("href");
+                    1 != s || t.hasClass("loaded") ? (t.parent().addClass("active").siblings().removeClass("active"),
+                        $(e).addClass("active").siblings().removeClass("active"),
+                        t.closest(".panel-default").addClass("active").siblings().removeClass("active"),
+                        t.closest(".lynessa-accordion").find(e).slideDown(400),
+                        t.closest(".lynessa-accordion").find(".panel-collapse").not(e).slideUp(400),
+                        lynessa_animation_tabs($(e), i)) : ($(e).closest(".tab-container,.lynessa-accordion").addClass("loading"),
+                            t.parent().addClass("active").siblings().removeClass("active"),
+                            $.ajax({
+                                type: "POST", url: lynessa_ajax_frontend.ajaxurl,
+                                data: {
+                                    action: "lynessa_ajax_tabs",
+                                    security: lynessa_ajax_frontend.security,
+                                    id: n, section_id: l
+                                }, success: function (a) {
+                                    "ok" == a.success ? ($(e).html($(a.html).find(".az_tta-panel-body").html()),
+                                        $(e).closest(".tab-container,.lynessa-accordion").removeClass("loading"),
+                                        $('[href="' + o + '"]').removeClass("loaded"), lynessa_countdown($(e).find(".lynessa-countdown")),
+                                        lynessa_init_carousel($(e).find(".owl-slick")),
+                                        0 < $(".owl-slick .product-item").length && lynessa_hover_product_item($(e).find(".owl-slick .row-item,.owl-slick .product-item.style-1,.owl-slick .product-item.style-2,.owl-slick .product-item.style-3,.owl-slick .product-item.style-4")),
+                                        0 < $(e).find(".variations_form").length && $(e).find(".variations_form").each(function () {
+                                            $(this).wc_variation_form()
+                                        }),
+                                        $(e).trigger("lynessa_ajax_tabs_complete"),
+                                        t.addClass("loaded"),
+                                        $(o).html("")) : ($(e).closest(".tab-container,.lynessa-accordion").removeClass("loading"),
+                                            $(e).html("<strong>Error: Can not Load Data ...</strong>")),
+                                        t.closest(".panel-default").addClass("active").siblings().removeClass("active"),
+                                        t.closest(".lynessa-accordion").find(e).slideDown(400),
+                                        t.closest(".lynessa-accordion").find(".panel-collapse").not(e).slideUp(400)
+                                },
+                                complete: function () {
+                                    $(e).addClass("active").siblings().removeClass("active"),
+                                        setTimeout(function (a) {
+                                            lynessa_animation_tabs($(e), i)
+                                        }, 10)
+                                }
+                            }))
+                }), $(document).on("click", "a.backtotop",
                     function (a) {
-                        a.preventDefault();
-                        var t = $(this),
-                            n = t.data("id"),
-                            e = t.attr("href"),
-                            s = t.data("ajax"),
-                            l = t.data("section"),
-                            i = t.data("animate"),
-                            o = t.closest(".tab-link,.lynessa-accordion").find("a.loaded").attr("href");
-                        1 != s || t.hasClass("loaded") ? (t.parent().addClass("active").siblings().removeClass("active"),
-                            $(e).addClass("active").siblings().removeClass("active"),
-                            t.closest(".panel-default").addClass("active").siblings().removeClass("active"),
-                            t.closest(".lynessa-accordion").find(e).slideDown(400),
-                            t.closest(".lynessa-accordion").find(".panel-collapse").not(e).slideUp(400),
-                            lynessa_animation_tabs($(e), i)) : ($(e).closest(".tab-container,.lynessa-accordion").addClass("loading"),
-                                t.parent().addClass("active").siblings().removeClass("active"),
-                                $.ajax({
-                                    type: "POST", url: lynessa_ajax_frontend.ajaxurl,
-                                    data: {
-                                        action: "lynessa_ajax_tabs",
-                                        security: lynessa_ajax_frontend.security,
-                                        id: n, section_id: l
-                                    }, success: function (a) {
-                                        "ok" == a.success ? ($(e).html($(a.html).find(".az_tta-panel-body").html()),
-                                            $(e).closest(".tab-container,.lynessa-accordion").removeClass("loading"),
-                                            $('[href="' + o + '"]').removeClass("loaded"), lynessa_countdown($(e).find(".lynessa-countdown")),
-                                            lynessa_init_carousel($(e).find(".owl-slick")),
-                                            0 < $(".owl-slick .product-item").length && lynessa_hover_product_item($(e).find(".owl-slick .row-item,.owl-slick .product-item.style-1,.owl-slick .product-item.style-2,.owl-slick .product-item.style-3,.owl-slick .product-item.style-4")),
-                                            0 < $(e).find(".variations_form").length && $(e).find(".variations_form").each(function () {
-                                                $(this).wc_variation_form()
-                                            }),
-                                            $(e).trigger("lynessa_ajax_tabs_complete"),
-                                            t.addClass("loaded"),
-                                            $(o).html("")) : ($(e).closest(".tab-container,.lynessa-accordion").removeClass("loading"),
-                                                $(e).html("<strong>Error: Can not Load Data ...</strong>")),
-                                            t.closest(".panel-default").addClass("active").siblings().removeClass("active"),
-                                            t.closest(".lynessa-accordion").find(e).slideDown(400),
-                                            t.closest(".lynessa-accordion").find(".panel-collapse").not(e).slideUp(400)
-                                    },
-                                    complete: function () {
-                                        $(e).addClass("active").siblings().removeClass("active"),
-                                            setTimeout(function (a) {
-                                                lynessa_animation_tabs($(e), i)
-                                            }, 10)
-                                    }
-                                }))
-                    }), $(document).on("click", "a.backtotop",
-                        function (a) {
-                            $("html, body").animate({ scrollTop: 0 }, 800), a.preventDefault()
-                        }), $(document).on("scroll",
-                            function () {
-                                200 < $(window).scrollTop() ? $(".backtotop").addClass("active") : $(".backtotop").removeClass("active")
-                            }), $(document).on("click", ".quantity .quantity-plus",
-                                function (a) {
-                                    var t = $(this).closest(".quantity").find("input.qty"),
-                                        n = parseInt(t.val()),
-                                        e = parseInt(t.attr("max"));
-                                    n += parseInt(t.data("step")),
-                                        e && e < n && (n = e),
-                                        t.val(n), t.trigger("change"),
-                                        a.preventDefault()
-                                }),
+                        $("html, body").animate({ scrollTop: 0 }, 800), a.preventDefault()
+                    }), $(document).on("scroll",
+                        function () {
+                            200 < $(window).scrollTop() ? $(".backtotop").addClass("active") : $(".backtotop").removeClass("active")
+                        }), $(document).on("click", ".quantity .quantity-plus",
+                            function (a) {
+                                var t = $(this).closest(".quantity").find("input.qty"),
+                                    n = parseInt(t.val()),
+                                    e = parseInt(t.attr("max"));
+                                n += parseInt(t.data("step")),
+                                    e && e < n && (n = e),
+                                    t.val(n), t.trigger("change"),
+                                    a.preventDefault()
+                            }),
         $(document).on("change",
             function () {
                 $(".quantity").each(function () {
