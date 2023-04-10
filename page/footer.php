@@ -162,26 +162,16 @@
             </div>
         </div>
     </div>
+
 </footer>
 <a href="#" class="backtotop active">
     <i class="fa fa-angle-up"></i>
 </a>
 <script>
-    $(function() {
-        $("#slider-range").slider({
-            range: true,
-            min: 0,
-            max: 500,
-            values: [75, 300],
-            slide: function(event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-            }
-        });
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-            " - $" + $("#slider-range").slider("values", 1));
-    });
+    <?php if (isset($thongbaocart)) { ?>
+        alert('<?= $thongbaocart ?>')
+    <?php } ?>
 </script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="assets/js/jquery-1.12.4.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/chosen.min.js"></script>

@@ -27,7 +27,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Loại sản phẩm</h6>
                     <select name="idCategory" id="">
                         <?php foreach ($listdm as $dm) : extract($dm) ?>
-                            <option value="<?= $idCate ?>"><?= $name ?></option>
+                            <option value="<?= $idCategory ?>"><?= $name ?></option>
                         <?php endforeach ?>
                     </select>
                     <br>

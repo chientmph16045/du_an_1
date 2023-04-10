@@ -26,12 +26,17 @@ if (isset($_GET['sp'])) {
                 $pass = $_POST['pass'];
                 $login = checkuser($email, $pass);
                 if (is_array($login)) {
-                    $login = checkuser($email, $pass);
-                    if (is_array($login)) {
-                        $_SESSION['user'] = $login;
+
+                    $_SESSION['user'] = $login;
+                    if ($_SESSION['user']['address'] == '') {
+                        $yourURL = "index.php?sp=account";
+                        echo ("<script>location.href =' $yourURL '</script>");
+                    } else {
                         $yourURL = "index.php";
                         echo ("<script>location.href =' $yourURL '</script>");
                     }
+
+
                 } else {
                     $thongbaoerro = 'Sai tài khoản hoặc mật khẩu';
                     include './page/login_resign.php';
@@ -45,8 +50,15 @@ if (isset($_GET['sp'])) {
                 $address = $_POST['address'];
                 $phone = $_POST['phone'];
                 $pass = $_POST['pass'];
+                $email = $_POST['email'];
                 update_user_now($id, $name, $address, $phone, $pass);
+                unset($_SESSION['user']);
+                $new = checkuser($email, $pass);
             }
+            $_SESSION['user'] = $new;
+            $thongbao = "Cập nhật thông tin tài khoản thành công";
+            $id = $_SESSION['user']['idUser'];
+            $listsp = order($id);
             include './page/my-account.php';
             break;
         case 'resign':
@@ -72,13 +84,22 @@ if (isset($_GET['sp'])) {
             }
             include './page/forget.php';
             break;
-        case 'chitiet':
-            include './page/single-product.php';
-            break;
+
         case 'account':
+            $id = $_SESSION['user']['idUser'];
+            $listsp = order($id);
+
             include './page/my-account.php';
             break;
-
+        case 'change_status':
+            if (isset($_POST['change'])) {
+                $id = $_GET['id'];
+                $change_status = $_POST['change_status'];
+                change_status($id, $change_status);
+            }
+            $listsp = order($_SESSION['user']['idUser']);
+            include './page/my-account.php';
+            break;
         case 'logout':
             session_destroy();
             $yourURL = "index.php";
@@ -130,10 +151,23 @@ if (isset($_GET['sp'])) {
                 $name = $_POST['name'];
                 $image = $_POST['img'];
                 $price = $_POST['price'];
-                $soluong = 1;
-                $ttien = $soluong * $price;
-                $spadd = [$id, $name, $image, $price, $soluong, $ttien];
-                array_push($_SESSION['mycart'], $spadd);
+                $soluong = $_POST['quantity'];
+                $check = 0;
+                for($i = 0;$i<sizeof($_SESSION['mycart']);$i++){
+                    if($_SESSION['mycart'][$i][1]==$name){
+                        $check = 1;
+                        $soluongnew = $soluong+$_SESSION['mycart'][$i][4];
+                        $_SESSION['mycart'][$i][4]=$soluongnew;
+                        break;
+                    }
+                }
+                if($check==0){
+                    $ttien = $soluong * $price;
+                    $spadd = [$id, $name, $image, $price, $soluong, $ttien];
+                    array_push($_SESSION['mycart'], $spadd);
+                    $thongbaocart='Thêm thành công';
+                }
+                
                 // var_dump($_SESSION['mycart']);
             }
             include './page/header.php';
@@ -164,6 +198,13 @@ if (isset($_GET['sp'])) {
             $yourURL = "index.php?sp=cart";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
+        case 'chitiet':
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $sp = load_one_sp($id); 
+            }
+            include_once './page/single-product.php';
+            break;
         case 'order':
             if (isset($_POST['place_order'])) {
                 $name = $_POST['name'];
@@ -191,9 +232,12 @@ if (isset($_GET['sp'])) {
             include_once "./page/checkout.php";
             break;
         default:
+            $list_sp = list_sp($kyw = '', $idCate = 0);
+
             include './page/home.php';
     }
 } else {
+    $list_sp = list_sp($kyw = '', $idCate = 0);
     include_once './page/home.php';
 }
 

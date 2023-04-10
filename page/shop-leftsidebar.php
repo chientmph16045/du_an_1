@@ -146,37 +146,33 @@
                             <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
                             <div class="product-inner tooltip-left">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="#">
+                                    <a class="thumb-link" href="index.php?sp=chitiet&id='.$idProduct.'">
                                         <img class="img-responsive" src="./image/' . $image . '" alt="MINI SKIRT" width="600" height="778">
                                     </a>
                                     <div class="flash">
                                         <span class="onnew"><span class="text">New</span></span>
                                     </div>
-                                    <form action="?sp=addtocart" method="post" class="variations_form cart">
-                                        <table class="variations">
+                                    
+                                    <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
+                                    <div class="group-button">
+                                        
+                                        
+                                        <form action="?sp=addtocart" method="post" >
+                                          <table class="variations">
                                             <tbody>
                                                 <tr>
                                                     <td class="value">
                                                         <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
                                                            <input type="hidden" name="img" value="' . $image . '"/>
-                                                           <input type="hidden" name="name" value="' . $name . '"/>
+                                                           <input type="hidden" name="name" value="' . $namePro . '"/>
                                                            <input type="hidden" name="price" value="' . $price . '"/>
                                                            <input type="hidden" name="id" value="' . $idProduct . '"/>
+                                                           <input type="hidden" name="quantity" value="1"/>
                                                         </select>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
-                                            <button type="submit" name="addcart" class="button product_type_variable add_to_cart_button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                            </svg></button>
-                                      
-                                        
-                                    </form>    
-                                    <a href="#" class="button yith-wcqv-button" data-product_id="24">Quick View</a>
-                                    <div class="group-button">
                                         <div class="yith-wcwl-add-to-wishlist">
                                             <div class="yith-wcwl-add-button show">
                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
@@ -185,15 +181,19 @@
                                         <div class="lynessa product compare-button">
                                             <a href="#" class="compare button">Compare</a>
                                         </div>
+
                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                        
+                                        <div class="add-to-cart">
+                                            <button type="submit" name="addcart" style="width: 40px;    background-color: #cf9163;"><img src="./image/cart.svg"></button>                                 
+                                        </form>
+                                    </div>
                                     </div>
                                     
                                 </div>
                                
                                 <div class="product-info equal-elem">
                                     <h3 class="product-name product_title">
-                                        <a href="#">' . $name . '</a>
+                                        <a href="#">' . $namePro . '</a>
                                     </h3>  
                                     <div class="rating-wapper nostar">
                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
@@ -211,23 +211,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="group-button">
-                                    <div class="group-button-inner">
-                                        <div class="yith-wcwl-add-to-wishlist">
-                                            <div class="yith-wcwl-add-button show">
-                                                <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                            </div>
-                                        </div>
-                                        <div class="lynessa product compare-button">
-                                            <a href="#" class="compare button">Compare</a>
-                                        </div>            
-                                        <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                        <div class="add-to-cart">
-                                            <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                options</a>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </li>';
                         }

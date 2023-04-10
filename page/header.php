@@ -140,15 +140,19 @@
                                     <a class="block-link link-dropdown" href="cart.php">
                                         <span class="pe-7s-shopbag"></span>
                                         <?php
-                                        if (isset($_SESSION['mycart'])) {
-                                            $stt = 0;
-                                            foreach ($_SESSION['mycart'] as $cart) {
-                                                $stt++;
-                                        ?><span class="count"><?= $stt ?></span>
-                                        <?php
+
+                                            if (isset($_SESSION['mycart'])) {
+                                                $stt = 0;
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                    $stt++;
+                                                ?><span class="count"><?=$stt?></span>
+                                         
+                                                
+                                                <?php 
+                                                
+                                                }
                                             }
-                                        }
-                                        ?>
+                                                ?>
 
                                     </a>
                                 </div>
