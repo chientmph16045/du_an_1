@@ -143,11 +143,11 @@ if (isset($_SESSION['user'])) {
             case "add_user":{
                 if(isset($_POST['new_user'])){
                     $name=$_POST['name'];
-                    $role=$_POST['role'];
+                    $phone=$_POST['phone'];
                     $email=$_POST['email'];
                     $password=$_POST['password'];
                     $address=$_POST['address'];
-                    insert_user($name,$role,$email,$password,$address);
+                    insert_user($name,$phone,$email,$password,$address);
                 }
                 
                 include_once './user/add.php';
@@ -165,11 +165,11 @@ if (isset($_SESSION['user'])) {
                 if(isset($_POST['fix_user'])){
                     $id=$_POST['id'];
                     $name=$_POST['name'];
-                    $role=$_POST['role'];
+                    $phone=$_POST['phone'];
                     $email=$_POST['email'];
                     $password=$_POST['password'];
                     $address=$_POST['address'];
-                    update_user($id,$name,$role,$email,$password,$address);
+                    update_user($id,$name,$phone,$email,$password,$address);
                 }
                 $listuser=list_user();
                 include_once './user/list.php';

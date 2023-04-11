@@ -191,7 +191,7 @@
                                                         <a href="#">
                                                             <img src="./image/<?= $cart[2] ?>" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778"><?= $cart[1] ?>;
                                                         </a>
-                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3] ?></span></span>
+                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3]*$cart[4] ?></span></span>
                                                     </li>
                                             <?php
                                                 }
@@ -203,7 +203,7 @@
                                             $tong = 0;
                                             if (isset($_SESSION['mycart'])) {
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                    $tong += $cart[5];
+                                                    $tong += $cart[3]*$cart[4];
                                                 }
                                                 echo '
                                                 <span class="lynessa-Price-amount amount"><span

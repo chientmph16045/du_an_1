@@ -15,15 +15,18 @@
             <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_dm">Danh sách danh mục</a></h6>
         </div>
         <div class="card-body">
-            <div class="table-responsive">
-                <form action="index.php?sp=fix_done_dm" method="post">
-                    <h6 class="m-0 font-weight-bold text-primary">Tên danh mục</h6>
-                    <input type="text" class="form-control bg-light border-0 small" value="<?=
-                         $name ?>" name="danhmuc" aria-label="Search" aria-describedby="basic-addon2">
-                        <input type="hidden" name="id" value="<?= $idCategory ?>" id="">
-                    <button type="submit" name="fix">Sửa</button>
-                </form>
-
+            <div class="">
+                    <form action="index.php?sp=fix_done_dm" method="post" class="row g-3">
+                        <div class="col-md-12">
+                            <label for="inputEmail4" class="form-label">Tên danh mục</label>
+                            <input type="text" class="form-control" id="inputEmail4" name="danhmuc" value="<?=$name ?>">
+                            <input type="hidden" name="id" value="<?= $idCategory ?>" id="">
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-primary" type="submit" name="fix">Update</button>
+                        </div>
+                    </form>
+                        
             </div>
         </div>
     </div>

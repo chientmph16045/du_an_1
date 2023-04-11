@@ -35,7 +35,7 @@
                     <select name="idCategory" id="">
                         <?php foreach ($listdm as $dm) :
                             extract($dm);
-                            if ($idCate == $idCate)
+                            if ($idCate == $idCategory)
                                 echo '<option value="' . $idCategory  . '" selected>' . $name . '</option>';
                             else
                                 echo '<option value="' . $idCategory  . '" >' . $name . '</option>' ?>
