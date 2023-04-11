@@ -170,6 +170,14 @@ jQuery(function (e) {
                         l.closest(".price_slider_wrapper").find(".price_slider_amount").html(n)
                     }
                 })
+                $.ajax({
+                    url: "../index.php",
+                    type: "post",
+                    data: { a: min, t: max },
+                    success: function (data) {
+                        $("#filter").html(data);
+                    }
+                })
             }),
         $(document).on("click",
             function (a) {

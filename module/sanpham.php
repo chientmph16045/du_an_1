@@ -21,6 +21,9 @@ function list_sp($kyw, $idCate)
     if (!empty($orderField) && !empty($orderSort)) {
         $sql .= " ORDER BY `product`.`" . $orderField . "`" . $orderSort;
     }
+    if (isset($_POST['price_slider'])) {
+        $sql .= " and price BETWEEN";
+    }
 
     $listsp = pdo_query($sql);
     return $listsp;

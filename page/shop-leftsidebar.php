@@ -236,12 +236,12 @@
                     </div>
                     <div id="lynessa_price_filter-2" class="widget lynessa widget_price_filter">
                         <h2 class="widgettitle">Filter By Price<span class="arrow"></span></h2>
-                        <form method="get" action="index.php?sp=shop">
+                        <form method="post" action="index.php?sp=shop">
                             <div class="price_slider_wrapper">
                                 <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="50" data-value-max="500">
                                 </div>
                                 <div class="price_slider_amount">
-                                    <button type="submit" class="button">Filter</button>
+                                    <button type="submit" id="filter" class="button">Filter</button>
                                     <div class="price_label">
                                         Price: <span class="from">$50</span> — <span class="to">$200</span>
                                     </div>
