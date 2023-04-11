@@ -202,8 +202,10 @@
                                             <?php
                                             $tong = 0;
                                             if (isset($_SESSION['mycart'])) {
+                                            ;
+
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                    $tong += $cart[5];
+                                                    $tong += $cart[3]*$cart[4] ;
                                                 }
                                                 echo '
                                                 <span class="lynessa-Price-amount amount"><span

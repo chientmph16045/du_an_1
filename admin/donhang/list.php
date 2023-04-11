@@ -14,6 +14,7 @@
                     <thead>
                         <tr>
                             <th style="text-align:center">STT</th>
+                            <th style="text-align:center">Mã đơn hàng</th>
                             <th style="text-align:center">Tên khách hàng</th>
                             <th style="text-align:center">Địa chỉ</th>
                             <th style="text-align:center">Số điện thoại</th>
@@ -45,6 +46,9 @@
                             <tr>
                                 <td>
                                     <?= $stt++ ?>
+                                </td>
+                                <td>
+                                    <?=$idCart?>
                                 </td>
                                 <td>
                                     <?= $nameUser ?>
