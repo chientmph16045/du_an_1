@@ -16,12 +16,9 @@
                             <th>STT</th>
                             <th>Tên Sản Phẩm</th>
                             <th>Giá</th>
-                            <th>Giá Sale</th>
                             <th>Hình</th>
                             <th>Mô tả</th>
                             <th>Số lượng</th>
-                            <th>Lượt Xem</th>
-                            <th>size</th>
                             <th>
                                 <form action="index.php?sp=spcl" method="post">
                                     <select name="loaisp" class="border-0" id="">
@@ -41,12 +38,9 @@
                             <th>STT</th>
                             <th>Tên Sản Phẩm</th>
                             <th>Giá</th>
-                            <th>Giá Sale</th>
                             <th>Hình</th>
                             <th>Mô tả</th>
                             <th>Số lượng</th>
-                            <th>Lượt Xem</th>
-                            <th>size</th>
                             <th>Loại sản phẩm</th>
                             <th>Thao tác</th>
                         </tr>
@@ -61,18 +55,14 @@
                                     <?= $stt++ ?>
                                 </td>
                                 <td>
-                                    <?= $name ?>
+                                    <?= $namePro ?>
                                 </td>
                                 <td>
-                                    $<?= $price ?>
+                                    <?= $price ?>
                                 </td>
-                                <!-- nếu k có giá sale thì sẽ k hiện lên trang danh sách sản phẩm -->
-                                <td><?php if($sale_price!=0 && $sale_price!=""){echo '$'.$sale_price.'';}?></td>
                                 <td><img src="../image/<?= $image ?>" width="100" alt=""></td>
                                 <td><?=$description?></td>
                                 <td><?=$quantity?></td>
-                                <td><?=$view?></td>
-                                <td><?=$size?>mm</td>
                                 <td><?=$idCate?></td>
                                 <td>
                                     <a href="index.php?sp=fix_sp&id=<?=$idProduct?>">Sửa</a>

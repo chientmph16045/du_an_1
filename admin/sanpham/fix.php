@@ -19,10 +19,6 @@
                     <h6 class="m-0 font-weight-bold text-primary">Giá</h6>
                     <input type="text" class="form-control bg-light border-0 small" name="price" value="<?=$price?>" aria-label="Search"
                         aria-describedby="basic-addon2">
-                        <h6 class="m-0 font-weight-bold text-primary">Giá giảm giá</h6>
-                    <input type="text" class="form-control bg-light border-0 small" name="sale_price" value="<?=$sale_price?>" aria-label="Search"
-                        aria-describedby="basic-addon2">
-
                     <h6 class="m-0 font-weight-bold text-primary">Hỉnh ảnh</h6>
                     <img src="../image/<?=$image?>" width="200px" alt="">
                     <br>
@@ -34,26 +30,20 @@
                     <h6 class="m-0 font-weight-bold text-primary">Số lượng sản phẩm</h6>
                     <input type="text" class="form-control bg-light border-0 small" name="quantity" value="<?=$quantity?>" aria-label="Search"
                         aria-describedby="basic-addon2">
-                    <h6 class="m-0 font-weight-bold text-primary">Số view</h6>
-                    <input type="text" class="form-control bg-light border-0 small" name="view" value="<?=$view?>" aria-label="Search"
-                        aria-describedby="basic-addon2">
-                        <h6 class="m-0 font-weight-bold text-primary">kích cỡ</h6>
-                    <input type="text" class="form-control bg-light border-0 small" name="size" value="<?=$size?>" aria-label="Search"
-                        aria-describedby="basic-addon2">     
                     <h6 class="m-0 font-weight-bold text-primary">Loại sản phẩm</h6>
                     <select name="idCategory" id="">
                         <?php foreach ($listdm as $dm):
                             extract($dm) ;
-                            if ($idCate == $idCategory)
-                            echo '<option value="' . $idCategory . '" selected>' . $name . '</option>';
+                            if ($idCate == $idCate)
+                            echo '<option value="' . $idCate . '" selected>' . $name . '</option>';
                         else
-                            echo '<option value="' . $idCategory . '" >' . $name . '</option>'?>
+                            echo '<option value="' . $idCate . '" >' . $name . '</option>'?>
 
                         <?php endforeach ?>
                     </select>
                     <input type="hidden" name="id" value="<?=$idProduct?>" id="">
                     <br>
-                    <button class="mt-2" class="btn btn-primary" type="submit" name="fix_sp">Sửa</button>
+                    <button class="mt-2" type="submit" name="fix_sp">Sửa</button>
                 </form>
 
             </div>

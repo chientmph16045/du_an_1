@@ -37,7 +37,7 @@
                         foreach($listuser as $dm):extract($dm) ?>
                         <tr>
                             <td><?=$stt++?></td>
-                            <td><?=$name?></td>
+                            <td><?=$nameUser?></td>
                             <td><?=$address?></td>
                             <td><?=$email?></td>
                             <td>

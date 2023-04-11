@@ -5,8 +5,10 @@ include "./header.php";
 include '../module/danhmuc.php';
 include '../module/sanpham.php';
 include '../module/taikhoan.php';
+include '../module/cart.php';
 include '../module/banner.php';
 include '../module/content.php';
+include '../module/comment.php';
 
 
 if (isset($_SESSION['user'])) {
@@ -54,20 +56,20 @@ if (isset($_SESSION['user'])) {
             //sản phẩm
             case 'spcl':
                 if (isset($_POST['tim'])) {
-                    $sp = $_POST['loaisp'];
-                    if($sp > 0){
-                        $listsp = load_one_list_sp_same($sp);
+                    $id = $_POST['loaisp'];
+                    if($id > 0){
+                        $listsp = load_one_list_sp_same($id);
                         $listdm = list_dm();
                     }
                     else{
-                        $listsp = list_sp();
+                        $listsp = list_sp($kyw='', $idCate=0);
                     $listdm = list_dm();
                     }
                 }
                 include_once './sanpham/list.php';
                 break;
             case 'list_sp': {
-                    $listsp = list_sp();
+                    $listsp = list_sp($kyw='', $idCate=0);
                     $listdm = list_dm();
                     include_once './sanpham/list.php';
                     break;
@@ -76,7 +78,6 @@ if (isset($_SESSION['user'])) {
                     if (isset($_POST['new_sp'])) {
                         $name = $_POST['name'];
                         $price = $_POST['price'];
-                        $sale_price = $_POST['sale_price'];
                         $image = $_FILES['image']['name'];
                         $target_dir = "../image/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -87,8 +88,6 @@ if (isset($_SESSION['user'])) {
                         }
                         $description = $_POST['description'];
                         $quantity = $_POST['quantity'];
-                        $view = $_POST['view'];
-                        $size = $_POST['size'];
                         $idCategory = $_POST['idCategory'];
                         insert_sp($name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCategory);
                     }
@@ -109,7 +108,6 @@ if (isset($_SESSION['user'])) {
                         $id = $_POST['id'];
                         $name = $_POST['name'];
                         $price = $_POST['price'];
-                        $sale_price = $_POST['sale_price'];
                         $image = $_FILES['image']['name'];
                         $target_dir = "../image/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -120,12 +118,10 @@ if (isset($_SESSION['user'])) {
                         }
                         $description = $_POST['description'];
                         $quantity = $_POST['quantity'];
-                        $view = $_POST['view'];
-                        $size = $_POST['size'];
                         $idCate = $_POST['idCategory'];
-                        update_sp($id,$name, $price,$sale_price, $image, $description, $quantity,$view,$size, $idCate);
+                        update_sp($id, $name, $price, $image, $description, $quantity, $idCate);
                     }
-                    $listsp = list_sp();
+                    $listsp = list_sp($kyw='', $idCate=0);
                     include_once './sanpham/list.php';
                     break;
                 }
@@ -133,12 +129,12 @@ if (isset($_SESSION['user'])) {
                     if (isset($_GET['id']) && ($_GET['id']) > 0) {
                         delete_sp($_GET['id']);
                     }
-                    $listsp = list_sp();
+                    $listsp = list_sp($kyw='', $idCate=0);
                     include_once './sanpham/list.php';
                     break;
                 }
 
-<<<<<<< HEAD
+
             case 'list_banner':
                 $list_banner=list_banner();
 
@@ -279,7 +275,31 @@ if (isset($_SESSION['user'])) {
                         break;
                     }
 
-=======
+                    case 'list_comment':
+                        // kiểm tra xem người dùng có bấm vào nút tìm kiếm trong trang danh sách sản phẩm không !
+                        if (isset($_POST['timkiemok'])&&($_POST['timkiemok'])) {
+                            // khởi tạo biến
+                            $kw=$_POST['keyword'];
+                            $idpro=$_POST['idpro'];
+                        }
+                        // nếu ngược lại ta xét giá trị cho $kw là rỗng và $iddm là bằng 0
+                        else {
+                            $kw='';
+                            $idpro=0;
+                        }
+                        // chú ý phải tồn tại biến mới thực hiện câu lệnh
+                        // hiển thị list danh mục 
+                        $listsanpham=loadall_sp();
+                        // hiển thị list danh sách
+                        $listbinhluan=loadall_binhluan($kw,$idpro);
+                     
+                        // $listbinhluan ở đây chính là biến để hứng cái funtion có giá trị trả về ở modeltk.php !
+
+                        $listbinhluan=loadall_binhluan($idpro);
+                        include "binhluan/list.php";
+                    break;
+
+
             // user
             case 'list_user':{
                 $listuser = list_user();
@@ -318,23 +338,39 @@ if (isset($_SESSION['user'])) {
                     update_user($id,$name,$role,$email,$password,$address);
                 }
                 $listuser=list_user();
-                include_once './user/fix.php';
+                include_once './user/list.php';
                 break;
             }
             case "delete_user":{
                 if(isset($_GET['id']) && ($_GET['id']) > 0){
-                    delete_user($_GET["id"]);
+                    delete_user($GET["id"]);
                 }
                 $listuser=list_user();
                 include_once "./user/list.php";
-                break;
             }
->>>>>>> beefa6724342a0b874da0d2ea2374951d3e80d0d
+
             case 'logout':
                 session_destroy();
-                $yourURL = "index.php";
+                $yourURL = "../";
                 echo ("<script>location.href =' $yourURL '</script>");
                 break;
+            //đơn hàng
+            case 'donhang':
+                $listkh = customer();
+                $listst = status();
+                include './donhang/list.php';
+                break;  
+            case 'chang_status':
+                if(isset($_POST['change'])){
+                    $id = $_GET['id'];
+                    $change_status = $_POST['changest'];
+                    change_status($id,$change_status);
+                }
+                $listkh = customer();
+                $listst = status();
+                var_dump( change_status($id,$change_status));
+                include './donhang/list.php';
+                break;      
         }
     } else {
         include "./home.php";

@@ -1,5 +1,4 @@
-
-    <div class="fullwidth-template">
+<div class="fullwidth-template">
         <div class="slide-home-02">
             <div class="response-product product-list-owl owl-slick equal-container better-height"
                 data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:0,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;speed&quot;:300,&quot;slidesToShow&quot;:1,&quot;rows&quot;:1}"
@@ -185,7 +184,6 @@
                                     </div>
                                 </div>
                             </div>
-
                                 ';
                                 }else {
                                     echo '
@@ -232,7 +230,6 @@
                                     </div>
                                 </div>
                             </div>
-
                                 ';
                                 }
                                 

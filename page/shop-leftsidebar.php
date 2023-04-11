@@ -1184,7 +1184,7 @@
                         </form>
                     </div> -->
                     <?php
-                        include_once 'page/box_left.php';
+                        include_once 'page/box-left.php';
                     
                     ?>
                 <!-- .widget-area -->
