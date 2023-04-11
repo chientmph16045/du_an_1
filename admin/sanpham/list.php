@@ -35,18 +35,6 @@
                             <th>Thao tác</th>
                         </tr>
                     </thead>
-                    <!-- <tfoot>
-                        <tr>
-                            <th>STT</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Giá</th>
-                            <th>Hình</th>
-                            <th>Mô tả</th>
-                            <th>Số lượng</th>
-                            <th>Loại sản phẩm</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </tfoot> -->
                     <tbody>
                         <?php $stt = 1;
 
@@ -67,7 +55,7 @@
                                 <td><?= $quantity ?></td>
                                 <td><?= $idCate ?></td>
                                 <td>
-                                    <a href="index.php?sp=fix_sp&id=<?= $idProduct ?>">Sửa</a>
+                                    <a href="index.php?sp=fix_sp&id=<?= $idProduct ?>">Sửa</a>/
                                     <a href="index.php?sp=delete_sp&id=<?= $idProduct ?>">Xóa</a>
                                 </td>
                             </tr>

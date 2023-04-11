@@ -14,16 +14,17 @@
             <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_user">Danh sách danh mục</a></h6>
         </div>
         <div class="card-body">
-            <div class="table-responsive">
+            <div class="">
                    
-<form class="row g-3" enctype="multipart/form-data" method="post">
+<form class="row g-3" enctype="multipart/form-data" method="post" >
   <div class="col-6">
     <label for="inputAddress" class="form-label">User name</label>
     <input type="text" class="form-control" id="inputUserName" placeholder="Name ..." name="name">
+    <!-- <span class="error">* <?php echo $nameErr;?></span> -->
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Role</label>
-    <input type="number" class="form-control" id="inputRole" name="role">
+    <label for="inputCity" class="form-label">Phone</label>
+    <input type="number" class="form-control" id="inputRole" name="phone">
   </div>
   <div class="col-md-12">
     <label for="inputEmail4" class="form-label">Email</label>
