@@ -35,12 +35,16 @@ if (isset($_SESSION['user'])) {
                 }
             case 'fix_done_dm': {
                     if (isset($_POST['fix'])) {
-                        $id = $_POST['id'];
-                        $danhmuc = $_POST['danhmuc'];
-                        update_dm($id, $danhmuc);
+                        if($_SERVER['REQUEST_METHOD']== "POST"){
+                            $id = $_POST['id'];
+                            $danhmuc = $_POST['danhmuc'];
+                            update_dm($id, $danhmuc);
+                        }
+                        
                     }
                     $listdm = list_dm();
                     include_once './danhmuc/list.php';
+                    break;
                 }
             case 'delete_dm': {
                     if (isset($_GET['id']) && ($_GET['id']) > 0) {
@@ -141,21 +145,40 @@ if (isset($_SESSION['user'])) {
                 }
             case "add_user": {
                     if (isset($_POST['new_user'])) {
-                        $name = $_POST['name'];
-                        $phone = $_POST['phone'];
-                        $email = $_POST['email'];
-                        $password = $_POST['password'];
-                        $address = $_POST['address'];
-                        $checkemail = checkforget($email);
-                        if (is_array($checkemail)) {
-                            $thongbaodangki = "Email đã tồn tại";
-                        } else {
-                            insert_user($name, $phone, $email, $password, $address);
-                            $thongbaodangki = "Đăng kí thành công";
+                        if($_SERVER['REQUEST_METHOD']== "POST"){
+                            if(empty($_POST['name'])){
+                                $thongbao="Không được để trống";
+                            }else{
+                                $name = $_POST['name'];
+                            }
+                            if(empty($_POST['email'])){
+                                $thongbao1="Không được để trống";
+                            }else{
+                                $email = $_POST['email'];
+                            }
+                            if(empty($_POST['phone'])){
+                                $thongbao2="Không được để trống";
+                            }else{
+                                $phone = $_POST['phone'];
+                            } 
+                            if(empty($_POST['password'])){
+                                $thongbao3="Không được để trống";
+                            }else{
+                                $password = $_POST['password'];
+                            }
+                            if( empty($_POST['address'])){
+                                $thongbao4="Không được để trống";
+                            }else{
+                                $address = $_POST['address'];
+                            }
+                            $checkemail = checkforget($email);
+                            if (is_array($checkemail)) {
+                                $thongbaodangki = "Email đã tồn tại";
+                            } else {
+                                insert_user($name, $phone, $email, $password, $address);
+                            }
                         }
-                        
                     }
-
                     include_once './user/add.php';
                     break;
                 }
@@ -169,13 +192,47 @@ if (isset($_SESSION['user'])) {
                 }
             case "fix_done_user": {
                     if (isset($_POST['fix_user'])) {
-                        $id = $_POST['id'];
-                        $name = $_POST['name'];
-                        $phone = $_POST['phone'];
-                        $email = $_POST['email'];
-                        $password = $_POST['password'];
-                        $address = $_POST['address'];
-                        update_user($id, $name, $phone, $email, $password, $address);
+                        if($_SERVER['REQUEST_METHOD']== "POST"){
+                            if(empty($_POST['name'])){
+                                $thongbao="Không được để trống";
+                            }else{
+                                $name = $_POST['name'];
+                            }
+                            if(empty($_POST['email'])){
+                                $thongbao1="Không được để trống";
+                            }else{
+                                $email = $_POST['email'];
+                            }
+                            if(empty($_POST['phone'])){
+                                $thongbao2="Không được để trống";
+                            }else{
+                                $phone = $_POST['phone'];
+                            } 
+                            if(empty($_POST['password'])){
+                                $thongbao3="Không được để trống";
+                            }else{
+                                $password = $_POST['password'];
+                            }
+                            if( empty($_POST['address'])){
+                                $thongbao4="Không được để trống";
+                            }else{
+                                $address = $_POST['address'];
+                            }
+                            $checkemail = checkforget($email);
+                            if (!is_array($checkemail)) {
+                                $thongbaodangki = "Email đã tồn tại";
+                            } else {
+                                $id = $_POST['id'];
+                                update_user($id, $name, $phone, $email, $password, $address); 
+                            }
+                            
+                                
+                            
+                            
+                            
+                        }
+                        
+                        
                     }
                     $listuser = list_user();
                     include_once './user/list.php';

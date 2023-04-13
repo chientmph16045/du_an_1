@@ -1,8 +1,4 @@
 
-
-
-
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -16,35 +12,50 @@
         <div class="card-body">
             <div class="">
                    
-<form class="row g-3" enctype="multipart/form-data" method="post" >
+<form class="row g-3" enctype="multipart/form-data" method="post" name="myForm" onsubmit="return validateForm()">
   <div class="col-6">
     <label for="inputAddress" class="form-label">User name</label>
-    <input type="text" class="form-control" id="inputUserName" placeholder="Name ..." name="name">
-    <!-- <span class="error">* <?php echo $nameErr;?></span> -->
+    <input type="text" class="form-control" id="name" placeholder="Name ..." name="name">
+    <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
+          } ?>
+    
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Phone</label>
-    <input type="number" class="form-control" id="inputRole" name="phone">
+    <input type="number" class="form-control" id="phone" name="phone">
+    <?php if (isset($thongbao1)) {
+            echo '<span id="error" style="color:red;">'.$thongbao1.'</span>';
+          } ?>
   </div>
   <div class="col-md-12">
     <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4" name="email">
+    <input type="email" class="form-control" id="email" name="email">
+    <?php if (isset($thongbao2)) {
+            echo '<span id="error" style="color:red;">'.$thongbao2.'</span>';
+          }elseif(isset($thongbaodangki)){
+            echo '<span id="error" style="color:red;">'.$thongbaodangki.'</span>';
+          } ?>
   </div>
   <div class="col-md-12">
     <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4" name="password">
+    <input type="password" class="form-control" id="password" name="password">
+    <?php if (isset($thongbao3)) {
+            echo '<span id="error" style="color:red;">'.$thongbao3.'</span>';
+          } ?>
   </div>
   
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor" name="address">
+    <input type="text" class="form-control" id="address" placeholder="Apartment, studio, or floor" name="address">
+    <?php if (isset($thongbao4)) {
+            echo '<span id="error" style="color:red;">'.$thongbao4.'</span>';
+          } ?>
   </div>
   <div class="col-12">
     <button type="submit" class="btn btn-primary" name="new_user">Add new</button>
   </div>
-  <?php if (isset($thongbaodangki)) {
-            echo $thongbaodangki;
-          } ?>
+  
 </form>
                         
             </div>
@@ -55,6 +66,5 @@
 <!-- /.container-fluid -->
 <!-- /.container-fluid -->
 
-</div>
+
 <!-- End of Main Content -->
-                        

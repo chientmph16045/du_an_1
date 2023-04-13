@@ -1,10 +1,22 @@
 <!-- Begin Page Content -->
-<?php
+<!-- <?php
     if (is_array($dm)) {
         
         extract($dm);
     }
-?>
+?> -->
+<?php 
+
+// if($_SERVER['REQUEST_METHOD']== "POST"){
+//     if(empty($_POST['danhmuc'])){
+//         $thongbao="Bạn cần nhập danh mục";
+//     }else{
+//         // // $listdm = list_dm();
+//         //             include './danhmuc/list.php';
+                 
+//     }
+// }
+// ?>
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -16,11 +28,13 @@
         </div>
         <div class="card-body">
             <div class="">
-                    <form action="index.php?sp=fix_done_dm" method="post" class="row g-3">
+                    <form action="index.php?sp=fix_done_dm&id=<?= $idCategory  ?>" method="post" class="row g-3" name="myForm" onsubmit="return validateForm()">
                         <div class="col-md-12">
                             <label for="inputEmail4" class="form-label">Tên danh mục</label>
                             <input type="text" class="form-control" id="inputEmail4" name="danhmuc" value="<?=$name ?>">
                             <input type="hidden" name="id" value="<?= $idCategory ?>" id="">
+                            <span style="color:red" id="error"> </span>
+                            
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-primary" type="submit" name="fix">Update</button>
@@ -37,3 +51,15 @@
 
 </div>
 <!-- End of Main Content -->
+<script>
+    function validateForm(){
+        let x = document.forms["myForm"]["danhmuc"].value;
+        if (x == "") {
+            document.getElementById("error").innerHTML = "không được để trống";
+            return false;
+        }else{
+            location.href = '/du_an_1/admin/index.php?sp=list_dm';
+            return true;
+        }
+    }
+</script>
