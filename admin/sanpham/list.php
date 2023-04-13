@@ -23,10 +23,11 @@
                                 <form action="index.php?sp=spcl" method="post">
                                     <select name="loaisp" class="border-0" id="">
 
-                                    <option value="0" selected>Loại sản phẩm</option>
-                                        <?php foreach($listdm as $dm):extract($dm)?>
-                                            <option value="<?=$idCategory?>"><?=$name?></option>
-                                        <?php endforeach?>
+                                        <option value="0" selected>Loại sản phẩm</option>
+                                        <?php foreach ($listdm as $dm):
+                                            extract($dm) ?>
+                                            <option value="<?= $idCategory ?>"><?= $name ?></option>
+                                        <?php endforeach ?>
 
                                     </select>
                                     <input type="submit" class="border-0" name="tim" value="search" id="">
@@ -35,23 +36,11 @@
                             <th>Thao tác</th>
                         </tr>
                     </thead>
-                    <!-- <tfoot>
-                        <tr>
-                            <th>STT</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Giá</th>
-                            <th>Hình</th>
-                            <th>Mô tả</th>
-                            <th>Số lượng</th>
-                            <th>Loại sản phẩm</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </tfoot> -->
                     <tbody>
-                        <?php $stt = 1;
+                        <?php $stt = 1; foreach ($listsp as $sp):
+                            extract($sp);
 
-                        foreach ($listsp as $sp) :
-                            extract($sp); ?>
+                            ?>
                             <tr>
                                 <td>
                                     <?= $stt++ ?>
@@ -63,11 +52,16 @@
                                     <?= $price ?>
                                 </td>
                                 <td><img src="../image/<?= $image ?>" width="100" alt=""></td>
-                                <td><?= $description ?></td>
-                                <td><?= $quantity ?></td>
-                                <td><?= $idCate ?></td>
                                 <td>
-                                    <a href="index.php?sp=fix_sp&id=<?= $idProduct ?>">Sửa</a>
+                                    <?= $description ?>
+                                </td>
+                                <td>
+                                    <?= $quantity ?>
+                                </td>
+                                <td>
+                                    <?= $idCate ?>
+                                <td>
+                                    <a href="index.php?sp=fix_sp&id=<?= $idProduct ?>">Sửa</a>/
                                     <a href="index.php?sp=delete_sp&id=<?= $idProduct ?>">Xóa</a>
                                 </td>
                             </tr>

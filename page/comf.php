@@ -20,8 +20,6 @@
                         <div class="lynessa-notices-wrapper"></div>
                         <div class="checkout-before-top">
                             <div class="lynessa-checkout-login">
-
-                                
                             </div>
                             <div class="lynessa-checkout-coupon">
                                 <div class="lynessa-notices-wrapper"></div>
@@ -44,9 +42,8 @@
                                 </form>
                             </div>
                         </div>
-                        <form  method="post" class="checkout lynessa-checkout" action="?sp=order"
+                        <form method="post" class="checkout lynessa-checkout" action="mail.php"
                             enctype="multipart/form-data" novalidate="novalidate">
-
                             <div class="col2-set" id="customer_details">
                                 <div class="col-1">
                                     <?php if (isset($_SESSION['user'])) {
@@ -55,10 +52,16 @@
                                             <h3>Thanks for order </h3>
                                             <div class="lynessa-billing-fields__field-wrapper">
                                                 <h1>You order </h1>
-                                            <span class="lynessa-input-wrapper">Fullname :<?= $name ?></span><br>
-                                            
-                                            <span class="lynessa-input-wrapper">Phone :<?= $phone ?></span><br>
-                                            <span class="lynessa-input-wrapper">Address :<?= $address ?></span><br>
+                                                <span class="lynessa-input-wrapper">Fullname :
+                                                    <?= $name ?>
+                                                </span><br>
+
+                                                <span class="lynessa-input-wrapper">Phone :
+                                                    <?= $phone ?>
+                                                </span><br>
+                                                <span class="lynessa-input-wrapper">Address :
+                                                    <?= $address ?>
+                                                </span><br>
                                             </div>
                                         </div>
                                         <div class="lynessa-account-fields">
@@ -85,7 +88,7 @@
                                     } ?>
                                 </div>
                                 <div class="col-2">
-                                    
+
                                 </div>
                             </div>
                             <h3 id="order_review_heading">Your order</h3>
@@ -108,7 +111,7 @@
                                                 <td class="product-total">
                                                     <span class="lynessa-Price-amount amount"><span
                                                             class="lynessa-Price-currencySymbol">$</span>
-                                                        <?= $cart[3] ?>
+                                                        <?= $cart[3] * $cart[4] ?>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -121,7 +124,7 @@
                                             $tong = 0;
                                             if (isset($_SESSION['mycart'])) {
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                    $tong += $cart[5];
+                                                    $tong += $cart[3] * $cart[4];
                                                 }
                                                 echo '
                                                 <td><span class="lynessa-Price-amount amount"><span
@@ -138,7 +141,7 @@
                                                         $tong = 0;
                                                         if (isset($_SESSION['mycart'])) {
                                                             foreach ($_SESSION['mycart'] as $cart) {
-                                                                $tong += $cart[5];
+                                                                $tong += $cart[3] * $cart[4];
                                                             }
                                                             echo
                                                                 $tong;
@@ -183,11 +186,12 @@
                                                         policy</a>.</p>
                                             </div>
                                         </div>
-                                        
-                                            <button type="submit" class="button alt" name="lynessa_checkout_place_order"
-                                                id="place_order" disabled value="Place order" data-value="Place order"><a href="index.php">Thank you</a>
-                                            </button>
-                                        
+                                                        <input type="hidden" name="email"  id="">
+                                        <button type="submit" class="button alt" disabled name="send" id="place_order"
+                                            value="Place order" data-value="Place order"><a href="index.php">Thank
+                                                you</a>
+                                        </button>
+
                                         <input type="hidden" id="lynessa-process-checkout-nonce"
                                             name="lynessa-process-checkout-nonce" value="634590c981"><input
                                             type="hidden" name="_wp_http_referer"

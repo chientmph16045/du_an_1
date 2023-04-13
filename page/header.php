@@ -23,8 +23,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Lynessa - HTML Template </title>
+    <style>
+        img > .a{
+            width: 270px;
+            height: 350px;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 
@@ -141,18 +149,18 @@
                                         <span class="pe-7s-shopbag"></span>
                                         <?php
 
-                                            if (isset($_SESSION['mycart'])) {
-                                                $stt = 0;
-                                                foreach ($_SESSION['mycart'] as $cart) {
-                                                    $stt++;
-                                                ?><span class="count"><?=$stt?></span>
-                                         
-                                                
-                                                <?php 
-                                                
-                                                }
+                                        if (isset($_SESSION['mycart'])) {
+                                            $stt = 0;
+                                            foreach ($_SESSION['mycart'] as $cart) {
+                                                $stt++;
+                                        ?><span class="count"><?= $stt ?></span>
+
+
+                                        <?php
+
                                             }
-                                                ?>
+                                        }
+                                        ?>
 
                                     </a>
                                 </div>
@@ -184,7 +192,7 @@
                                                         <a href="#">
                                                             <img src="./image/<?= $cart[2] ?>" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778"><?= $cart[1] ?>;
                                                         </a>
-                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3] ?></span></span>
+                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3]*$cart[4] ?></span></span>
                                                     </li>
                                             <?php
                                                 }
@@ -195,8 +203,10 @@
                                             <?php
                                             $tong = 0;
                                             if (isset($_SESSION['mycart'])) {
+                                            ;
+
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                    $tong += $cart[5];
+                                                    $tong += $cart[3]*$cart[4] ;
                                                 }
                                                 echo '
                                                 <span class="lynessa-Price-amount amount"><span

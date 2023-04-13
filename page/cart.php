@@ -65,7 +65,7 @@
                                                     <span class="qty-label">Quantiy:</span>
                                                     <div class="control">
 
-                                                        <input type="text" value="<?= $cart[4] ?>" title="Qty"
+                                                        <input type="text" value="<?= $cart[4] ?>" disabled title="Qty"
                                                             class="input-qty input-text qty text">
 
                                                     </div>
@@ -74,7 +74,7 @@
                                             <td class="product-subtotal" data-title="Total">
                                                 <span class="lynessa-Price-amount amount"><span
                                                         class="lynessa-Price-currencySymbol">$</span>
-                                                    <?= $cart[5] ?>
+                                                    <?= $cart[3]*$cart[4] ?>
                                                 </span>
                                             </td>
                                         </tr>
@@ -206,7 +206,7 @@
                                         $tong = 0;
                                         if (isset($_SESSION['mycart'])) {
                                             foreach ($_SESSION['mycart'] as $cart) {
-                                                $tong += $cart[5];
+                                                $tong += $cart[3]*$cart[4];
                                             }
                                             echo '
 

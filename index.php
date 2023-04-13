@@ -16,7 +16,7 @@ if (isset($_GET['sp'])) {
     switch ($sp) {
 
 
-            //login && resign && logout
+        //login && resign && logout
         case 'login_resign':
             include './page/login_resign.php';
             break;
@@ -66,8 +66,14 @@ if (isset($_GET['sp'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
-                insertAcc($name, $email, $pass);
-                $thongbaodangki = "Đăng kí thành công";
+                $checkemail = checkforget($email);
+                if (is_array($checkemail)) {
+                    $thongbaodangki = "Email đã tồn tại";
+                } else {
+                    insertAcc($name, $email, $pass);
+                    $thongbaodangki = "Đăng kí thành công";
+                }
+
             }
             include './page/login_resign.php';
             break;
@@ -104,6 +110,16 @@ if (isset($_GET['sp'])) {
             session_destroy();
             $yourURL = "index.php";
             echo ("<script>location.href =' $yourURL '</script>");
+            break;
+        case 'price':
+            if (isset($_GET['sp']))
+                if (isset($_GET['orderby']) && ($_GET['orderby']) != "") {
+                    $orderCondition = orderCondition();
+                }
+
+            $loadsp = list_sp('', 0);
+            $listdm = list_dm();
+            include './page/shop-leftsidebar.php';
             break;
 
         case 'shopcl':
@@ -143,21 +159,21 @@ if (isset($_GET['sp'])) {
                 $price = $_POST['price'];
                 $soluong = $_POST['quantity'];
                 $check = 0;
-                for($i = 0;$i<sizeof($_SESSION['mycart']);$i++){
-                    if($_SESSION['mycart'][$i][1]==$name){
+                for ($i = 0; $i < sizeof($_SESSION['mycart']); $i++) {
+                    if ($_SESSION['mycart'][$i][1] == $name) {
                         $check = 1;
-                        $soluongnew = $soluong+$_SESSION['mycart'][$i][4];
-                        $_SESSION['mycart'][$i][4]=$soluongnew;
+                        $soluongnew = $soluong + $_SESSION['mycart'][$i][4];
+                        $_SESSION['mycart'][$i][4] = $soluongnew;
                         break;
                     }
                 }
-                if($check==0){
+                if ($check == 0) {
                     $ttien = $soluong * $price;
                     $spadd = [$id, $name, $image, $price, $soluong, $ttien];
                     array_push($_SESSION['mycart'], $spadd);
-                    $thongbaocart='Thêm thành công';
+                    $thongbaocart = 'Thêm thành công';
                 }
-                
+
                 // var_dump($_SESSION['mycart']);
             }
             include './page/header.php';
@@ -184,14 +200,13 @@ if (isset($_GET['sp'])) {
             } else {
                 $_SESSION['mycart'] = [];
             }
-
             $yourURL = "index.php?sp=cart";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
         case 'chitiet':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $sp = load_one_sp($id); 
+                $sp = load_one_sp($id);
             }
             include_once './page/single-product.php';
             break;
@@ -211,6 +226,22 @@ if (isset($_GET['sp'])) {
 
             include './page/comf.php';
             unset($_SESSION['mycart']);
+            break;
+        case 'mail':
+            if (isset($_POST['mail'])) {
+                // Always set content-type when sending HTML email
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                // More headers
+                $headers .= 'From: <webmaster@example.com>' . "\r\n";
+                $headers .= 'Cc: myboss@example.com' . "\r\n";
+                $email = $_POST['mail'];
+                $subject = 'Your subject for email';
+                $message = 'Body of your message';
+                mail($email, $subject, $message, $headers);
+            }
+            include './index.php';
             break;
         case 'blog':
             include './page/blog.php';

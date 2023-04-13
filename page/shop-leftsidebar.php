@@ -117,43 +117,13 @@
                         </form>
                     </div>
                     <form class="lynessa-ordering" method="get">
-                        <select title="product_cat" name="orderby" class="orderby">
+                        <select title="product_cat" name="orderby" class="orderby" onchange="this.options[this.selectedIndex].value && (window.location=this.options[this.selectedIndex].value);">
                             <option value="menu_order" selected="selected">Default sorting</option>
-                            <option value="popularity">Sort by popularity</option>
-                            <option value="rating">Sort by average rating</option>
-                            <option value="date">Sort by latest</option>
-                            <option value="price">Sort by price: low to high</option>
-                            <option value="price-desc">Sort by price: high to low</option>
+                            <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "asc") { ?> selected <?php } ?> value="index.php?sp=price&field=price&sort=asc">Sort by price: low to high</option>
+                            <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "desc") { ?> selected <?php } ?> value="index.php?sp=price&field=price&sort=desc">Sort by price: high to low</option>
                         </select>
                     </form>
-                    <form class="per-page-form" method="post" action="index.php?sp=shopcl">
-                        <label>
-                            <select class="option-perpage" name="loaisp">
-                                <option value="0" selected="">
-                                    Show all
-                                </option>
-                                <?php foreach ($listdm as $dm) : extract($dm) ?>
-                                    <option value="<?= $idCate ?>"><?= $name ?></option>
-                                <?php endforeach ?>
-                                <input type="submit" class=" search" name="search" value="search" id="">
-                                <!-- <option value="5">
-                                    <a href="#">Show 05</a>
-                                </option>
-                                <option value="10">
-                                    Show 10
-                                </option>
-                                <option value="12">
-                                    Show 12
-                                </option>
-                                <option value="15">
-                                    Show 15
-                                </option>
-                                <option value="20">
-                                    Show All
-                                </option> -->
-                            </select>
-                        </label>
-                    </form>
+
                 </div>
                 <div class=" auto-clear lynessa-products">
                     <ul class="row products columns-3">
@@ -164,7 +134,7 @@
                             <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
                             <div class="product-inner tooltip-left">
                                 <div class="product-thumb">
-                                    <a class="thumb-link" href="index.php?sp=chitiet&id='.$idProduct.'">
+                                    <a class="thumb-link" href="index.php?sp=chitiet&id=' . $idProduct . '">
                                         <img class="img-responsive" src="./image/' . $image . '" alt="MINI SKIRT" width="600" height="778">
                                     </a>
                                     <div class="flash">
@@ -241,7 +211,6 @@
                         <a class="page-numbers" href="#">2</a>
                         <a class="next page-numbers" href="#">Next</a>
                     </nav>
-                    <p class="lynessa-result-count">Showing 1–12 of 20 results</p>
                 </div>
             </div>
             <div class="sidebar col-xl-3 col-lg-4 col-md-4 col-sm-12">
@@ -256,12 +225,12 @@
                         <h2 class="widgettitle">Filter By Price<span class="arrow"></span></h2>
                         <form method="post" action="index.php?sp=shop">
                             <div class="price_slider_wrapper">
-                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="0" data-value-max="1000">
+                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="50" data-value-max="500">
                                 </div>
                                 <div class="price_slider_amount">
-                                    <button type="submit" class="button">Filter</button>
+                                    <button type="submit" id="filter" class="button">Filter</button>
                                     <div class="price_label">
-                                        Price: <span class="from">$0</span> — <span class="to">$1000</span>
+                                        Price: <span class="from">$50</span> — <span class="to">$200</span>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +239,19 @@
                     <div id="lynessa_layered_nav-6" class="widget lynessa widget_layered_nav lynessa-widget-layered-nav">
                         <h2 class="widgettitle">Filter By Size<span class="arrow"></span></h2>
                         <ul class="lynessa-widget-layered-nav-list">
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                            <?php
+                            foreach ($listdm as $category) {
+                                extract($category);
+                                $linkCate = "index.php?sp=shop&idCate=" . $idCate;
+
+                                echo '<li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span><a href="' . $linkCate . '">' . $size . '</a></span>
+                                    <span class="count"></span></label>
+                            </li>';
+                            }
+                            ?>
+                            <!-- <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
                                 <label><input type="checkbox" name="size">
                                     <span>14.0 mm</span>
                                     <span class="count">(1)</span></label>
@@ -309,7 +290,7 @@
                                 <label><input type="checkbox" name="size">
                                     <span>16.8 mm</span>
                                     <span class="count">(3)</span></label>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div id="lynessa_product_categories-3" class="widget lynessa widget_product_categories">

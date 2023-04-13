@@ -86,9 +86,9 @@
                                          
                                                 
                                                 <?php 
-                                                
-                                                }
-                                            }
+
+                                                        }
+                                                    }
                                                 ?>
                                      </a>
                                  </div>
@@ -274,13 +274,21 @@
                                                      <span class="qty-label">Quantiy:</span>
                                                      <div class="control">
                                                          <a class="btn-number qtyminus quantity-minus" href="#">-</a>
-                                                         <input type="text" data-step="1" min="0" max="" name="quantity" value="1" title="Qty" class="input-qty input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
+                                                         <input type="text" data-step="1" min="1" max="<?=$sp['quantity']?>" name="quantity" value="1" title="Qty" class="input-qty input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
                                                          <a class="btn-number qtyplus quantity-plus" href="#">+</a>
                                                      </div>
                                                  </div>
-                                                 <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
+                                                
+                                                 <?php if($sp['quantity']>0){?>
+                                                    <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
                                                      Add to cart
                                                  </button>
+                                                    
+                                                    <?php }else{?>
+                                                        <button type="submit" name="addcart" disabled class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
+                                                     Hết hàng
+                                                 </button>
+                                                        <?php }?>
                                                  <input name="img" value="<?=$sp['image']?>" type="hidden">
                                                  <input name="name" value="<?=$sp['namePro']?>" type="hidden">
                                                  <input name="price" value="<?=$sp['price']?>" type="hidden">
