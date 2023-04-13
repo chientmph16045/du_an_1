@@ -6,6 +6,7 @@ include '../module/danhmuc.php';
 include '../module/sanpham.php';
 include '../module/taikhoan.php';
 include '../module/cart.php';
+include '../module/binhluan.php';
 
 
 if (isset($_SESSION['user'])) {
@@ -219,6 +220,20 @@ if (isset($_SESSION['user'])) {
                 $listst = status();
                 include './donhang/list.php';
                 break;
+
+            // bình luận 
+            case 'list_comment':
+                $listcm=load_allcomment();
+                include './binhluan/list.php';
+                break;
+            case 'delete_cm': {
+                    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+                        delete_cm($_GET['id']);
+                    }
+                    $listcm=load_allcomment();
+                    include_once './binhluan/list.php';
+                    break;
+                }    
         }
     } else {
         $listsp = list_sp($kyw = '', $idCate = 0);
