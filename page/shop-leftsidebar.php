@@ -123,19 +123,7 @@
                             <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "desc") { ?> selected <?php } ?> value="index.php?sp=price&field=price&sort=desc">Sort by price: high to low</option>
                         </select>
                     </form>
-                    <form class="per-page-form" method="POST" action="index.php?sp=shopcl">
-                        <label>
-                            <select class="option-perpage" name="loaisp">
-                                <option value="0" selected="">
-                                    Show all
-                                </option>
-                                <?php foreach ($listdm as $dm) : extract($dm) ?>
-                                    <option value="<?= $idCate ?>"><?= $name ?></option>
-                                <?php endforeach ?>
-                                <input type="submit" class=" search" name="search" value="search" id="">
-                            </select>
-                        </label>
-                    </form>
+
                 </div>
                 <div class=" auto-clear lynessa-products">
                     <ul class="row products columns-3">
@@ -164,7 +152,7 @@
                                                     <td class="value">
                                                         <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
                                                            <input type="hidden" name="img" value="' . $image . '"/>
-                                                           <input type="hidden" name="name" value="' . $name . '"/>
+                                                           <input type="hidden" name="name" value="' . $namePro . '"/>
                                                            <input type="hidden" name="price" value="' . $price . '"/>
                                                            <input type="hidden" name="id" value="' . $idProduct . '"/>
                                                            <input type="hidden" name="quantity" value="1"/>
@@ -193,7 +181,7 @@
                                
                                 <div class="product-info equal-elem">
                                     <h3 class="product-name product_title">
-                                        <a href="#">' . $name . '</a>
+                                        <a href="#">' . $namePro . '</a>
                                     </h3>  
                                     <div class="rating-wapper nostar">
                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
@@ -223,7 +211,6 @@
                         <a class="page-numbers" href="#">2</a>
                         <a class="next page-numbers" href="#">Next</a>
                     </nav>
-                    <p class="lynessa-result-count">Showing 1–12 of 20 results</p>
                 </div>
             </div>
             <div class="sidebar col-xl-3 col-lg-4 col-md-4 col-sm-12">
