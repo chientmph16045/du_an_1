@@ -73,6 +73,13 @@
                     <span>User</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.php?sp=list_comment" >
+                    <!-- <i class="fas fa-fw fa-wrench"></i> -->
+                    <span>Bình Luận</span>
+                </a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
