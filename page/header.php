@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Lynessa - HTML Template </title>
     <style>
@@ -148,18 +149,18 @@
                                         <span class="pe-7s-shopbag"></span>
                                         <?php
 
-                                            if (isset($_SESSION['mycart'])) {
-                                                $stt = 0;
-                                                foreach ($_SESSION['mycart'] as $cart) {
-                                                    $stt++;
-                                                ?><span class="count"><?=$stt?></span>
-                                         
-                                                
-                                                <?php 
-                                                
-                                                }
+                                        if (isset($_SESSION['mycart'])) {
+                                            $stt = 0;
+                                            foreach ($_SESSION['mycart'] as $cart) {
+                                                $stt++;
+                                        ?><span class="count"><?= $stt ?></span>
+
+
+                                        <?php
+
                                             }
-                                                ?>
+                                        }
+                                        ?>
 
                                     </a>
                                 </div>
