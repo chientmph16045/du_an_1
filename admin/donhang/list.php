@@ -69,7 +69,24 @@
                                     <?= $quantity ?>
                                 </td>
                                 <td>
-                                    <form action="?sp=chang_status&id=<?= $idCart ?>" method="post">
+                                    <?php 
+                                    if($tinhtrang == 0 || $tinhtrang == 4){
+
+                                    $thongbao = '';
+                                    if($tinhtrang == 0){
+                                        $thongbao = 'Hủy hàng thành công';
+                                        
+                                    }
+                                    if($tinhtrang == 4){
+                                        $thongbao = 'Giao hàng thành công';
+                                    }
+                                    ?>
+                                    <span>
+                                        <?=$thongbao?>
+                                    </span>
+                                    <?php }else{
+?>
+<form action="?sp=chang_status&id=<?= $idCart ?>" method="post">
                                         <select name="changest" class="border-0" id="">
                                             <option value="0" selected>Thay đổi tình trạng</option>
                                             <?php foreach ($listst as $dm):
@@ -79,6 +96,8 @@
                                         </select>
                                         <input type="submit" class="border-0" name="change" value="change" id="">
                                     </form>
+<?php
+                                    }?>
                                 </td>
                                 <td>
                                 <?=$tong?>

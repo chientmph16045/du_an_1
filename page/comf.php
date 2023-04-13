@@ -187,8 +187,8 @@
                                             </div>
                                         </div>
                                                         <input type="hidden" name="email"  id="">
-                                        <button type="submit" class="button alt" name="send" id="place_order"
-                                            value="Place order" data-value="Place order"><a href="#">Thank
+                                        <button type="submit" class="button alt" disabled name="send" id="place_order"
+                                            value="Place order" data-value="Place order"><a href="index.php">Thank
                                                 you</a>
                                         </button>
 

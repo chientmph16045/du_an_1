@@ -1,14 +1,12 @@
 <?php
 
-include './PHPMailer';
-
 use PHPMailer\PHPMailer\PHPMailer;
 
 //Import the PHPMailer class into the global namespace
 
 
 if(isset($_POST['send'])){
-    $mail = new PHPMailer();
+    $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->SMTPAuth = true;
     $mail->Username = 'ndat165@gmail.com';
