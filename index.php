@@ -64,13 +64,15 @@ if (isset($_GET['sp'])) {
         case 'resign':
             if (isset($_POST['resign'])) {
                 $name = $_POST['name'];
+                $address = $_POST['address'];
+                $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
                 $checkemail = checkforget($email);
                 if (is_array($checkemail)) {
                     $thongbaodangki = "Email đã tồn tại";
                 } else {
-                    insertAcc($name, $email, $pass);
+                    insert_user($name,$phone,$email,$pass,$address);
                     $thongbaodangki = "Đăng kí thành công";
                 }
 
