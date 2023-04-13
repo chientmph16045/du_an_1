@@ -41,14 +41,14 @@
                         <?php $stt = 1;
                         foreach ($listkh as $kh):
                             extract($kh);
-                            $tong = $quantity*$price;
+                            $tong = $quantity * $price;
                             ?>
                             <tr>
                                 <td>
                                     <?= $stt++ ?>
                                 </td>
                                 <td>
-                                    <?=$idCart?>
+                                    <?= $idCart ?>
                                 </td>
                                 <td>
                                     <?= $nameUser ?>
@@ -69,40 +69,46 @@
                                     <?= $quantity ?>
                                 </td>
                                 <td>
-                                    <?php 
-                                    if($tinhtrang == 0 || $tinhtrang == 4){
+                                    <?php
+                                    if ($tinhtrang == 0 || $tinhtrang == 4) {
 
-                                    $thongbao = '';
-                                    if($tinhtrang == 0){
-                                        $thongbao = 'Hủy hàng thành công';
-                                        
-                                    }
-                                    if($tinhtrang == 4){
-                                        $thongbao = 'Giao hàng thành công';
+                                        $thongbao = '';
+                                        if ($tinhtrang == 0) {
+                                            $thongbao = 'Hủy hàng thành công';
+
+                                        }
+                                        if ($tinhtrang == 4) {
+                                            $thongbao = 'Giao hàng thành công';
+                                        }
+                                        ?>
+                                        <span>
+                                            <?= $thongbao ?>
+                                        </span>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <form action="?sp=chang_status&id=<?= $idCart ?>" method="post">
+                                            <select name="changest" class="border-0" id="">
+                                                <option value="0" selected>Thay đổi tình trạng</option>
+                                                <?php foreach ($listst as $dm):
+                                                    extract($dm) ?>
+                                                    <option value="<?= $idStatus ?>"><?= $nameStatus ?></option>
+                                                <?php endforeach ?>
+                                            </select>
+                                            <input type="hidden" name="idsp" value="<?= $idSp ?>" id="">
+                                            <input type="hidden" name="slsp" value="<?= $slsp ?>" id="">
+                                            <input type="hidden" name="soluong" value="<?= $quantity ?>" id="">
+                                            <input type="submit" class="border-0" name="change" value="change" id="">
+                                        </form>
+                                        <?php
                                     }
                                     ?>
-                                    <span>
-                                        <?=$thongbao?>
-                                    </span>
-                                    <?php }else{
-?>
-<form action="?sp=chang_status&id=<?= $idCart ?>" method="post">
-                                        <select name="changest" class="border-0" id="">
-                                            <option value="0" selected>Thay đổi tình trạng</option>
-                                            <?php foreach ($listst as $dm):
-                                                extract($dm) ?>
-                                                <option value="<?= $idStatus ?>"><?= $nameStatus ?></option>
-                                            <?php endforeach ?>
-                                        </select>
-                                        <input type="submit" class="border-0" name="change" value="change" id="">
-                                    </form>
-<?php
-                                    }?>
                                 </td>
                                 <td>
-                                <?=$tong?>
+                                    <?= $tong ?>
+
                                 </td>
-                                
+
                             </tr>
                         <?php endforeach ?>
                     </tbody>

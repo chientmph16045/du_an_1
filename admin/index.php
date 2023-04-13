@@ -12,7 +12,7 @@ if (isset($_SESSION['user'])) {
     if (isset($_GET['sp'])) {
         $sp = $_GET['sp'];
         switch ($sp) {
-                //danh mục
+            //danh mục
             case 'list_dm': {
                     $listdm = list_dm();
                     include_once './danhmuc/list.php';
@@ -50,12 +50,12 @@ if (isset($_SESSION['user'])) {
                     include_once './danhmuc/list.php';
                     break;
                 }
-                //sản phẩm
+            //sản phẩm
             case 'spcl':
                 if (isset($_POST['tim'])) {
 
                     $id = $_POST['loaisp'];
-                    if($id > 0){
+                    if ($id > 0) {
                         $listsp = load_one_list_sp_same($id);
 
                         $listdm = list_dm();
@@ -67,9 +67,8 @@ if (isset($_SESSION['user'])) {
                 include_once './sanpham/list.php';
                 break;
             case 'list_sp': {
-                    $listsp = list_sp('', 0);
                     $listsp = list_sp($kyw = '', $idCate = 0);
-                    $listsp = list_sp($kyw = '', $idCate = 0);
+                    $list_cart = cart();
                     $listdm = list_dm();
                     include_once './sanpham/list.php';
                     break;
@@ -135,54 +134,61 @@ if (isset($_SESSION['user'])) {
                 }
 
             // user
-            case 'list_user':{
-                $listuser = list_user();
-                include_once './user/list.php';
-                break;
-            }
-            case "add_user":{
-                if(isset($_POST['new_user'])){
-                    $name=$_POST['name'];
-                    $phone=$_POST['phone'];
-                    $email=$_POST['email'];
-                    $password=$_POST['password'];
-                    $address=$_POST['address'];
-                    insert_user($name,$phone,$email,$password,$address);
+            case 'list_user': {
+                    $listuser = list_user();
+                    include_once './user/list.php';
+                    break;
                 }
-                
-                include_once './user/add.php';
-                break;
-            }
-            case "fix_user":{
-                if(isset($_GET['id'])){
-                    $user=list_one_user($_GET["id"]);
+            case "add_user": {
+                    if (isset($_POST['new_user'])) {
+                        $name = $_POST['name'];
+                        $phone = $_POST['phone'];
+                        $email = $_POST['email'];
+                        $password = $_POST['password'];
+                        $address = $_POST['address'];
+                        $checkemail = checkforget($email);
+                        if (is_array($checkemail)) {
+                            $thongbaodangki = "Email đã tồn tại";
+                        } else {
+                            insert_user($name, $phone, $email, $password, $address);
+                            $thongbaodangki = "Đăng kí thành công";
+                        }
+                        
+                    }
+
+                    include_once './user/add.php';
+                    break;
                 }
-                $listuser=list_user();
-                include_once "./user/fix.php";
-                break;
-            }
-            case "fix_done_user":{
-                if(isset($_POST['fix_user'])){
-                    $id=$_POST['id'];
-                    $name=$_POST['name'];
-                    $phone=$_POST['phone'];
-                    $email=$_POST['email'];
-                    $password=$_POST['password'];
-                    $address=$_POST['address'];
-                    update_user($id,$name,$phone,$email,$password,$address);
+            case "fix_user": {
+                    if (isset($_GET['id'])) {
+                        $user = list_one_user($_GET["id"]);
+                    }
+                    $listuser = list_user();
+                    include_once "./user/fix.php";
+                    break;
                 }
-                $listuser=list_user();
-                include_once './user/list.php';
-                break;
-            }
-            case "delete_user":{
-                if(isset($_GET['id']) && ($_GET['id']) > 0){
-                    delete_user($_GET["id"]);
+            case "fix_done_user": {
+                    if (isset($_POST['fix_user'])) {
+                        $id = $_POST['id'];
+                        $name = $_POST['name'];
+                        $phone = $_POST['phone'];
+                        $email = $_POST['email'];
+                        $password = $_POST['password'];
+                        $address = $_POST['address'];
+                        update_user($id, $name, $phone, $email, $password, $address);
+                    }
+                    $listuser = list_user();
+                    include_once './user/list.php';
+                    break;
                 }
-                $listuser=list_user();
-                include_once "./user/list.php";
-                break;
-            }
+            case "delete_user": {
+                    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+                        delete_user($_GET["id"]);
+                    }
+                    $listuser = list_user();
+                    include_once "./user/list.php";
+                    break;
+                }
 
             case 'logout':
                 session_destroy();
@@ -194,20 +200,28 @@ if (isset($_SESSION['user'])) {
                 $listkh = customer();
                 $listst = status();
                 include './donhang/list.php';
-                break;  
+                break;
             case 'chang_status':
-                if(isset($_POST['change'])){
+                if (isset($_POST['change'])) {
                     $id = $_GET['id'];
+                    $idsp = $_POST['idsp'];
+                    $soluong = $_POST['soluong'];
+                    $slsp = $_POST['slsp'];
+                    $updatesoluong = 0;
                     $change_status = $_POST['changest'];
-                    change_status($id,$change_status);
+                    if ($change_status == 4) {
+                        $updatesoluong = $slsp - $soluong;
+                        change_quantity($idsp, $updatesoluong);
+                    }
+                    change_status($id, $change_status);
                 }
                 $listkh = customer();
                 $listst = status();
-                var_dump( change_status($id,$change_status));
                 include './donhang/list.php';
-                break;      
+                break;
         }
     } else {
+        $listsp = list_sp($kyw = '', $idCate = 0);
         include "./home.php";
     }
 

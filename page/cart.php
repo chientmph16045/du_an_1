@@ -65,7 +65,7 @@
                                                     <span class="qty-label">Quantiy:</span>
                                                     <div class="control">
 
-                                                        <input type="text" value="<?= $cart[4] ?>" title="Qty"
+                                                        <input type="text" value="<?= $cart[4] ?>" disabled title="Qty"
                                                             class="input-qty input-text qty text">
 
                                                     </div>

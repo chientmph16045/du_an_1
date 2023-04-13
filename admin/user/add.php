@@ -42,6 +42,9 @@
   <div class="col-12">
     <button type="submit" class="btn btn-primary" name="new_user">Add new</button>
   </div>
+  <?php if (isset($thongbaodangki)) {
+            echo $thongbaodangki;
+          } ?>
 </form>
                         
             </div>

@@ -66,8 +66,14 @@ if (isset($_GET['sp'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
-                insertAcc($name, $email, $pass);
-                $thongbaodangki = "Đăng kí thành công";
+                $checkemail = checkforget($email);
+                if (is_array($checkemail)) {
+                    $thongbaodangki = "Email đã tồn tại";
+                } else {
+                    insertAcc($name, $email, $pass);
+                    $thongbaodangki = "Đăng kí thành công";
+                }
+
             }
             include './page/login_resign.php';
             break;

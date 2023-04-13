@@ -16,6 +16,7 @@ function list_sp($kyw, $idCate)
     if ($idCate > 0) {
         $sql .= "  and idCate = '" . $idCate . "'";
     }
+    $sql .= " ORDER BY `idProduct`  desc";
     $listsp = pdo_query($sql);
     return $listsp;
 }
@@ -24,6 +25,11 @@ function load_one_sp($id)
     $sql = "SELECT * FROM `product` WHERE idProduct = " . $_GET['id'];
     $sp = pdo_query_one($sql);
     return $sp;
+}
+function change_quantity($idsp, $updatesoluong)
+{
+    $sql = "UPDATE `product` set `quantity`='" . $updatesoluong . "' WHERE `idProduct`=" . $idsp;
+    pdo_execute($sql);
 }
 function load_one_list_sp_same($id)
 {
@@ -40,6 +46,7 @@ function update_sp($id, $name, $price, $image, $description, $quantity, $idCate)
     }
     pdo_execute($sql);
 }
+
 function delete_sp($id)
 {
     $sql = "DELETE FROM `product` WHERE idProduct = " . $_GET['id'];
@@ -64,4 +71,3 @@ function load_similar_product($id, $ma_loai)
     $listsp = pdo_query($sql);
     return $listsp;
 }
-
