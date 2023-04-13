@@ -21,10 +21,12 @@ function list_sp($kyw, $idCate)
     if (!empty($orderField) && !empty($orderSort)) {
         $sql .= " ORDER BY `product`.`" . $orderField . "`" . $orderSort;
     }
-    if (isset($_POST['price_slider'])) {
-        $sql .= " and price BETWEEN";
+    $priceRange = $_POST['price_slider'];
+    if (!empty($priceRange)) {
+        $priceRangeArr = explode(',', $priceRange);
+        $sql .= " and WHERE price BETWEEN '" . $priceRangeArr[0] . "' AND '" . $priceRangeArr[1] . "'";
+        $sql .= " and ORDER BY price ASC ";
     }
-
     $listsp = pdo_query($sql);
     return $listsp;
 }
@@ -54,25 +56,9 @@ function delete_sp($id)
     $sql = "DELETE FROM `product` WHERE idProduct = " . $_GET['id'];
     pdo_execute($sql);
 }
-
-// function price()
-// {
-//     if (isset($_POST['action'])) {
-//         $sql = "SELECT * FROM  `product` WHERE productStatus = '1'";
-//         if (isset($_POST['data_min'], $_POS['data_max']) && !empty($_POST[' data_value_min'] && !empty($_POS[' data_value_max']))) {
-//             $sql = "AND price BETWEEN '" . $_POST['data_min'] . "' AND '" . $_POST['data_max'] . "' ";
-//         }
-//     }
-//     $productPrice = pdo_execute($sql);
-//     return $productPrice;
-// }
-
 function load_similar_product($id, $ma_loai)
 {
     $sql = "select * from product where idCate='" . $ma_loai . "'and idProduct <> " . $id;
     $listsp = pdo_query($sql);
     return $listsp;
-}
-function orderCondition()
-{
 }

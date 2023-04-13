@@ -125,7 +125,7 @@
                     </form>
 
                 </div>
-                <div class=" auto-clear lynessa-products">
+                <div class=" auto-clear lynessa-products productContainer">
                     <ul class="row products columns-3">
                         <?php
                         foreach ($loadsp as $sp) {
@@ -222,15 +222,14 @@
                         </form>
                     </div>
                     <div id="lynessa_price_filter-2" class="widget lynessa widget_price_filter">
-                        <h2 class="widgettitle">Filter By Price<span class="arrow"></span></h2>
-                        <form method="post" action="index.php?sp=shop">
+                        <form method="post" action="index.php?sp=priceslider">
                             <div class="price_slider_wrapper">
-                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="50" data-value-max="500">
+                                <div data-label-reasult="Range:" data-min="0" data-max="500" data-unit="$" class="price_slider" data-value-min="50" data-value-max="100">
                                 </div>
                                 <div class="price_slider_amount">
-                                    <button type="submit" id="filter" class="button">Filter</button>
+                                    <button type="submit" name="filter" class="button" onclick="filterProducts()">Filter</button>
                                     <div class="price_label">
-                                        Price: <span class="from">$50</span> — <span class="to">$200</span>
+                                        Price: <span class="from">$50</span> — <span class="to">$100</span>
                                     </div>
                                 </div>
                             </div>

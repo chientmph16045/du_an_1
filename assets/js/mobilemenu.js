@@ -156,29 +156,22 @@ jQuery(function (e) {
                             n = e(this).closest(".stars"); return t.val(a.text()), a.siblings("a").removeClass("active"),
                                 a.addClass("active"), n.addClass("selected"), !1
                     }), e(".lynessa-product-gallery .lynessa-product-gallery__image").zoom()
-            }), $(".price_slider").each(function () {
-                var a = $(this).data("min"),
-                    t = $(this).data("max"),
-                    e = $(this).data("unit"),
-                    n = $(this).data("value-min"),
-                    s = $(this).data("value-max"),
-                    l = $(this);
-                $(this).slider({
-                    range: !0, min: a, max: t, values: [n, s],
-                    slide: function (a, t) {
-                        var n = '<button type="submit" class="button">Filter</button><div class="price_label">Price: <span class="from">' + e + t.values[0] + ' </span> — <span class="to">' + e + t.values[1] + "</span></div>";
-                        l.closest(".price_slider_wrapper").find(".price_slider_amount").html(n)
-                    }
-                })
-                $.ajax({
-                    url: "../index.php",
-                    type: "post",
-                    data: { a: min, t: max },
-                    success: function (data) {
-                        $("#filter").html(data);
-                    }
-                })
             }),
+        $(".price_slider").each(function () {
+            var a = $(this).data("min"),
+                t = $(this).data("max"),
+                e = $(this).data("unit"),
+                n = $(this).data("value-min"),
+                s = $(this).data("value-max"),
+                l = $(this);
+            $(this).slider({
+                range: !0, min: a, max: t, values: [n, s],
+                slide: function (a, t) {
+                    var n = '<button type="submit" class="button">Filter</button><div class="price_label">Price: <span class="from">' + e + a.values[0] + ' </span> — <span class="to">' + e + t.values[1] + "</span></div>";
+                    l.closest(".price_slider_wrapper").find(".price_slider_amount").html(n)
+                }
+            })
+        }),
         $(document).on("click",
             function (a) {
                 var t = $(a.target).closest(".lynessa-dropdown"),
