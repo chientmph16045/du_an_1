@@ -388,71 +388,21 @@
                                      </div>
                                  </div>
                              </div>
-                             <div class="lynessa-Tabs-panel lynessa-Tabs-panel--additional_information panel entry-content lynessa-tab" id="tab-additional_information" role="tabpanel" aria-labelledby="tab-title-additional_information">
-                                 <h2>Additional information</h2>
-                                 <table class="shop_attributes">
-                                     <tbody>
-                                         <tr>
-                                             <th>Color</th>
-                                             <td>
-                                                 <p>Blue, Pink, Red, Yellow</p>
-                                             </td>
-                                         </tr>
-                                     </tbody>
-                                 </table>
-                             </div>
-                             <div class="lynessa-Tabs-panel lynessa-Tabs-panel--reviews panel entry-content lynessa-tab" id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
-                                 <div id="reviews" class="lynessa-Reviews">
-                                     <div id="comments">
-                                         <h2 class="lynessa-Reviews-title">Reviews</h2>
-                                         <p class="lynessa-noreviews">There are no reviews yet.</p>
-                                     </div>
-                                     <div id="review_form_wrapper">
-                                         <div id="review_form">
-                                             <div id="respond" class="comment-respond">
-                                                 <span id="reply-title" class="comment-reply-title">Be the first to review “T-shirt with skirt”</span>
-                                                 <form id="commentform" class="comment-form">
-                                                     <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>
-                                                         Required fields are marked <span class="required">*</span></p>
-                                                     <p class="comment-form-author">
-                                                         <label for="author">Name&nbsp;<span class="required">*</span></label>
-                                                         <input id="author" name="author" value="" size="30" required="" type="text">
-                                                     </p>
-                                                     <p class="comment-form-email"><label for="email">Email&nbsp;
-                                                             <span class="required">*</span></label>
-                                                         <input id="email" name="email" value="" size="30" required="" type="email">
-                                                     </p>
-                                                     <div class="comment-form-rating"><label for="rating">Your rating</label>
-                                                         <p class="stars">
-                                                             <span>
-                                                                 <a class="star-1" href="#">1</a>
-                                                                 <a class="star-2" href="#">2</a>
-                                                                 <a class="star-3" href="#">3</a>
-                                                                 <a class="star-4" href="#">4</a>
-                                                                 <a class="star-5" href="#">5</a>
-                                                             </span>
-                                                         </p>
-                                                         <select title="product_cat" name="rating" id="rating" required="" style="display: none;">
-                                                             <option value="">Rate…</option>
-                                                             <option value="5">Perfect</option>
-                                                             <option value="4">Good</option>
-                                                             <option value="3">Average</option>
-                                                             <option value="2">Not that bad</option>
-                                                             <option value="1">Very poor</option>
-                                                         </select>
-                                                     </div>
-                                                     <p class="comment-form-comment"><label for="comment">Your
-                                                             review&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea></p><input name="wpml_language_code" value="en" type="hidden">
-                                                     <p class="form-submit"><input name="submit" id="submit" class="submit" value="Submit" type="submit"> <input name="comment_post_ID" value="27" id="comment_post_ID" type="hidden">
-                                                         <input name="comment_parent" id="comment_parent" value="0" type="hidden">
-                                                     </p>
-                                                 </form>
-                                             </div><!-- #respond -->
-                                         </div>
-                                     </div>
-                                     <div class="clear"></div>
-                                 </div>
-                             </div>
+                             <div class="lynessa-Tabs-panel lynessa-Tabs-panel--additional_information panel entry-content lynessa-tab" id="tab-reviews">
+                            
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    $("#comment").load("page/binhluan/formbinhluan.php", {
+                                                        idpro: <?=$sp['idProduct']?>,
+                                                    });
+                                                });
+                                            </script>
+                                            <div class="comment" id="comment">
+
+                                            </div> 
+
+                            </div>
                          </div>
                      </div>
                  </div>

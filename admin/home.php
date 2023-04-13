@@ -3,8 +3,8 @@ foreach ($listsp as $sp):
     extract($sp);
     $thongbao ='';
     if($quantity < 10 ){
-        $thongbao = "Hiện tại có các đơn hàng đang sắp hết : \n ".$namePro."".$quantity."";
+        $thongbao = "Sản phẩm sắp hết: ".$namePro." " ;
     }
 ?>
-<script>alert(<?=$thongbao?>)</script>
+<script>alert('<?=$thongbao?>')</script>
 <?php endforeach?>
