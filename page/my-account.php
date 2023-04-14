@@ -155,6 +155,11 @@
                                     } elseif ($tinhtrang == 1 || $tinhtrang == 2) { ?>
                                         <form action="?sp=change_status&id=<?= $idCart ?>" method="post">
                                             <?= $change ?>
+                                            <input type="hidden" value="<?= $quantity ?>" name="quanti">
+                                            <input type="hidden" value="<?= $slsp ?>" name="slsp">
+                                            <input type="hidden" value="<?= $idSp ?>" name="idsp">
+                                            <input type="hidden" value="<?= $tinhtrang ?>" name="tinhtrang">
+                                            <input type="hidden" value="0" name="changest">
                                             <input type="submit" value="Hủy" name="change" class="btn solid" />
                                         </form>
 

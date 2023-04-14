@@ -102,8 +102,22 @@ if (isset($_GET['sp'])) {
         case 'change_status':
             if (isset($_POST['change'])) {
                 $id = $_GET['id'];
-                $change_status = $_POST['change_status'];
-                change_status($id, $change_status);
+                    $idsp = $_POST['idsp'];
+                    $soluong = $_POST['quanti'];
+                    $slsp = $_POST['slsp'];
+                    $updatesoluong = 0;
+                    $change_status = $_POST['changest'];
+                    $tt = $_POST['tinhtrang'];
+                    if($tt == 2){
+                        if ($change_status == 0) {
+                            $updatesoluong = $slsp + $soluong;
+                            change_quantity($idsp, $updatesoluong);
+                        }
+                        change_status($id, $change_status);
+                    }else{
+                        change_status($id, $change_status);
+                    }
+                    
             }
             $listsp = order($_SESSION['user']['idUser']);
             include './page/my-account.php';
@@ -157,7 +171,7 @@ if (isset($_GET['sp'])) {
             if (isset($_POST['addcart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
-                $quan = $_POST['quan'];
+                $quan = $_POST['quantity'];
                 $image = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = $_POST['quantity'];
