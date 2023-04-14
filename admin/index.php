@@ -192,17 +192,17 @@ if (isset($_SESSION['user'])) {
                     break;
                 }
             case "fix_done_user": {
+                if (isset($_GET['id'])) {
+                    $user = list_one_user($_GET["id"]);
+                }
                     if (isset($_POST['fix_user'])) {
                         if($_SERVER['REQUEST_METHOD']== "POST"){
-                            if(empty($_POST['name'])){
-                                $thongbao="Không được để trống";
-                            }else{
+                            
+                            if(!empty($_POST['name'])){
+                                
                                 $name = $_POST['name'];
-                            }
-                            if(empty($_POST['email'])){
-                                $thongbao1="Không được để trống";
                             }else{
-                                $email = $_POST['email'];
+                                $thongbao="Không được để trống";
                             }
                             if(empty($_POST['phone'])){
                                 $thongbao2="Không được để trống";
@@ -219,24 +219,15 @@ if (isset($_SESSION['user'])) {
                             }else{
                                 $address = $_POST['address'];
                             }
-                            $checkemail = checkforget($email);
-                            if (!is_array($checkemail)) {
-                                $thongbaodangki = "Email đã tồn tại";
-                            } else {
-                                $id = $_POST['id'];
-                                update_user($id, $name, $phone, $email, $password, $address); 
-                            }
                             
                                 
-                            
-                            
-                            
-                        }
-                        
-                        
+                                $id = $_POST['id'];
+                                $email = $_POST['email'];
+                                update_user($id, $name, $phone, $email, $password, $address); 
+                        }                  
                     }
                     $listuser = list_user();
-                    include_once './user/list.php';
+                    include_once './user/fix.php';
                     break;
                 }
             case "delete_user": {

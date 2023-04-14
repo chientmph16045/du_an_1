@@ -3,11 +3,11 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Danh mục</h1>
+  <h1 class="h3 mb-2 text-gray-800">Update</h1>
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_user">Danh sách danh mục</a></h6>
+      <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_user">List user</a></h6>
     </div>
     <div class="card-body">
       <div class="">
@@ -25,17 +25,15 @@
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">Phone</label>
-            <input type="number" class="form-control" id="inputRole" name="phone" required value="<?= $phone ?>">
-            <?php if (isset($thongbao1)) {
-            echo '<span id="error" style="color:red;">'.$thongbao1.'</span>';
+            <input type="number" class="form-control" id="inputRole" required name="phone" value="<?= $phone ?>">
+            <?php if (isset($thongbao2)) {
+            echo '<span id="error" style="color:red;">'.$thongbao2.'</span>';
           } ?>
           </div>
           <div class="col-md-12">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" disabled class="form-control" id="inputEmail4" name="email" value="<?= $email ?>">
-            <?php if (isset($thongbao2)) {
-            echo '<span id="error" style="color:red;">'.$thongbao2.'</span>';
-          } ?>
+            <input type="email" class="form-control" id="inputEmail4" disabled name="email" value="<?= $email ?>">
+            <input type="email" class="form-control" id="inputEmail4" hidden name="email" value="<?= $email ?>">
           </div>
           <div class="col-md-12">
             <label for="inputPassword4" class="form-label">Password</label>
