@@ -131,7 +131,7 @@
                         foreach ($loadsp as $sp) {
                             extract($sp);
                             $dis="";
-                            if($quantity==0){
+                            if($quantity<=0){
                                 $dis="disabled";
                             }
                             echo '
