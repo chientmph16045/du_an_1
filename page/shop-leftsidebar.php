@@ -159,6 +159,8 @@
                                                            <input type="hidden" name="name" value="' . $namePro . '"/>
                                                            <input type="hidden" name="price" value="' . $price . '"/>
                                                            <input type="hidden" name="id" value="' . $idProduct . '"/>
+                                                           <input type="hidden" name="quan" value="' . $quantity . '"/>
+
                                                            <input type="hidden" name="quantity" value="1"/>
                                                         </select>
                                                     </td>
