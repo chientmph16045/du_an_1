@@ -219,7 +219,7 @@ if (isset($_GET['sp'])) {
                 $_SESSION['mycart'] = [];
             }
 
-            $yourURL = "index.php?sp=addtocart";
+            $yourURL = "index.php?sp=home";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
         case 'delete_cart_cart':
