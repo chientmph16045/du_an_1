@@ -112,7 +112,13 @@
                     <!-- Lấy danh sách sản phẩm
                 
                 -->
-                    <?php foreach ($list_sp as $value): ?>
+                    <?php foreach ($list_sp as $value): 
+                        extract($value);
+                        $dis="";
+                        if($quantity<=0){
+                            $dis="disabled";
+                        }
+                        ?>
                         <div
                             class="product-item recent-product style-04 rows-space-0 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
                             <div class="product-inner tooltip-top tooltip-all-top">
@@ -135,7 +141,7 @@
                                                         <input type="hidden" name="quantity" value="1"/>
                                            
                                             
-                                                <button type="submit" name="addcart"
+                                                <button type="submit" <?=$dis?> name="addcart"
                                                     style="width: 40px;    background-color: #cf9163;"><img
                                                         src="./image/cart.svg"></button>
                                                 </form>
