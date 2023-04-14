@@ -255,46 +255,7 @@
                             </li>';
                             }
                             ?>
-                            <!-- <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>14.0 mm</span>
-                                    <span class="count">(1)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>14.4 mm</span>
-                                    <span class="count">(4)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>14.8 mm</span>
-                                    <span class="count">(2)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>15.2 mm</span>
-                                    <span class="count">(3)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>15.6 mm</span>
-                                    <span class="count">(1)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>16.0 mm</span>
-                                    <span class="count">(4)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>16.4 mm</span>
-                                    <span class="count">(4)</span></label>
-                            </li>
-                            <li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
-                                    <span>16.8 mm</span>
-                                    <span class="count">(3)</span></label>
-                            </li> -->
+                            
                         </ul>
                     </div>
                     <div id="lynessa_product_categories-3" class="widget lynessa widget_product_categories">
