@@ -97,10 +97,10 @@
                                             </a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                    <a href="./admin">Quản Trị</a>
+                                                    <a href="./admin">Admin</a>
                                                 </li>
                                                 <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                    <a href="?sp=account">Tài khoản</a>
+                                                    <a href="?sp=account">Account</a>
                                                 </li>
                                                 <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                     <a href="?sp=logout">Logout</a>
@@ -116,7 +116,7 @@
                                             </a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                    <a href="?sp=account">Tài khoản</a>
+                                                    <a href="?sp=account">Account</a>
                                                 </li>
                                                 <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
                                                     <a href="?sp=logout">Logout</a>

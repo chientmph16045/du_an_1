@@ -226,7 +226,7 @@ if (isset($_SESSION['user'])) {
                     $slsp = $_POST['slsp'];
                     $updatesoluong = 0;
                     $change_status = $_POST['changest'];
-                    if ($change_status == 4) {
+                    if ($change_status == 2) {
                         $updatesoluong = $slsp - $soluong;
                         change_quantity($idsp, $updatesoluong);
                     }

@@ -278,7 +278,12 @@
                                                          <a class="btn-number qtyplus quantity-plus" href="#">+</a>
                                                      </div>
                                                  </div>
-                                                
+                                                 
+                                                 <input name="img" value="<?=$sp['image']?>" type="hidden">
+                                                 <input name="quan" value="<?=$sp['quantity']?>" type="hidden">
+                                                 <input name="name" value="<?=$sp['namePro']?>" type="hidden">
+                                                 <input name="price" value="<?=$sp['price']?>" type="hidden">
+                                                 <input name="id" value="<?=$sp['idProduct']?>" type="hidden">
                                                  <?php if($sp['quantity']>0){?>
                                                     <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
                                                      Add to cart
@@ -289,10 +294,7 @@
                                                      Hết hàng
                                                  </button>
                                                         <?php }?>
-                                                 <input name="img" value="<?=$sp['image']?>" type="hidden">
-                                                 <input name="name" value="<?=$sp['namePro']?>" type="hidden">
-                                                 <input name="price" value="<?=$sp['price']?>" type="hidden">
-                                                 <input name="id" value="<?=$sp['idProduct']?>" type="hidden">
+                                                 
                                              </div>
                                          </div>
                                      </form>

@@ -13,7 +13,7 @@ function insert_cart($idUser, $idsp, $quantity, $tt, $idbill)
 }
 function order($id)
 {
-    $sql = "SELECT *,cart.quantity FROM cart
+    $sql = "SELECT *,cart.quantity,product.quantity as slsp FROM cart
     inner join product on cart.idSp = product.idProduct 
     inner join `status` on cart.tinhtrang = `status`.idStatus
     where `idUser` = " . $id . " order by idCart desc";
