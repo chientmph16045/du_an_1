@@ -143,9 +143,9 @@
                                     </div>
                                 <?php } ?>
                             </div>
-                            <div class="block-minicart block-dreaming lynessa-mini-cart lynessa-dropdown">
-                                <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
-                                    <a class="block-link link-dropdown" href="cart.php">
+                            <div class="block-minicart block-dreaming lynessa-mini-cart lynessa-dropdown" id="demo" onclick="click()">
+                                <div class="shopcart-dropdown block-cart-link"  data-lynessa="lynessa-dropdown" >
+                                    <a class="block-link link-dropdown" href="" >
                                         <span class="pe-7s-shopbag"></span>
                                         <?php
 
@@ -267,3 +267,4 @@
         </div>
 
     </header>
+
