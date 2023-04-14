@@ -127,16 +127,7 @@ if (isset($_GET['sp'])) {
             $yourURL = "index.php";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
-        case 'price':
-            if (isset($_GET['sp']))
-                if (isset($_GET['orderby']) && ($_GET['orderby']) != "") {
-                    $orderCondition = orderCondition();
-                }
-
-            $loadsp = list_sp('', 0);
-            $listdm = list_dm();
-            include './page/shop-leftsidebar.php';
-            break;
+     
 
         case 'shopcl':
             if (isset($_POST['search'])) {
@@ -228,7 +219,7 @@ if (isset($_GET['sp'])) {
             } else {
                 $_SESSION['mycart'] = [];
             }
-            $yourURL = "index.php?sp=cart";
+            $yourURL = "index.php?sp=home";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
         case 'chitiet':

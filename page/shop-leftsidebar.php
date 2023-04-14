@@ -119,8 +119,8 @@
                     <form class="lynessa-ordering" method="get">
                         <select title="product_cat" name="orderby" class="orderby" onchange="this.options[this.selectedIndex].value && (window.location=this.options[this.selectedIndex].value);">
                             <option value="menu_order" selected="selected">Default sorting</option>
-                            <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "asc") { ?> selected <?php } ?> value="index.php?sp=price&field=price&sort=asc">Sort by price: low to high</option>
-                            <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "desc") { ?> selected <?php } ?> value="index.php?sp=price&field=price&sort=desc">Sort by price: high to low</option>
+                            <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "asc") { ?> selected <?php } ?> value="index.php?sp=shop&field=price&sort=asc">Sort by price: low to high</option>
+                            <option <?php if (isset($_GET['sort']) && $_GET['sort'] == "desc") { ?> selected <?php } ?> value="index.php?sp=shop&field=price&sort=desc">Sort by price: high to low</option>
                         </select>
                     </form>
 
