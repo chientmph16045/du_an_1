@@ -227,7 +227,39 @@
                             <button type="submit" value="Search">Search</button>
                         </form>
                     </div>
-                   
+                    <div id="lynessa_price_filter-2" class="widget lynessa widget_price_filter">
+                        <h2 class="widgettitle">Filter By Price<span class="arrow"></span></h2>
+                        <form method="post" action="index.php?sp=shop">
+                            <div class="price_slider_wrapper">
+                                <div data-label-reasult="Range:" data-min="0" data-max="1000" data-unit="$" class="price_slider" data-value-min="50" data-value-max="500">
+                                </div>
+                                <div class="price_slider_amount">
+                                    <button type="submit" id="filter" class="button">Filter</button>
+                                    <div class="price_label">
+                                        Price: <span class="from">$50</span> — <span class="to">$200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="lynessa_layered_nav-6" class="widget lynessa widget_layered_nav lynessa-widget-layered-nav">
+                        <h2 class="widgettitle">Filter By Size<span class="arrow"></span></h2>
+                        <ul class="lynessa-widget-layered-nav-list">
+                            <?php
+                            foreach ($listdm as $category) {
+                                extract($category);
+                                $linkCate = "index.php?sp=shop&idCate=" . $idCate;
+
+                                echo '<li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
+                                <label><input type="checkbox" name="size">
+                                    <span><a href="' . $linkCate . '">' . $size . '</a></span>
+                                    <span class="count"></span></label>
+                            </li>';
+                            }
+                            ?>
+                            
+                        </ul>
+                    </div>
                     <div id="lynessa_product_categories-3" class="widget lynessa widget_product_categories">
                         <h2 class="widgettitle">Product categories<span class="arrow"></span></h2>
                         <ul class="product-categories">
