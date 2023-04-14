@@ -57,7 +57,7 @@
         <div class="forms-container">
             <div class="signin-signup">
                 <form action="?sp=account_fix" method="post" class="sign-in-form">
-                    <h2 class="title">Cập nhật tài khoản</h2>
+                    <h2 class="title">Update Account</h2>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
                         <input type="text" placeholder="Họ và tên" value="<?= $nameUser ?>" name="name" required />
@@ -94,7 +94,7 @@
                 </form>
                 <div class="sign-up-form">
 
-                    <h2 class="title">Đơn hàng</h2>
+                    <h2 class="title">Your order</h2>
 
                     <table>
                         <tr>
