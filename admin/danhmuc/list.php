@@ -33,8 +33,8 @@
                                 <td><?= $stt++ ?></td>
                                 <td><?= $name ?></td>
                                 <td>
-                                    <a href="index.php?sp=fix_dm&id=<?= $idCate ?>">Sửa</a>
-                                    <a href="index.php?sp=delete_dm&id=<?= $idCate ?>">Xóa</a>
+                                    <a href="index.php?sp=fix_dm&id=<?= $idCategory  ?>">Sửa</a>/
+                                    <a href="index.php?sp=delete_dm&id=<?= $idCategory ?>">Xóa</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

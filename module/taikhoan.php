@@ -11,8 +11,8 @@ function list_user(){
     $listuser=pdo_query($sql);
     return $listuser;
 }
-function insert_user($name,$role,$email,$password,$address){
-    $sql = "INSERT INTO `user`(`name`,`role`,`email`,`password`,`address`) value('$name','$role','$email','$password','$address')";
+function insert_user($name,$phone,$email,$password,$address){
+    $sql = "INSERT INTO `user`(`nameUser`,`phone`,`email`,`password`,`address`) value('$name','$phone','$email','$password','$address')";
     pdo_execute($sql);
 }
 
@@ -27,7 +27,7 @@ function checkforget($email)
 
 function insertAcc($name, $email, $pass)
 {
-    $sql = "INSERT INTO `user`(`name`,`email`,`password`) values ('$name','$email','$pass') ";
+    $sql = "INSERT INTO `user`(`nameUser`,`email`,`password`) values ('$name','$email','$pass') ";
     pdo_execute($sql);
 }
 
@@ -36,20 +36,18 @@ function list_one_user($id){
     $user = pdo_query_one($sql);
     return $user;
 }
-function update_user($id,$name, $role, $email, $password, $address){
-    $sql = "UPDATE `user` set `name`='".$name."', `role`='".$role."',`email`='".$email."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
+function update_user($id,$name, $phone, $email, $password, $address){
+    $sql = "UPDATE `user` set `nameUser`='".$name."', `phone`='".$phone."',`email`='".$email."',`password`='".$password."',`address`='".$address."' WHERE `user`.`idUser`=".$id;
     pdo_execute($sql);
 }
 function update_user_now($id,$name,$address,$phone,$pass){
-    $sql = "UPDATE `user` set `name`='".$name."', `address`='".$address."',`phone`='".$phone."',`password`='".$pass."' WHERE `user`.`idUser`=".$id;
+    $sql = "UPDATE `user` set `nameUser`='".$name."', `address`='".$address."',`phone`='".$phone."',`password`='".$pass."' WHERE `user`.`idUser`=".$id;
     pdo_execute($sql);
 }
 
 function delete_user($id){
-        $sql = "DELETE FROM `user` WHERE idUser = " . $_GET['id'];
-        pdo_execute($sql);
-    
-    
+    $sql = "DELETE FROM `user` WHERE idUser = " . $_GET['id'];
+    pdo_execute($sql);
 }
 
 ?>

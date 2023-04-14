@@ -17,29 +17,19 @@
                             <th>Tên User</th>
                             <th>Địa chỉ</th>
                             <th>Email</th>
+                            <th>Số điện thoại</th>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
-                    <!-- <tfoot>
-                        <tr>
-                            <th>STT</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Giá</th>
-                            <th>Hình</th>
-                            <th>Mô tả</th>
-                            <th>Số lượng</th>
-                            <th>Loại sản phẩm</th>
-                            <th>Thao tác</th>
-                        </tr>
-                    </tfoot> -->
                     <tbody>
                         <?php $stt=1;
                         foreach($listuser as $dm):extract($dm) ?>
                         <tr>
                             <td><?=$stt++?></td>
-                            <td><?=$name?></td>
+                            <td><?=$nameUser?></td>
                             <td><?=$address?></td>
                             <td><?=$email?></td>
+                            <td><?=$phone?></td>
                             <td>
                                 <a href="index.php?sp=fix_user&id=<?=$idUser?>">Sửa</a>/
                                 <a href="index.php?sp=delete_user&id=<?=$idUser?>">Xóa</a>

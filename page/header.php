@@ -23,8 +23,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/megamenu.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/dreaming-attribute.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Lynessa - HTML Template </title>
+    <style>
+        img>.a {
+            width: 270px;
+            height: 350px;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 
@@ -79,105 +87,130 @@
                     <div class="header-control-inner">
                         <div class="meta-dreaming">
                             <div class="menu-item block-user block-dreaming lynessa-dropdown">
-                            <?php if (isset($_SESSION['user'])) {
-                                extract($_SESSION['user']);
-                                if ($role == 3) {
-                                    ?>
-                                    <div class="menu-item block-user block-dreaming lynessa-dropdown">
-                                        <a class="block-link" href="index.php?sp=account">
-                                            <span class="pe-7s-user"></span>
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                <a href="./admin">Quản Trị</a>
-                                            </li>
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                <a href="?sp=account">Tài khoản</a>
-                                            </li>
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                <a href="?sp=logout">Logout</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <?php
-                                } else {
-                                    ?>
-                                    <div class="menu-item block-user block-dreaming lynessa-dropdown">
-                                        <a class="block-link" href="index.php?sp=account">
-                                            <span class="pe-7s-user"></span>
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                <a href="?sp=account">Tài khoản</a>
-                                            </li>
-                                            <li
-                                                class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
-                                                <a href="?sp=logout">Logout</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                <?php
-                                }
+                                <?php if (isset($_SESSION['user'])) {
+                                    extract($_SESSION['user']);
+                                    if ($role == 3) {
                                 ?>
+                                        <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                            <a class="block-link" href="index.php?sp=account">
+                                                <span class="pe-7s-user"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                    <a href="./admin">Quản Trị</a>
+                                                </li>
+                                                <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                    <a href="?sp=account">Tài khoản</a>
+                                                </li>
+                                                <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                    <a href="?sp=logout">Logout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                            <a class="block-link" href="index.php?sp=account">
+                                                <span class="pe-7s-user"></span>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                    <a href="?sp=account">Tài khoản</a>
+                                                </li>
+                                                <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                                    <a href="?sp=logout">Logout</a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                            <?php } else { ?>
-                                <div class="menu-item block-user block-dreaming lynessa-dropdown">
-                                    <a class="block-link" href="index.php?sp=login_resign">
-                                        <span class="pe-7s-user"></span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li
-                                            class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
+                                    <?php
+                                    }
+                                    ?>
 
-                                            <a href="?sp=login_resign">Login or Resign</a>
+                                <?php } else { ?>
+                                    <div class="menu-item block-user block-dreaming lynessa-dropdown">
+                                        <a class="block-link" href="index.php?sp=login_resign">
+                                            <span class="pe-7s-user"></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item lynessa-MyAccount-navigation-link lynessa-MyAccount-navigation-link--customer-logout">
 
-                                        </li>
-                                    </ul>
-                                </div>
-                            <?php } ?>
+                                                <a href="?sp=login_resign">Login or Resign</a>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php } ?>
                             </div>
                             <div class="block-minicart block-dreaming lynessa-mini-cart lynessa-dropdown">
                                 <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
-                                    <a class="block-link link-dropdown" href="cart.php">
+                                    <a class="block-link link-dropdown" href="page/cart.php">
                                         <span class="pe-7s-shopbag"></span>
-                                        <span class="count">3</span>
+                                        <?php
+
+                                        if (isset($_SESSION['mycart'])) {
+                                            $stt = 0;
+                                            foreach ($_SESSION['mycart'] as $cart) {
+                                                $stt++;
+                                        ?><span class="count"><?= $stt ?></span>
+                                        <?php
+
+                                            }
+                                        }
+                                        ?>
+
                                     </a>
                                 </div>
+
                                 <div class="widget lynessa widget_shopping_cart">
                                     <div class="widget_shopping_cart_content">
-                                        <h3 class="minicart-title">Your Cart<span class="minicart-number-items">3</span>
+
+
+                                        <h3 class="minicart-title">Your Cart
+                                            <?php
+                                            if (isset($_SESSION['mycart'])) {
+                                                $stt = 0;
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                    $stt++;
+                                            ?><span class="minicart-number-items"><?= $stt ?></span>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
                                         </h3>
                                         <ul class="lynessa-mini-cart cart_list product_list_widget">
-                                            <li class="lynessa-mini-cart-item mini_cart_item">
-                                                <a href="#" class="remove remove_from_cart_button">×</a>
-                                                <a href="#">
-                                                    <img src="assets/images/apro134-1-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">T-shirt with skirt –
-                                                    Pink&nbsp;
-                                                </a>
-                                                <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>150.00</span></span>
-                                            </li>
-                                            <li class="lynessa-mini-cart-item mini_cart_item">
-                                                <a href="#" class="remove remove_from_cart_button">×</a>
-                                                <a href="#">
-                                                    <img src="assets/images/apro1113-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">Abstract Sweatshirt&nbsp;
-                                                </a>
-                                                <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>129.00</span></span>
-                                            </li>
-                                            <li class="lynessa-mini-cart-item mini_cart_item">
-                                                <a href="#" class="remove remove_from_cart_button">×</a>
-                                                <a href="#">
-                                                    <img src="assets/images/apro201-1-600x778.jpg" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778">ELOISE SHIRRED&nbsp;
-                                                </a>
-                                                <span class="quantity">1 × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>139.00</span></span>
-                                            </li>
+                                            <?php
+                                            if (isset($_SESSION['mycart'])) {
+                                                $stt = 0;
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                            ?>
+                                                    <li class="lynessa-mini-cart-item mini_cart_item">
+
+                                                        <a href="?sp=delete_cart&idCart=<?= $stt++ ?>" class="remove remove_from_cart_button">×</a>
+                                                        <a href="#">
+                                                            <img src="./image/<?= $cart[2] ?>" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778"><?= $cart[1] ?>;
+                                                        </a>
+                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3] * $cart[4] ?></span></span>
+                                                    </li>
+                                            <?php
+                                                }
+                                            }
+                                            ?>
                                         </ul>
                                         <p class="lynessa-mini-cart__total total"><strong>Subtotal:</strong>
-                                            <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>418.00</span>
+                                            <?php
+                                            $tong = 0;
+                                            if (isset($_SESSION['mycart'])) {;
+
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                    $tong += $cart[3] * $cart[4];
+                                                }
+                                                echo '
+                                                <span class="lynessa-Price-amount amount"><span
+                                            class="lynessa-Price-currencySymbol">$</span>' . $tong . '</span>';
+                                            }
+                                            ?>
                                         </p>
                                         <p class="lynessa-mini-cart__buttons buttons">
                                             <a href="?sp=cart" class="button lynessa-forward">Viewcart</a>
@@ -185,6 +218,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -208,27 +242,19 @@
                                                     </h5>
                                     </div> -->
                                     </li>
-
-                                    <li id="menu-item-228"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Shop"
-                                            href="?sp=shop-leftsidebar">Shop</a>
-
+                                    <li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-228 parent parent-megamenu item-megamenu menu-item-has-children">
+                                        <a class="lynessa-menu-item-title" title="Shop" href="?sp=shop">Shop</a>
 
                                     </li>
                                     <li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-229 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Elements" href="#">Elements</a>
                                     </li>
-
-                                    <li id="menu-item-996"
-                                        class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
+                                    <li id="menu-item-996" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
                                         <a class="lynessa-menu-item-title" title="Blog" href="?sp=blog">Blog</a>
 
                                     </li>
-                                    <li id="menu-item-237"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
-                                        <a class="lynessa-menu-item-title" title="Pages" href="?sp=contact">Contact</a>
-
+                                    <li id="menu-item-237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
+                                        <a class="lynessa-menu-item-title" title="Pages" href="contact.php">Contact</a>
                                     </li>
                                 </ul>
                             </div>
