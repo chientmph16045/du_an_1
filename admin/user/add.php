@@ -24,15 +24,15 @@
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Phone</label>
     <input type="number" class="form-control" id="phone" name="phone">
-    <?php if (isset($thongbao1)) {
-            echo '<span id="error" style="color:red;">'.$thongbao1.'</span>';
+    <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           } ?>
   </div>
   <div class="col-md-12">
     <label for="inputEmail4" class="form-label">Email</label>
     <input type="email" class="form-control" id="email" name="email">
-    <?php if (isset($thongbao2)) {
-            echo '<span id="error" style="color:red;">'.$thongbao2.'</span>';
+    <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           }elseif(isset($thongbaodangki)){
             echo '<span id="error" style="color:red;">'.$thongbaodangki.'</span>';
           } ?>
@@ -40,16 +40,16 @@
   <div class="col-md-12">
     <label for="inputPassword4" class="form-label">Password</label>
     <input type="password" class="form-control" id="password" name="password">
-    <?php if (isset($thongbao3)) {
-            echo '<span id="error" style="color:red;">'.$thongbao3.'</span>';
+    <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           } ?>
   </div>
   
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Address</label>
     <input type="text" class="form-control" id="address" placeholder="Apartment, studio, or floor" name="address">
-    <?php if (isset($thongbao4)) {
-            echo '<span id="error" style="color:red;">'.$thongbao4.'</span>';
+    <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           } ?>
   </div>
   <div class="col-12">

@@ -14,41 +14,39 @@
         <?php if (is_array($user)) {
           extract($user);
         } ?>
-        <form class="row g-3" action="index.php?sp=fix_done_user&id=<?=$idUser?>" enctype="multipart/form-data" method="post">
+        <form class="row g-3" action="index.php?sp=fix_done_user&id=<?=$idUser?>" id="form" enctype="multipart/form-data" method="post">
           <div class="col-6">
             <label for="inputAddress" class="form-label">User name</label>
-            <input type="text" class="form-control" id="inputUserName" placeholder="Name ..." name="name"
+            <input type="text" class="form-control" id="name" placeholder="Name ..." name="name"
               value="<?= $nameUser ?>">
-              <?php if (isset($thongbao)) {
-            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
-          } ?>
+              <span id="error"></span>
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">Phone</label>
-            <input type="number" class="form-control" id="inputRole" name="phone" value="<?= $phone ?>">
-            <?php if (isset($thongbao2)) {
-            echo '<span id="error" style="color:red;">'.$thongbao2.'</span>';
+            <input type="number" class="form-control" id="phone" name="phone" value="<?= $phone ?>">
+            <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           } ?>
           </div>
           <div class="col-md-12">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" disabled name="email" value="<?= $email ?>">
+            <input type="email" class="form-control" id="email" disabled name="email" value="<?= $email ?>">
             <input type="email" class="form-control" id="inputEmail4" hidden name="email" value="<?= $email ?>">
           </div>
           <div class="col-md-12">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" name="password" value="<?= $password ?>">
-            <?php if (isset($thongbao3)) {
-            echo '<span id="error" style="color:red;">'.$thongbao3.'</span>';
+            <input type="password" class="form-control" id="password" name="password" value="<?= $password ?>">
+            <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           } ?>
           </div>
 
           <div class="col-12">
             <label for="inputAddress2" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Apartment, studio, or floor"
+            <input type="text" class="form-control" id="address" placeholder="Apartment, studio, or floor"
               name="address" value="<?= $address ?>">
-              <?php if (isset($thongbao4)) {
-            echo '<span id="error" style="color:red;">'.$thongbao4.'</span>';
+              <?php if (isset($thongbao)) {
+            echo '<span id="error" style="color:red;">'.$thongbao.'</span>';
           } ?>
           </div>
           <input type="hidden" name="id" value="<?= $idUser ?>" id="">
@@ -69,4 +67,6 @@
 <!-- /.container-fluid -->
 
 </div>
+
+<script src="./fix.js"></script>
 <!-- End of Main Content -->

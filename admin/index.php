@@ -41,7 +41,6 @@ if (isset($_SESSION['user'])) {
                             $danhmuc = $_POST['danhmuc'];
                             update_dm($id, $danhmuc);
                         }
-                        
                     }
                     $listdm = list_dm();
                     include_once './danhmuc/list.php';
@@ -147,31 +146,16 @@ if (isset($_SESSION['user'])) {
             case "add_user": {
                     if (isset($_POST['new_user'])) {
                         if($_SERVER['REQUEST_METHOD']== "POST"){
-                            if(empty($_POST['name'])){
+                            if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['password']) || empty($_POST['address'])){
                                 $thongbao="Không được để trống";
                             }else{
                                 $name = $_POST['name'];
-                            }
-                            if(empty($_POST['email'])){
-                                $thongbao1="Không được để trống";
-                            }else{
                                 $email = $_POST['email'];
-                            }
-                            if(empty($_POST['phone'])){
-                                $thongbao2="Không được để trống";
-                            }else{
                                 $phone = $_POST['phone'];
-                            } 
-                            if(empty($_POST['password'])){
-                                $thongbao3="Không được để trống";
-                            }else{
                                 $password = $_POST['password'];
-                            }
-                            if( empty($_POST['address'])){
-                                $thongbao4="Không được để trống";
-                            }else{
                                 $address = $_POST['address'];
                             }
+                            
                             $checkemail = checkforget($email);
                             if (is_array($checkemail)) {
                                 $thongbaodangki = "Email đã tồn tại";
@@ -187,6 +171,7 @@ if (isset($_SESSION['user'])) {
                     if (isset($_GET['id'])) {
                         $user = list_one_user($_GET["id"]);
                     }
+                    
                     $listuser = list_user();
                     include_once "./user/fix.php";
                     break;
@@ -195,37 +180,20 @@ if (isset($_SESSION['user'])) {
                 if (isset($_GET['id'])) {
                     $user = list_one_user($_GET["id"]);
                 }
+                if($_SERVER['REQUEST_METHOD']== "POST"){
                     if (isset($_POST['fix_user'])) {
-                        if($_SERVER['REQUEST_METHOD']== "POST"){
-                            
-                            if(!empty($_POST['name'])){
-                                
-                                $name = $_POST['name'];
-                            }else{
-                                $thongbao="Không được để trống";
-                            }
-                            if(empty($_POST['phone'])){
-                                $thongbao2="Không được để trống";
-                            }else{
-                                $phone = $_POST['phone'];
-                            } 
-                            if(empty($_POST['password'])){
-                                $thongbao3="Không được để trống";
-                            }else{
-                                $password = $_POST['password'];
-                            }
-                            if( empty($_POST['address'])){
-                                $thongbao4="Không được để trống";
-                            }else{
-                                $address = $_POST['address'];
-                            }
-                            
-                                
-                                $id = $_POST['id'];
-                                $email = $_POST['email'];
-                                update_user($id, $name, $phone, $email, $password, $address); 
-                        }                  
-                    }
+                        $name = $_POST['name'];
+                  
+                        $phone = $_POST['phone'];
+                        $password = $_POST['password'];
+                        $address = $_POST['address'];
+                        $id = $_POST['id'];
+                        $email = $_POST['email'];
+                        update_user($id, $name, $phone, $email, $password, $address);               
+                    }    
+                        
+                }    
+                    
                     $listuser = list_user();
                     include_once './user/fix.php';
                     break;
