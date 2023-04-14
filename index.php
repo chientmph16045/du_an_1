@@ -72,7 +72,7 @@ if (isset($_GET['sp'])) {
                 if (is_array($checkemail)) {
                     $thongbaodangki = "Email đã tồn tại";
                 } else {
-                    insert_user($name,$phone,$email,$pass,$address);
+                    insert_user($name, $phone, $email, $pass, $address);
                     $thongbaodangki = "Đăng kí thành công";
                 }
 
@@ -157,30 +157,42 @@ if (isset($_GET['sp'])) {
             if (isset($_POST['addcart'])) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
+                $quan = $_POST['quan'];
                 $image = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = $_POST['quantity'];
-                $check = 0;
-                for ($i = 0; $i < sizeof($_SESSION['mycart']); $i++) {
-                    if ($_SESSION['mycart'][$i][1] == $name) {
-                        $check = 1;
-                        $soluongnew = $soluong + $_SESSION['mycart'][$i][4];
-                        $_SESSION['mycart'][$i][4] = $soluongnew;
-                        break;
+                if ($soluong > $quan) {
+                    $thongbao = 'Nhập số lượng hàng quá nhiều';
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        $sp = load_one_sp($id);
                     }
-                }
-                if ($check == 0) {
-                    $ttien = $soluong * $price;
-                    $spadd = [$id, $name, $image, $price, $soluong, $ttien];
-                    array_push($_SESSION['mycart'], $spadd);
-                    $thongbaocart = 'Thêm thành công';
-                }
+                    include_once './page/single-product.php';
+                    break;
+                } else {
+                    $check = 0;
+                    for ($i = 0; $i < sizeof($_SESSION['mycart']); $i++) {
+                        if ($_SESSION['mycart'][$i][1] == $name) {
+                            $check = 1;
+                            $soluongnew = $soluong + $_SESSION['mycart'][$i][4];
+                            $_SESSION['mycart'][$i][4] = $soluongnew;
+                            break;
+                        }
+                    }
+                    if ($check == 0) {
+                        $ttien = $soluong * $price;
+                        $spadd = [$id, $name, $image, $price, $soluong, $ttien];
+                        array_push($_SESSION['mycart'], $spadd);
+                        $thongbaocart = 'Thêm thành công';
+                    }
 
-                // var_dump($_SESSION['mycart']);
+                    // var_dump($_SESSION['mycart']);
+                }
+                include './page/header.php';
+                $yourURL = "index.php?sp=shop";
+                echo ("<script>location.href =' $yourURL '</script>");
+
             }
-            include './page/header.php';
-            $yourURL = "index.php?sp=shop";
-            echo ("<script>location.href =' $yourURL '</script>");
             break;
         case 'cart':
             include_once './page/cart.php';
