@@ -6,19 +6,19 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=add_user">Thêm mới user</a></h6>
+            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=add_user">Add new</a></h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>STT</th>
-                            <th>Tên User</th>
-                            <th>Địa chỉ</th>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Address</th>
                             <th>Email</th>
-                            <th>Số điện thoại</th>
-                            <th>Thao tác</th>
+                            <th>Number phone</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,8 +31,8 @@
                             <td><?=$email?></td>
                             <td><?=$phone?></td>
                             <td>
-                                <a href="index.php?sp=fix_user&id=<?=$idUser?>">Sửa</a>/
-                                <a href="index.php?sp=delete_user&id=<?=$idUser?>">Xóa</a>
+                                <a href="index.php?sp=fix_user&id=<?=$idUser?>">Edit</a>/
+                                <a href="index.php?sp=delete_user&id=<?=$idUser?>">Delete</a>
                             </td>
                         </tr>
                         <?php endforeach ?>

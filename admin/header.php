@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -54,7 +54,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php?sp=list_dm" >
                     <!-- <i class="fas fa-fw"></i> -->
-                    <span>Danh mục</span>
+                    <span>Type product</span>
                 </a>
                 
             </li>
@@ -63,7 +63,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php?sp=list_sp" >
                     <!-- <i class="fas fa-fw fa-wrench"></i> -->
-                    <span>Sản phẩm</span>
+                    <span>Product</span>
                 </a>
             </li>
 
@@ -77,22 +77,20 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php?sp=list_comment" >
                     <!-- <i class="fas fa-fw fa-wrench"></i> -->
-                    <span>Bình Luận</span>
+                    <span>Comment</span>
                 </a>
             </li>
             <!-- Divider -->
-            <hr class="sidebar-divider">
+       
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
+            
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="?sp=donhang" >
                     <!-- <i class="fas fa-fw fa-folder"></i> -->
-                    <span>Đơn hàng</span>
+                    <span>Order</span>
                 </a>
             </li>
 
