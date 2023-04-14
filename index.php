@@ -1,5 +1,5 @@
 <?php
-
+// tes
 session_start();
 include_once './page/header.php';
 include_once './module/pdo.php';
@@ -227,6 +227,7 @@ if (isset($_GET['sp'])) {
                 $id = $_GET['id'];
                 $sp = load_one_sp($id);
             }
+            $list_sp = list_sp($kyw = '', $idCate = 0);
             include_once './page/single-product.php';
             break;
         case 'order':

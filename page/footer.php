@@ -1,28 +1,4 @@
 <footer id="footer" class="footer style-04">
-    <div class="section-001 section-009">
-        <div class="container">
-            <div class="lynessa-newsletter style-01">
-                <div class="newsletter-inner">
-                    <div class="newsletter-info">
-                        <div class="newsletter-wrap">
-                            <h3 class="title">Newsletter<span></span></h3>
-                            <h4 class="subtitle">Get Discount 30% Off</h4>
-                            <p class="desc">Suspendisse netus proin eleifend fusce sollicitudin potenti vel magnis
-                                nascetur</p>
-                        </div>
-                    </div>
-                    <div class="newsletter-form-wrap">
-                        <div class="newsletter-form-inner">
-                            <input class="email email-newsletter" name="email" placeholder="Enter your email ..." type="email">
-                            <a href="#" class="button btn-submit submit-newsletter">
-                                <span class="text">Subscribe</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="section-025">
         <div class="container">
             <div class="row">
@@ -148,20 +124,7 @@
             </div>
         </div>
     </div>
-    <div class="section-016">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>© Copyright 2020 <a href="#">Lynessa</a>. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="payment">
-                        <img src="assets/images/payment.png" class="az_single_image-img attachment-full" alt="img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
 </footer>
 <a href="#" class="backtotop active">
