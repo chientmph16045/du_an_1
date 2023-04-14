@@ -21,7 +21,6 @@ function list_sp($kyw, $idCate)
     if (!empty($orderField) && !empty($orderSort)) {
         $sql .= " ORDER BY `product`.`" . $orderField . "`" . $orderSort;
     }
-    $sql .= " ORDER BY `idProduct` desc";
     $listsp = pdo_query($sql);
     return $listsp;
 }
