@@ -145,7 +145,7 @@
                             </div>
                             <div class="block-minicart block-dreaming lynessa-mini-cart lynessa-dropdown">
                                 <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
-                                    <a class="block-link link-dropdown" href="cart.php">
+                                    <a class="block-link link-dropdown" href="index.php?sp=cart">
                                         <span class="pe-7s-shopbag"></span>
                                         <?php
 
