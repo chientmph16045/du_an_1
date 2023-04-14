@@ -21,12 +21,6 @@ function list_sp($kyw, $idCate)
     if (!empty($orderField) && !empty($orderSort)) {
         $sql .= " ORDER BY `product`.`" . $orderField . "`" . $orderSort;
     }
-    $priceRange = $_POST['price_slider'];
-    if (!empty($priceRange)) {
-        $priceRangeArr = explode(',', $priceRange);
-        $sql .= " and WHERE price BETWEEN '" . $priceRangeArr[0] . "' AND '" . $priceRangeArr[1] . "'";
-        $sql .= " and ORDER BY price ASC ";
-    }
     $listsp = pdo_query($sql);
     return $listsp;
 }
@@ -35,6 +29,11 @@ function load_one_sp($id)
     $sql = "SELECT * FROM `product` WHERE idProduct = " . $_GET['id'];
     $sp = pdo_query_one($sql);
     return $sp;
+}
+function change_quantity($idsp, $updatesoluong)
+{
+    $sql = "UPDATE `product` set `quantity`='" . $updatesoluong . "' WHERE `idProduct`=" . $idsp;
+    pdo_execute($sql);
 }
 function load_one_list_sp_same($id)
 {
@@ -51,6 +50,7 @@ function update_sp($id, $name, $price, $image, $description, $quantity, $idCate)
     }
     pdo_execute($sql);
 }
+
 function delete_sp($id)
 {
     $sql = "DELETE FROM `product` WHERE idProduct = " . $_GET['id'];

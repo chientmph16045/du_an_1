@@ -64,8 +64,13 @@ if (isset($_GET['sp'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $pass = $_POST['pass'];
-                insertAcc($name, $email, $pass);
-                $thongbaodangki = "Đăng kí thành công";
+                $checkemail = checkforget($email);
+                if (is_array($checkemail)) {
+                    $thongbaodangki = "Email đã tồn tại";
+                } else {
+                    insertAcc($name, $email, $pass);
+                    $thongbaodangki = "Đăng kí thành công";
+                }
             }
             include './page/login_resign.php';
             break;
@@ -108,19 +113,6 @@ if (isset($_GET['sp'])) {
             $listdm = list_dm();
             include './page/shop-leftsidebar.php';
             break;
-        case 'priceslider':
-            if (isset($_POST['filter'])) {
-                $price = $_POST['price_slider'];
-                if ($price > 0) {
-                    $loadsp = list_sp('', 0);
-                    $listdm = list_dm();
-                }
-            }
-            $loadsp = list_sp('', 0);
-            $listdm = list_dm();
-            include './page/shop-leftsidebar.php';
-            break;
-
         case 'shopcl':
             if (isset($_POST['search'])) {
                 $sp = $_POST['loaisp'];
@@ -199,7 +191,6 @@ if (isset($_GET['sp'])) {
             } else {
                 $_SESSION['mycart'] = [];
             }
-
             $yourURL = "index.php?sp=cart";
             echo ("<script>location.href =' $yourURL '</script>");
             break;
@@ -226,6 +217,22 @@ if (isset($_GET['sp'])) {
 
             include './page/comf.php';
             unset($_SESSION['mycart']);
+            break;
+        case 'mail':
+            if (isset($_POST['mail'])) {
+                // Always set content-type when sending HTML email
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                // More headers
+                $headers .= 'From: <webmaster@example.com>' . "\r\n";
+                $headers .= 'Cc: myboss@example.com' . "\r\n";
+                $email = $_POST['mail'];
+                $subject = 'Your subject for email';
+                $message = 'Body of your message';
+                mail($email, $subject, $message, $headers);
+            }
+            include './index.php';
             break;
         case 'blog':
             include './page/blog.php';

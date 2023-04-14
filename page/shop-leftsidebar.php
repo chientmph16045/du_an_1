@@ -244,7 +244,7 @@
                                 $linkCate = "index.php?sp=shop&idCate=" . $idCate;
 
                                 echo '<li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
-                                <label><input type="checkbox" name="size">
+                                
                                     <span><a href="' . $linkCate . '">' . $size . '</a></span>
                                     <span class="count"></span></label>
                             </li>';
@@ -300,7 +300,7 @@
                                 extract($category);
                                 $linkCate = "index.php?sp=shop&idCate=" . $idCate;
 
-                                echo '<li class="cat-item cat-item-22"><label><input type="checkbox" name="cate"><span><a href="' . $linkCate . '">' . $name . '</a></span>
+                                echo '<li class="cat-item cat-item-22"><label><span><a href="' . $linkCate . '">' . $name . '</a></span>
                                         </label></li>';
                             }
                             ?>

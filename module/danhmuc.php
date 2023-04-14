@@ -11,19 +11,26 @@ function list_dm()
     $listdm = pdo_query($sql);
     return $listdm;
 }
+function list_size()
+{
+    $sql = "SELECT * FROM `size`";
+    $listsize = pdo_query($sql);
+    return $listsize;
+}
 
 function load_one_dm($id)
 {
-    $sql = "SELECT * FROM `category` WHERE idCate = " . $_GET['id'];
+    $sql = "SELECT * FROM `category` WHERE idCategory = " . $_GET['id'];
     $dm = pdo_query_one($sql);
     return $dm;
 }
 function update_dm($id, $danhmuc)
 {
-    $sql = "UPDATE `category` set `name`='" . $danhmuc . "' WHERE `idCate`=" . $id;
+    $sql = "UPDATE `category` set `name`='" . $danhmuc . "' WHERE `idCategory`=" . $id;
     pdo_execute($sql);
 }
 function delete_dm($id)
 {
-    $sql = "DELETE FROM `category` WHERE idCate = " . $_GET['id'];
+    $sql = "DELETE FROM `category` WHERE idCategory = " . $_GET['id'];
+    pdo_execute($sql);
 }

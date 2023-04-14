@@ -77,19 +77,19 @@
                                  <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
                                      <a class="block-link link-dropdown" href="cart.php">
                                          <span class="pe-7s-shopbag"></span>
-                                       <?php
+                                         <?php
                                             if (isset($_SESSION['mycart'])) {
                                                 $stt = 0;
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                   
-                                                ?>  <span class="count"> <?=$stt++?></span>
-                                         
-                                                
-                                                <?php 
-                                                
+
+                                            ?> <span class="count"> <?= $stt++ ?></span>
+
+
+                                         <?php
+
                                                 }
                                             }
-                                                ?>
+                                            ?>
                                      </a>
                                  </div>
                                  <div class="widget lynessa widget_shopping_cart">
@@ -193,7 +193,7 @@
                                  <div class="single-left">
                                      <div class="lynessa-product-gallery lynessa-product-gallery--with-images lynessa-product-gallery--columns-4 images">
                                          <a href="#" class="lynessa-product-gallery__trigger">
-                                             <img draggable="false" class="emoji" alt="🔍" src="image/<?=$sp['image']?>"></a>
+                                             <img draggable="false" class="emoji" alt="🔍" src="image/<?= $sp['image'] ?>"></a>
                                          <div class="flex-viewport">
                                              <figure class="lynessa-product-gallery__wrapper">
 
@@ -231,20 +231,8 @@
                                          <table class="variations">
                                              <tbody>
                                                  <tr>
-                                                     <td class="label"><label>Color</label></td>
+                                                     <td class="label"><label>size</label></td>
                                                      <td class="value">
-                                                         <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
-                                                             <option data-type="" data-pa_color="" value="">Choose an option
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#3155e2" value="blue" class="attached enabled">Blue
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#ffe59e" value="pink" class="attached enabled">Pink
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#b6b8ba" value="red" class="attached enabled">Red
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#e8e120" value="yellow" class="attached enabled">Yellow
-                                                             </option>
-                                                         </select>
                                                          <div class="data-val attribute-pa_color" data-attributetype="box_style">
                                                              <label>
                                                                  <input type="radio" name="color">
@@ -274,17 +262,25 @@
                                                      <span class="qty-label">Quantiy:</span>
                                                      <div class="control">
                                                          <a class="btn-number qtyminus quantity-minus" href="#">-</a>
-                                                         <input type="text" data-step="1" min="0" max="" name="quantity" value="1" title="Qty" class="input-qty input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
+                                                         <input type="text" data-step="1" min="1" max="<?= $sp['quantity'] ?>" name="quantity" value="1" title="Qty" class="input-qty input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
                                                          <a class="btn-number qtyplus quantity-plus" href="#">+</a>
                                                      </div>
                                                  </div>
-                                                 <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
-                                                     Add to cart
-                                                 </button>
-                                                 <input name="img" value="<?=$sp['image']?>" type="hidden">
-                                                 <input name="name" value="<?=$sp['namePro']?>" type="hidden">
-                                                 <input name="price" value="<?=$sp['price']?>" type="hidden">
-                                                 <input name="id" value="<?=$sp['idProduct']?>" type="hidden">
+
+                                                 <?php if ($sp['quantity'] > 0) { ?>
+                                                     <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
+                                                         Add to cart
+                                                     </button>
+
+                                                 <?php } else { ?>
+                                                     <button type="submit" name="addcart" disabled class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
+                                                         Hết hàng
+                                                     </button>
+                                                 <?php } ?>
+                                                 <input name="img" value="<?= $sp['image'] ?>" type="hidden">
+                                                 <input name="name" value="<?= $sp['namePro'] ?>" type="hidden">
+                                                 <input name="price" value="<?= $sp['price'] ?>" type="hidden">
+                                                 <input name="id" value="<?= $sp['idProduct'] ?>" type="hidden">
                                              </div>
                                          </div>
                                      </form>
@@ -385,9 +381,9 @@
                                  <table class="shop_attributes">
                                      <tbody>
                                          <tr>
-                                             <th>Color</th>
+                                             <th>size</th>
                                              <td>
-                                                 <p>Blue, Pink, Red, Yellow</p>
+                                                 <p>29, 30, 31, 32</p>
                                              </td>
                                          </tr>
                                      </tbody>
@@ -880,4 +876,3 @@
              </div>
          </div>
      </div>
-     
