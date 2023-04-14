@@ -20,17 +20,17 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh mục</h1>
+    <h1 class="h3 mb-2 text-gray-800">Update</h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_dm">Danh sách danh mục</a></h6>
+            <h6 class="m-0 font-weight-bold text-primary"><a href="index.php?sp=list_dm">List type</a></h6>
         </div>
         <div class="card-body">
             <div class="">
                     <form action="index.php?sp=fix_done_dm&id=<?= $idCategory  ?>" method="post" class="row g-3" name="myForm" onsubmit="return validateForm()">
                         <div class="col-md-12">
-                            <label for="inputEmail4" class="form-label">Tên danh mục</label>
+                            <label for="inputEmail4" class="form-label">Name</label>
                             <input type="text" class="form-control" id="inputEmail4" name="danhmuc" value="<?=$name ?>">
                             <input type="hidden" name="id" value="<?= $idCategory ?>" id="">
                             <span style="color:red" id="error"> </span>
