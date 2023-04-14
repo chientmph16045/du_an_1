@@ -77,19 +77,19 @@
                                  <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
                                      <a class="block-link link-dropdown" href="cart.php">
                                          <span class="pe-7s-shopbag"></span>
-                                       <?php
+                                         <?php
                                             if (isset($_SESSION['mycart'])) {
                                                 $stt = 0;
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                   
-                                                ?>  <span class="count"> <?=$stt++?></span>
-                                         
-                                                
-                                                <?php 
 
-                                                        }
-                                                    }
-                                                ?>
+                                            ?> <span class="count"> <?= $stt++ ?></span>
+
+
+                                         <?php
+
+                                                }
+                                            }
+                                            ?>
                                      </a>
                                  </div>
                                  <div class="widget lynessa widget_shopping_cart">
@@ -193,7 +193,7 @@
                                  <div class="single-left">
                                      <div class="lynessa-product-gallery lynessa-product-gallery--with-images lynessa-product-gallery--columns-4 images">
                                          <a href="#" class="lynessa-product-gallery__trigger">
-                                             <img draggable="false" class="emoji" alt="🔍" src="image/<?=$sp['image']?>"></a>
+                                             <img draggable="false" class="emoji" alt="🔍" src="image/<?= $sp['image'] ?>"></a>
                                          <div class="flex-viewport">
                                              <figure class="lynessa-product-gallery__wrapper">
 
@@ -231,7 +231,7 @@
                                          <table class="variations">
                                              <tbody>
                                                  <tr>
-                                                     <td class="label"><label>Color</label></td>
+                                                     
                                                      <td class="value">
                                                          <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
                                                              <option data-type="" data-pa_color="" value="">Choose an option
@@ -245,23 +245,7 @@
                                                              <option data-width="30" data-height="30" data-type="color" data-pa_color="#e8e120" value="yellow" class="attached enabled">Yellow
                                                              </option>
                                                          </select>
-                                                         <div class="data-val attribute-pa_color" data-attributetype="box_style">
-                                                             <label>
-                                                                 <input type="radio" name="color">
-                                                                 <span class="change-value color" style="background: #3155e2;" data-value="blue">
-                                                                 </span>
-                                                             </label>
-                                                             <label>
-                                                                 <input type="radio" name="color">
-                                                                 <span class="change-value color" style="background: #52b745;" data-value="green">
-                                                                 </span>
-                                                             </label>
-                                                             <label>
-                                                                 <input type="radio" name="color">
-                                                                 <span class="change-value color" style="background: #ffe59e;" data-value="pink">
-                                                                 </span>
-                                                             </label>
-                                                         </div>
+                                                         
                                                          <a class="reset_variations" href="#" style="visibility: hidden;">Clear</a>
                                                      </td>
                                                  </tr>
@@ -274,36 +258,35 @@
                                                      <span class="qty-label">Quantiy:</span>
                                                      <div class="control">
                                                          <a class="btn-number qtyminus quantity-minus" href="#">-</a>
-                                                         <input type="text" data-step="1" min="1" max="<?=$sp['quantity']?>" name="quantity" value="1" title="Qty" class="input-qty input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
+                                                         <input type="text" data-step="1" min="1" max="<?= $sp['quantity'] ?>" name="quantity" value="1" title="Qty" class="input-qty input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
                                                          <a class="btn-number qtyplus quantity-plus" href="#">+</a>
                                                      </div>
                                                  </div>
-                                                
-                                                 <?php if($sp['quantity']>0){?>
-                                                    <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
-                                                     Add to cart
-                                                 </button>
-                                                    
-                                                    <?php }else{?>
-                                                        <button type="submit" name="addcart" disabled class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
-                                                     Hết hàng
-                                                 </button>
-                                                        <?php }?>
-                                                 <input name="img" value="<?=$sp['image']?>" type="hidden">
-                                                 <input name="name" value="<?=$sp['namePro']?>" type="hidden">
-                                                 <input name="price" value="<?=$sp['price']?>" type="hidden">
-                                                 <input name="id" value="<?=$sp['idProduct']?>" type="hidden">
+
+                                                 <?php if ($sp['quantity'] > 0) { ?>
+                                                     <button type="submit" name="addcart" class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
+                                                         Add to cart
+                                                     </button>
+
+                                                 <?php } else { ?>
+                                                     <button type="submit" name="addcart" disabled class="single_add_to_cart_button button alt lynessa-variation-selection-needed">
+                                                         Hết hàng
+                                                     </button>
+                                                 <?php } ?>
+                                                 <input name="img" value="<?= $sp['image'] ?>" type="hidden">
+                                                 <input name="name" value="<?= $sp['namePro'] ?>" type="hidden">
+                                                 <input name="price" value="<?= $sp['price'] ?>" type="hidden">
+                                                 <input name="id" value="<?= $sp['idProduct'] ?>" type="hidden">
                                              </div>
                                          </div>
                                      </form>
                                      <div class="yith-wcwl-add-to-wishlist">
                                          <div class="yith-wcwl-add-button show">
-                                             <a href="#" rel="nofollow" data-product-id="27" data-product-type="variable" class="add_to_wishlist">
-                                                 Add to Wishlist</a>
+                                             
                                          </div>
                                      </div>
                                      <div class="clear"></div>
-                                     <a href="#" class="compare button" data-product_id="27" rel="nofollow">Compare</a>
+                                     
                                      <div class="product_meta">
                                          <div class="wcml-dropdown product wcml_currency_switcher">
                                              <ul>
@@ -341,501 +324,79 @@
                                  <li class="description_tab active" id="tab-title-description" role="tab" aria-controls="tab-description">
                                      <a href="#tab-description">Description</a>
                                  </li>
-                                 <li class="additional_information_tab" id="tab-title-additional_information" role="tab" aria-controls="tab-additional_information">
-                                     <a href="#tab-additional_information">Additional information</a>
-                                 </li>
+                                 
                                  <li class="reviews_tab" id="tab-title-reviews" role="tab" aria-controls="tab-reviews">
                                      <a href="#tab-reviews">Reviews (0)</a>
                                  </li>
                              </ul>
-                             <div class="lynessa-Tabs-panel lynessa-Tabs-panel--description panel entry-content lynessa-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
-                                 <h2>Description</h2>
-                                 <div class="container-table">
-                                     <div class="container-cell">
-                                         <h2 class="az_custom_heading">Platea viverra aenean<br>dictumst</h2>
-                                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit
-                                             scelerisque integer, quam dapibus per risus donec semper
-                                             vulputate interdum, imperdiet mus rhoncus commodo ultricies
-                                             class urna tincidunt. Imperdiet vitae lacus etiam metus ut nisl
-                                             curae, conubia enim scelerisque quis facilisis torquent,
-                                             ultricies orci faucibus dictumst mauris curabitur. Massa risus
-                                             nec sociosqu fames montes accumsan iaculis justo turpis
-                                             luctus</p>
-                                     </div>
-                                     <div class="container-cell">
-                                         <div class="az_single_image-wrapper az_box_border_grey">
-                                             <img src="assets/images/single-pro1.jpg" class="az_single_image-img attachment-full" alt="img">
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="container-table">
-                                     <div class="container-cell">
-                                         <div class="az_single_image-wrapper az_box_border_grey">
-                                             <img src="assets/images/single-pro2.jpg" class="az_single_image-img attachment-full" alt="img">
-                                         </div>
-                                     </div>
-                                     <div class="container-cell">
-                                         <h2 class="az_custom_heading">
-                                             Potenti praesent molestie<br>
-                                             at viverra</h2>
-                                         <p>This generator uses a dictionary of Latin words to construct
-                                             passages of Lorem Ipsum text that meet your desired length. The
-                                             sentence and paragraph durations and punctuation dispersal are
-                                             calculated using Gaussian distribution, based on statistical
-                                             analysis of real world texts. This ensures that the generated
-                                             Lorem Ipsum text is unique, free of repetition and also
-                                             resembles readable text as much as possible.</p>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="lynessa-Tabs-panel lynessa-Tabs-panel--additional_information panel entry-content lynessa-tab" id="tab-reviews">
                             
-                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-                                            <script>
-                                                $(document).ready(function() {
-                                                    $("#comment").load("page/binhluan/formbinhluan.php", {
-                                                        idpro: <?=$sp['idProduct']?>,
-                                                    });
-                                                });
-                                            </script>
-                                            <div class="comment" id="comment">
+                             <div class="lynessa-Tabs-panel lynessa-Tabs-panel--additional_information panel entry-content lynessa-tab" id="tab-reviews">
 
-                                            </div> 
+                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+                                 <script>
+                                     $(document).ready(function() {
+                                         $("#comment").load("page/binhluan/formbinhluan.php", {
+                                             idpro: <?= $sp['idProduct'] ?>,
+                                         });
+                                     });
+                                 </script>
+                                 <div class="comment" id="comment">
 
-                            </div>
+                                 </div>
+
+                             </div>
                          </div>
                      </div>
                  </div>
                  <div class="col-md-12 col-sm-12 dreaming_related-product">
                      <div class="block-title">
                          <h2 class="product-grid-title">
-                             Related Products
+                             Products Your May Like
                              <span></span>
                          </h2>
                      </div>
                      <div class="owl-slick owl-products equal-container better-height" data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;slidesToShow&quot;:4}" data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                         <div class="product-item style-01 post-27 product type-product status-publish has-post-thumbnail product_cat-table product_cat-new-arrivals product_cat-lamp product_tag-table product_tag-sock  instock shipping-taxable purchasable product-type-variable has-default-attributes ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="0">
-                                         <img class="img-responsive" src="assets/images/apro101-1-600x778.jpg" alt="STRIPE SKIRTS" width="600" height="778">
-                                     </a>
-                                     <div class="flash"><span class="onnew"><span class="text">New</span></span></div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                         <?php foreach ($list_sp as $value) : ?>
+                             <div class="product-item style-01 post-27 product type-product status-publish has-post-thumbnail product_cat-table product_cat-new-arrivals product_cat-lamp product_tag-table product_tag-sock  instock shipping-taxable purchasable product-type-variable has-default-attributes ">
+                                 <div class="product-inner tooltip-left">
+                                     <div class="product-thumb">
+                                         <a class="thumb-link" href="index.php?sp=chitiet&id=<?= $value['idProduct'] ?>" tabindex="0">
+                                             <img class="img-responsive" src="image/<?= $value['image'] ?>" alt="STRIPE SKIRTS" width="600" height="778">
+                                         </a>
+                                         <div class="flash"><span class="onnew"><span class="text">New</span></span></div>
+                                         <div class="group-button">
+                                             <div class="yith-wcwl-add-to-wishlist">
+                                                 <div class="yith-wcwl-add-button show">
+                                                     <a href="#" class="add_to_wishlist">Add to Wishlist</a>
+                                                 </div>
+                                             </div>
+                                             <div class="lynessa product compare-button">
+                                                 <a href="#" class="compare button">Compare</a>
+                                             </div>
+                                             <a href="#" class="button yith-wcqv-button">Quick View</a>
+                                             <div class="add-to-cart">
+                                                 <a href="#" class="button product_type_variable add_to_cart_button">Add to
+                                                     cart</a>
                                              </div>
                                          </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_variable add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
                                      </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="0">STRIPE SKIRTS</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
+                                     <div class="product-info equal-elem">
+                                         <h3 class="product-name product_title">
+                                             <a href="#" tabindex="0"> <?= $value['namePro'] ?></a>
+                                         </h3>
+                                         <div class="rating-wapper nostar">
+                                             <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
+                                             <span class="review">(0)</span>
+                                         </div>
+                                         <span class="price"><span class="lynessa-Price-amount amount">
+                                                 <span class="lynessa-Price-currencySymbol">$</span><?= $sp['price'] ?></span></span>
                                      </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $sp['price'] ?></span></span>
                                  </div>
                              </div>
-                         </div>
-                         <div class="product-item style-01 post-30 product type-product status-publish has-post-thumbnail product_cat-light product_cat-bed product_cat-specials product_tag-light product_tag-table product_tag-sock last instock featured downloadable shipping-taxable purchasable product-type-simple  ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="0">
-                                         <img class="img-responsive" src="assets/images/apro41-1-600x778.jpg" alt="MARIE CAMI" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_variable add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="0">MARIE CAMI</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>134.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-35 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-new-arrivals product_cat-lamp product_tag-light product_tag-hat product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="0">
-                                         <img class="img-responsive" src="assets/images/apro151-1-600x778.jpg" alt="HEM SMOCKING" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onsale"><span class="number">-11%</span></span>
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_variable add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="0">HEM SMOCKING</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><del><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>89.00</span></del> <ins><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>79.00</span></ins></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-25 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-specials product_tag-light product_tag-sock  instock sale featured shipping-taxable purchasable product-type-simple ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="-1">
-                                         <img class="img-responsive" src="assets/images/apro13-1-600x778.jpg" alt="KNIT LIKE" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_variable add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="-1">KNIT LIKE</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>109.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-93 product type-product status-publish has-post-thumbnail product_cat-light product_cat-table product_cat-new-arrivals product_tag-table product_tag-sock last instock shipping-taxable purchasable product-type-simple ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="-1">
-                                         <img class="img-responsive" src="assets/images/apro181-2-600x778.jpg" alt="BASIC SINGLET" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_variable add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="-1">City
-                                             life jumpers</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>98.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-22 product type-product status-publish has-post-thumbnail product_cat-table product_cat-bed product_cat-lamp product_tag-table product_tag-hat product_tag-sock first instock featured downloadable shipping-taxable purchasable product-type-simple ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="-1">
-                                         <img class="img-responsive" src="assets/images/apro171-1-600x778.jpg" alt="INSERT SINGLET" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <form class="variations_form cart">
-                                         <table class="variations">
-                                             <tbody>
-                                                 <tr>
-                                                     <td class="value">
-                                                         <select title="box_style" data-attributetype="box_style" data-id="pa_color" class="attribute-select " name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes" tabindex="-1">
-                                                             <option data-type="" data-pa_color="" value="">Choose an
-                                                                 option
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#ffe59e" value="pink" class="attached enabled">Pink
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#a825ea" value="purple" class="attached enabled">Purple
-                                                             </option>
-                                                             <option data-width="30" data-height="30" data-type="color" data-pa_color="#b6b8ba" value="red" class="attached enabled">Red
-                                                             </option>
-                                                         </select>
-                                                         <div class="data-val attribute-pa_color" data-attributetype="box_style">
-                                                             <label>
-                                                                 <input type="radio" name="color">
-                                                                 <span class="change-value color" style="background: #3155e2;" data-value="blue">
-                                                                 </span>
-                                                             </label>
-                                                             <label>
-                                                                 <input type="radio" name="color">
-                                                                 <span class="change-value color" style="background: #52b745;" data-value="green">
-                                                                 </span>
-                                                             </label>
-                                                             <label>
-                                                                 <input type="radio" name="color">
-                                                                 <span class="change-value color" style="background: #ffe59e;" data-value="pink">
-                                                                 </span>
-                                                             </label>
-                                                         </div>
-                                                         <a class="reset_variations" href="#" tabindex="-1" style="visibility: hidden;">Clear</a>
-                                                     </td>
-                                                 </tr>
-                                             </tbody>
-                                         </table>
-                                     </form>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_variable add_to_cart_button">Select
-                                                 options</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="-1">INSERT SINGLET</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>105.00</span> – <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>110.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
+                         <?php endforeach ?>
                      </div>
                  </div>
-                 <div class="col-md-12 col-sm-12 lynessa_dreaming_upsell-product">
-                     <div class="block-title">
-                         <h2 class="product-grid-title">
-                             Upsell Products
-                             <span></span>
-                         </h2>
-                     </div>
-                     <div class="owl-slick owl-products equal-container better-height" data-slick="{&quot;arrows&quot;:false,&quot;slidesMargin&quot;:30,&quot;dots&quot;:true,&quot;infinite&quot;:false,&quot;slidesToShow&quot;:4}" data-responsive="[{&quot;breakpoint&quot;:480,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:768,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;10&quot;}},{&quot;breakpoint&quot;:992,&quot;settings&quot;:{&quot;slidesToShow&quot;:2,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1200,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;20&quot;}},{&quot;breakpoint&quot;:1500,&quot;settings&quot;:{&quot;slidesToShow&quot;:3,&quot;slidesMargin&quot;:&quot;30&quot;}}]">
-                         <div class="product-item style-01 post-27 product type-product status-publish has-post-thumbnail product_cat-table product_cat-new-arrivals product_cat-lamp product_tag-table product_tag-sock  instock shipping-taxable purchasable product-type-variable has-default-attributes ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="0">
-                                         <img class="img-responsive" src="assets/images/apro141-1-600x778.jpg" alt="ELOISE SHIRRED" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_external add_to_cart_button">Buy
-                                                 it on Amazon</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="0">Dining Restock</a>
-                                     </h3>
-                                     <div class="rating-wapper ">
-                                         <div class="star-rating"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div>
-                                         <span class="review">(1)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>207.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-26 product type-product status-publish has-post-thumbnail product_cat-light product_cat-chair product_cat-sofas product_tag-light product_tag-hat last instock featured shipping-taxable product-type-external  ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="0">
-                                         <img class="img-responsive" src="assets/images/apro31-1-600x778.jpg" alt="KNIT CARDIGAN" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_simple add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="0">KNIT CARDIGAN</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>120.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-37 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-bed product_tag-light product_tag-hat product_tag-sock first instock shipping-taxable purchasable product-type-simple  ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link lynessa-product-gallery__image" href="#" tabindex="0">
-                                         <img class="img-responsive wp-post-image" src="assets/images/apro83-1-600x778.jpg" alt="WIDE PANTS" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <button href="#" class="button product_type_simple add_to_cart_button">Add to
-                                                 cart</button>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="0">WIDE PANTS</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>56.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="product-item style-01 post-1194 product_variation type-product_variation status-publish has-post-thumbnail product  instock shipping-taxable purchasable product-type-variation ">
-                             <div class="product-inner tooltip-left">
-                                 <div class="product-thumb">
-                                     <a class="thumb-link" href="#" tabindex="-1">
-                                         <img class="img-responsive" src="assets/images/apro302-600x778.jpg" alt="MARIE CAMI" width="600" height="778">
-                                     </a>
-                                     <div class="flash">
-                                         <span class="onnew"><span class="text">New</span></span>
-                                     </div>
-                                     <div class="group-button">
-                                         <div class="yith-wcwl-add-to-wishlist">
-                                             <div class="yith-wcwl-add-button show">
-                                                 <a href="#" class="add_to_wishlist">Add to Wishlist</a>
-                                             </div>
-                                         </div>
-                                         <div class="lynessa product compare-button">
-                                             <a href="#" class="compare button">Compare</a>
-                                         </div>
-                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
-                                         <div class="add-to-cart">
-                                             <a href="#" class="button product_type_simple add_to_cart_button">Add to
-                                                 cart</a>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="product-info equal-elem">
-                                     <h3 class="product-name product_title">
-                                         <a href="#" tabindex="-1">MARIE CAMI</a>
-                                     </h3>
-                                     <div class="rating-wapper nostar">
-                                         <div class="star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div>
-                                         <span class="review">(0)</span>
-                                     </div>
-                                     <span class="price"><span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span>79.00</span></span>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                
              </div>
          </div>
      </div>
-     

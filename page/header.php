@@ -27,7 +27,7 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Lynessa - HTML Template </title>
     <style>
-        img > .a{
+        img>.a {
             width: 270px;
             height: 350px;
             object-fit: contain;
@@ -145,7 +145,7 @@
                             </div>
                             <div class="block-minicart block-dreaming lynessa-mini-cart lynessa-dropdown">
                                 <div class="shopcart-dropdown block-cart-link" data-lynessa="lynessa-dropdown">
-                                    <a class="block-link link-dropdown" href="cart.php">
+                                    <a class="block-link link-dropdown" href="page/cart.php">
                                         <span class="pe-7s-shopbag"></span>
                                         <?php
 
@@ -154,8 +154,6 @@
                                             foreach ($_SESSION['mycart'] as $cart) {
                                                 $stt++;
                                         ?><span class="count"><?= $stt ?></span>
-
-
                                         <?php
 
                                             }
@@ -169,15 +167,16 @@
                                     <div class="widget_shopping_cart_content">
 
 
-                                        <h3 class="minicart-title">Your Cart <?php
-                                                                                if (isset($_SESSION['mycart'])) {
-                                                                                    $stt = 0;
-                                                                                    foreach ($_SESSION['mycart'] as $cart) {
-                                                                                        $stt++;
-                                                                                ?><span class="minicart-number-items"><?= $stt ?></span>
+                                        <h3 class="minicart-title">Your Cart
                                             <?php
-                                                                                    }
-                                                                                }
+                                            if (isset($_SESSION['mycart'])) {
+                                                $stt = 0;
+                                                foreach ($_SESSION['mycart'] as $cart) {
+                                                    $stt++;
+                                            ?><span class="minicart-number-items"><?= $stt ?></span>
+                                            <?php
+                                                }
+                                            }
                                             ?>
                                         </h3>
                                         <ul class="lynessa-mini-cart cart_list product_list_widget">
@@ -192,7 +191,7 @@
                                                         <a href="#">
                                                             <img src="./image/<?= $cart[2] ?>" class="attachment-lynessa_thumbnail size-lynessa_thumbnail" alt="img" width="600" height="778"><?= $cart[1] ?>;
                                                         </a>
-                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3]*$cart[4] ?></span></span>
+                                                        <span class="quantity"><?= $cart[4] ?> × <span class="lynessa-Price-amount amount"><span class="lynessa-Price-currencySymbol">$</span><?= $cart[3] * $cart[4] ?></span></span>
                                                     </li>
                                             <?php
                                                 }
@@ -202,11 +201,10 @@
                                         <p class="lynessa-mini-cart__total total"><strong>Subtotal:</strong>
                                             <?php
                                             $tong = 0;
-                                            if (isset($_SESSION['mycart'])) {
-                                            ;
+                                            if (isset($_SESSION['mycart'])) {;
 
                                                 foreach ($_SESSION['mycart'] as $cart) {
-                                                    $tong += $cart[3]*$cart[4] ;
+                                                    $tong += $cart[3] * $cart[4];
                                                 }
                                                 echo '
                                                 <span class="lynessa-Price-amount amount"><span
@@ -252,7 +250,7 @@
                                         <a class="lynessa-menu-item-title" title="Elements" href="#">Elements</a>
                                     </li>
                                     <li id="menu-item-996" class="menu-item menu-item-type-post_type menu-item-object-megamenu menu-item-996 parent parent-megamenu item-megamenu menu-item-has-children">
-                                        <a class="lynessa-menu-item-title" title="Blog" href="blog.php">Blog</a>
+                                        <a class="lynessa-menu-item-title" title="Blog" href="?sp=blog">Blog</a>
 
                                     </li>
                                     <li id="menu-item-237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-237 parent">
