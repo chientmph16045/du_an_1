@@ -130,9 +130,9 @@
                         <?php
                         foreach ($loadsp as $sp) {
                             extract($sp);
-                            $dis="";
-                            if($quantity<=0){
-                                $dis="disabled";
+                            $dis = "";
+                            if ($quantity <= 0) {
+                                $dis = "disabled";
                             }
                             echo '
                             <li class="product-item wow fadeInUp product-item rows-space-30 col-bg-4 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-ts-6 style-01 post-24 product type-product status-publish has-post-thumbnail product_cat-chair product_cat-table product_cat-new-arrivals product_tag-light product_tag-hat product_tag-sock first instock featured shipping-taxable purchasable product-type-variable has-default-attributes" data-wow-duration="1s" data-wow-delay="0ms" data-wow="fadeInUp">
@@ -178,7 +178,7 @@
 
                                         <a href="#" class="button yith-wcqv-button">Quick View</a>
                                         <div class="add-to-cart">
-                                             <button type="submit" '.$dis.'  name="addcart" style="width: 40px;    background-color: #cf9163;"><img src="./image/cart.svg"></button>                                      
+                                             <button type="submit" ' . $dis . '  name="addcart" style="width: 40px;    background-color: #cf9163;"><img src="./image/cart.svg"></button>                                      
                                         </form>
                                     </div>
                                     </div>
@@ -252,12 +252,12 @@
 
                                 echo '<li class="lynessa-widget-layered-nav-list__item lynessa-layered-nav-term ">
                                 <label><input type="checkbox" name="size">
-                                    <span><a href="' . $linkCate . '">' . $size . '</a></span>
+                                    <span><a href="' . $linkCate . '">' . $name . '</a></span>
                                     <span class="count"></span></label>
                             </li>';
                             }
                             ?>
-                            
+
                         </ul>
                     </div>
                     <div id="lynessa_product_categories-3" class="widget lynessa widget_product_categories">
